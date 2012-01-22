@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fundamentals of Computing</string>
-    <string name="numbersystem_prompt">sdfsdfd</string>
+    <string name="numbersystem_prompt">Select Number System</string>
     <string-array name="numbersystem_array">
         <item>binary</item>
         <item>3</item>
