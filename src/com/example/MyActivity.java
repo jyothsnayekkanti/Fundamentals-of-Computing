@@ -1,9 +1,12 @@
 package com.example;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -28,7 +31,16 @@ public class MyActivity extends Activity
 	EditText input;
 
 	private int positionSelected = 0;
+	private String inputTextValue = null;
 
+
+	public String getInputTextValue() {
+		return inputTextValue;
+	}
+
+	public void setInputTextValue(String inputTextValue) {
+		this.inputTextValue = inputTextValue;
+	}
 
 	public int getPositionSelected() {
 		return positionSelected;
@@ -71,9 +83,34 @@ public class MyActivity extends Activity
 			@Override
 			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
 				setValues(""+arg0.getText(), getPositionSelected());
-				return false;
+				return true;
 			}    
 		});
+
+		input.setOnKeyListener(new OnKeyListener()
+		{
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					if(keyCode != KeyEvent.KEYCODE_ENTER){
+						if(keyCode == KeyEvent.KEYCODE_BACK){
+							return false; 
+						}
+						if(isNumberAllowed(keyCode, getPositionSelected())){
+							System.out.println("number allowed");
+							return false;
+						}
+						else{
+							System.out.println("number not allowed");
+							return true;
+						}
+					}
+				}
+				return false;
+			}
+		});
+
+
 
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 			public void onItemSelected(AdapterView<?> parent,
@@ -88,6 +125,35 @@ public class MyActivity extends Activity
 
 	}
 
+	public List base10AllowedNumberList(){
+		return null;
+	}
+	// 0 - 9 : 7 -16
+	// binary pos 0 - <=1 : 8
+	// 3 pos 1 - <= 2 : 9
+	// 4 pos 2 - <= 3 : 10
+	// 5 pos 3 - <= 4 : 11
+	// 6 pos 4 - <= 5 : 12
+	// 9 pos 7 - <= 8 : 15
+	// decimal pos 8 - <=9 : 16
+	// Hexadecimal pos 9 : 7 - 16, 29 - 34 
+
+	public boolean isNumberAllowed(int keyCode, int pos)
+	{
+		if((keyCode >=KeyEvent.KEYCODE_0 && keyCode <= KeyEvent.KEYCODE_9) || (keyCode >= KeyEvent.KEYCODE_A && keyCode <= KeyEvent.KEYCODE_F)){
+			if(keyCode == KeyEvent.KEYCODE_0 || keyCode == KeyEvent.KEYCODE_1 || pos == 9){
+				return true;
+			}
+			else if(pos != 9 && ((keyCode-7) < (pos+2))){
+				return true;
+			}
+		}
+		else
+		{
+			return false;
+		}
+		return false;
+	}
 
 
 	public void setValues(String str, int pos)
