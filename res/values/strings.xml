@@ -3,14 +3,9 @@
     <string name="app_name">Fundamentals of Computing</string>
     <string name="numbersystem_prompt">Select Number System</string>
     <string-array name="numbersystem_array">
-        <item>binary</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
+        <item>Binary</item>
+        <item>Quaternary</item>
         <item>Octal</item>
-        <item>9</item>
         <item>Decimal</item>
         <item>Hexadecimal</item>
     </string-array>
