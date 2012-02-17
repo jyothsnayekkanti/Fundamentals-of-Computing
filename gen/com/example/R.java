@@ -24,15 +24,22 @@ public final class R {
         public static final int base4value=0x7f050008;
         public static final int base8=0x7f050004;
         public static final int base8value=0x7f050009;
-        public static final int inputValue=0x7f050001;
+        public static final int converterInputValue=0x7f050001;
+        public static final int sortButton=0x7f05000e;
+        public static final int sortInputValues=0x7f05000c;
+        public static final int sortOutputValues=0x7f05000d;
         public static final int spinner=0x7f050000;
     }
     public static final class layout {
         public static final int home=0x7f020000;
         public static final int main=0x7f020001;
+        public static final int sort=0x7f020002;
     }
     public static final class string {
         public static final int app_name=0x7f030000;
-        public static final int numbersystem_prompt=0x7f030001;
+        public static final int component_name_convert=0x7f030001;
+        public static final int component_name_search=0x7f030003;
+        public static final int component_name_sort=0x7f030002;
+        public static final int numbersystem_prompt=0x7f030004;
     }
 }

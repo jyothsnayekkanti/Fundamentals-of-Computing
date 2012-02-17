@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fundamentals of Computing</string>
+    <string name="component_name_convert">Converter</string>
+    <string name="component_name_sort">Sorting Algorithms</string>
+    <string name="component_name_search">Search Algorithms</string>
     <string name="numbersystem_prompt">Select Number System</string>
     <string-array name="numbersystem_array">
         <item>Binary</item>

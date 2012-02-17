@@ -60,7 +60,7 @@ public class MyActivity extends Activity
 		octal = (TextView) findViewById(R.id.base8value);
 		decimal = (TextView) findViewById(R.id.base10value); 
         hexadecimal = (TextView) findViewById(R.id.base16value);
-		input = (EditText) findViewById(R.id.inputValue);
+		input = (EditText) findViewById(R.id.converterInputValue);
 
 		input.setOnEditorActionListener(new OnEditorActionListener()
 		{

@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:prompt="@string/numbersystem_prompt" 
             />
-    <EditText android:id="@+id/inputValue" android:layout_height="wrap_content" android:layout_width="200dp"  android:layout_toRightOf="@id/spinner" android:inputType="numberDecimal" />
+    <EditText android:id="@+id/converterInputValue" android:layout_height="wrap_content" android:layout_width="200dp"  android:layout_toRightOf="@id/spinner" android:inputType="numberDecimal" />
 
     <TextView android:id="@+id/base2"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/spinner"  android:layout_marginTop="2dp"  android:text="Binary" />
     <!--<TextView android:id="@+id/base2"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/base1"  android:layout_marginTop="2dp"  android:text="3" />-->
@@ -25,7 +25,7 @@
     <TextView android:id="@+id/base16"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_below="@+id/base10"  android:layout_marginTop="2dp"  android:text="Hexadecimal" />
         
     <!--<TextView android:id="@+id/base1value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/spinner" android:layout_toRightOf="@+id/base1" android:layout_marginTop="2dp" android:layout_marginLeft="80dp" />-->
-    <TextView android:id="@+id/base2value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/inputValue"  android:layout_toRightOf="@+id/base2" android:layout_marginTop="2dp" android:layout_marginLeft="80dp" android:layout_alignParentRight="true"/>
+    <TextView android:id="@+id/base2value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/converterInputValue"  android:layout_toRightOf="@+id/base2" android:layout_marginTop="2dp" android:layout_marginLeft="80dp" android:layout_alignParentRight="true"/>
     <!--<TextView android:id="@+id/base3value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/quaternary"  android:layout_toRightOf="@+id/base3" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>-->
     <TextView android:id="@+id/base4value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/base2value"  android:layout_toRightOf="@+id/base4" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>
     <!--<TextView android:id="@+id/base5value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/base4"  android:layout_toRightOf="@+id/base5" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>-->

@@ -1,0 +1,12 @@
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.classpath
+.project
+Fundamentals of Computing.eml
+Fundamentals of Computing.userlibraries
+bin/
+src/com/example/MyExample.java
+src/com/example/MyOnEditorActionListener.java
