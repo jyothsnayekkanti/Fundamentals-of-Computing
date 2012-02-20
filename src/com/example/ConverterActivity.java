@@ -14,7 +14,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView.OnEditorActionListener;
 
-public class MyActivity extends Activity
+public class ConverterActivity extends Activity
 {
     Spinner spinner;
     TextView binary;
@@ -60,7 +60,7 @@ public class MyActivity extends Activity
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(context, MyHome.class);
+				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
 			}
 		});			

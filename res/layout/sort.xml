@@ -1,87 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-     
+
     <TextView
         android:id="@+id/aboutSortType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" 
-        android:text="About Sort type About Sort type About Sort type About Sort type" >
-    </TextView>
-    
+       android:layout_marginTop="2dp"  />
+
     <Button
         android:id="@+id/explainButton"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/aboutSortType"
-        android:layout_marginTop="2dp" 
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="Explain"/>
+       android:layout_marginTop="2dp" 
+        android:layout_toRightOf="@+id/aboutSortType"
+        android:text="@string/explain_label" />
 
     <TextView
         android:id="@+id/inputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/explainButton"
-        android:text="Give numbers to be sorted" >
-    </TextView>    
-    
+        android:layout_below="@+id/aboutSortType"
+        android:text="@string/sort_input_label" >
+    </TextView>
+
     <EditText
         android:id="@+id/sortInputValues"
-        android:layout_width="200dp"  
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_below="@+id/inputLabel"
-		android:layout_marginTop="2dp" >
+       android:layout_marginTop="2dp" 
+        android:layout_toRightOf="@+id/inputLabel"
+        android:inputType="number" >
     </EditText>
 
-    
     <Button
         android:id="@+id/sortButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+       android:layout_marginTop="2dp" 
         android:layout_toRightOf="@+id/sortInputValues"
-        android:layout_marginTop="2dp" 
-        android:text="Sort"/>    
-
+        android:layout_below="@id/explainButton"
+        android:text="@string/sort_label" />
 
     <TextView
         android:id="@+id/outputLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp" 
-        android:layout_below="@+id/inputLabel"        
-        android:text="Sorted numbers" >
-    </TextView>        
-    
-    <TextView
-        android:id="@+id/sortOutputValues"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sortInputValues"
-        android:layout_marginTop="2dp" >
-    </TextView>
-    
-    <TextView
-        android:id="@+id/timetakenLabel"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sortInputValues"
-        android:layout_marginTop="2dp" 
-        android:text="Time taken">
-    </TextView>
-    
-    <TextView
-        android:id="@+id/timetaken"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sortInputValues"
-        android:layout_marginTop="2dp" >
+        android:layout_below="@+id/inputLabel"
+       android:layout_marginTop="2dp" 
+        android:text="@string/sort_output_label" >
     </TextView>
 
-<Button android:text = "Home" android:id="@+id/SorttoHome"         android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+    <TextView
+        android:id="@+id/sortOutputValues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_marginTop="2dp" 
+        android:layout_below="@+id/sortInputValues"        
+        android:layout_toRightOf="@+id/sortInputValues" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/timetakenLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sort_output_label"
+     android:layout_marginTop="2dp" 
+        android:text="@string/timetaken_label" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/timetaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sortOutputValues"
+        android:layout_toRightOf="@+id/timetaken_label"        
+       android:layout_marginTop="2dp" >
+    </TextView>
+
+    <Button
+        android:id="@+id/SorttoHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/home_label" />
+
+</LinearLayout>

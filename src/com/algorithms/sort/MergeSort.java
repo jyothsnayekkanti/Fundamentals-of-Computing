@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class MergeSort implements Sorter{
+public class MergeSort implements ISorter{
 
 	@Override  
 	public String sortType()

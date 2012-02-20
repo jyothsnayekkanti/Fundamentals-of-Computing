@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class HeapSort implements Sorter{
+public class HeapSort implements ISorter{
 
 	@Override  
 	public String sortType()

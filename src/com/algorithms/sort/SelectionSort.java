@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class SelectionSort implements Sorter{
+public class SelectionSort implements ISorter{
 
 	@Override  
 	public String sortType()

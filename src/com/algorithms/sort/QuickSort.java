@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class QuickSort implements Sorter{
+public class QuickSort implements ISorter{
 
 
 	@Override

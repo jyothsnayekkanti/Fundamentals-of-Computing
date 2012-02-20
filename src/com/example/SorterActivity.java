@@ -14,12 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.algorithms.sort.BubbleSort;
+import com.algorithms.sort.SortFactory;
+import com.algorithms.sort.ISorter;
 
-public class MySorter extends Activity {
+public class SorterActivity extends Activity {
 	EditText input;
 	TextView output;
 	Button button1;
+	String sortType = null;
+	TextView aboutSortType;
 	
 	private String inputTextValue = null;
 
@@ -37,11 +40,15 @@ public class MySorter extends Activity {
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		final Context context = this;		
+		final Context context = this;
+		sortType = getIntent().getStringExtra("sortType");
 		setContentView(R.layout.sort);
 
+		aboutSortType = (TextView) findViewById(R.id.aboutSortType);
 		input = (EditText) findViewById(R.id.sortInputValues);
 		output = (TextView) findViewById(R.id.sortOutputValues);
+		
+		aboutSortType.setText(sortType);
 		
 		input.setOnEditorActionListener(new OnEditorActionListener()
 		{
@@ -61,7 +68,7 @@ public class MySorter extends Activity {
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = getInputArray(input.getText().toString());
-				int[] sortedArray = new BubbleSort().sort(inputArray, inputArray.length);
+				int[] sortedArray = SortFactory.createSorter(sortType).sort(inputArray, inputArray.length);
 				output.setText(getOutputText(sortedArray, sortedArray.length));
 			}
 		});
@@ -71,7 +78,7 @@ public class MySorter extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(context, MyHome.class);
+				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
 			}
 		});	    

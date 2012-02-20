@@ -30,7 +30,7 @@ public class SortAlgorithms {
 
 	}
 
-	public static void sort(Sorter sorter, int[] inputArray, int length){
+	public static void sort(ISorter sorter, int[] inputArray, int length){
 		long startTime;
 		long endTime;
 		System.out.println("Input Array : "+inputArray[0] + ","+inputArray[1] + ","+inputArray[2] + ","+inputArray[3] + ","+inputArray[4]);

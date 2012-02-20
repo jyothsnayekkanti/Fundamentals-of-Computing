@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class BubbleSort implements Sorter{
+public class BubbleSort implements ISorter{
 
 	@Override  
 	public String sortType()

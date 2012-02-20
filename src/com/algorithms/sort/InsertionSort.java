@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class InsertionSort implements Sorter{
+public class InsertionSort implements ISorter{
 
 	@Override  
 	public String sortType()

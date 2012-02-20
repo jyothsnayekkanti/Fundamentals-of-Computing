@@ -1,6 +1,6 @@
 package com.algorithms.sort;
 
-public class BidirectionalBubbleSort implements Sorter {
+public class BidirectionalBubbleSort implements ISorter {
 
 	@Override
 	public String sortType()

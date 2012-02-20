@@ -4,13 +4,16 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:label="@string/app_name" >
-        <activity android:name="MyActivity"
+        <activity android:name=".ConverterActivity"
                   android:label="@string/component_name_convert">
         </activity>
-        <activity android:name="MySorter"
+        <activity android:name=".SorterActivity"
                   android:label="@string/component_name_sort" >
         </activity>
-        <activity android:name="MyHome"
+        <activity android:name=".SortGalleryActivity"
+                  android:label="@string/component_name_sort" >
+        </activity>
+        <activity android:name=".MainActivity"
                   android:label="Fundamentals Of Computing" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

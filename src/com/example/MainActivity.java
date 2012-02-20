@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MyHome extends Activity{
+public class MainActivity extends Activity{
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -23,7 +23,7 @@ public class MyHome extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(context, MyActivity.class);
+				Intent intent = new Intent(context, ConverterActivity.class);
 				context.startActivity(intent);
 			}
 		});
@@ -33,11 +33,13 @@ public class MyHome extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(context, MySorter.class);
-				context.startActivity(intent);
+//				Intent intent = new Intent(context, MySorter.class);
+//				context.startActivity(intent);
+				Intent intent = new Intent(context, SortGalleryActivity.class);
+				context.startActivity(intent);				
 			}
 		});
 	
-	}	
+	}
 
 }
