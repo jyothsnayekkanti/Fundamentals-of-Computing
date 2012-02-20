@@ -4,7 +4,6 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         android:orientation="vertical">
-
     <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
@@ -35,4 +34,8 @@
     <!--<TextView android:id="@+id/base9value"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_below="@+id/decimal"  android:layout_toRightOf="@+id/hexadecimal" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>-->
     <TextView android:id="@+id/base10value"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_below="@+id/base8value"  android:layout_toRightOf="@+id/base10" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>
     <TextView android:id="@+id/base16value"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_below="@+id/base10value"  android:layout_toRightOf="@+id/base16" android:layout_marginTop="2dp" android:layout_marginLeft="80dp"/>
+    
+    
+<Button android:text = "Home" android:id="@+id/ConverttoHome"         android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" android:layout_alignParentBottom="true"/>    
 </RelativeLayout>

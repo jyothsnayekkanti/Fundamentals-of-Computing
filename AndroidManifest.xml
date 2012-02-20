@@ -9,6 +9,9 @@
         </activity>
         <activity android:name="MySorter"
                   android:label="@string/component_name_sort" >
+        </activity>
+        <activity android:name="MyHome"
+                  android:label="Fundamentals Of Computing" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -3,6 +3,8 @@ package com.example;
 import java.util.StringTokenizer;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.algorithms.sort.BubbleSort;
 public class MySorter extends Activity {
 	EditText input;
 	TextView output;
+	Button button1;
 	
 	private String inputTextValue = null;
 
@@ -34,6 +37,7 @@ public class MySorter extends Activity {
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		final Context context = this;		
 		setContentView(R.layout.sort);
 
 		input = (EditText) findViewById(R.id.sortInputValues);
@@ -61,6 +65,16 @@ public class MySorter extends Activity {
 				output.setText(getOutputText(sortedArray, sortedArray.length));
 			}
 		});
+	    
+	    button1 = (Button)findViewById(R.id.SorttoHome);
+	    button1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, MyHome.class);
+				context.startActivity(intent);
+			}
+		});	    
 
 	}
 	

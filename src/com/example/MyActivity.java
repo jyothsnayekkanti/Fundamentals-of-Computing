@@ -3,9 +3,12 @@ package com.example;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -20,6 +23,7 @@ public class MyActivity extends Activity
     TextView decimal;
     TextView hexadecimal;
 	EditText input;
+	Button button1;
     
     final static String[] myArray = new String[]{"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
 	private int positionSelected = 0;
@@ -48,7 +52,18 @@ public class MyActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.home);
+		final Context context = this;		
+		setContentView(R.layout.convert);
+		
+	    button1 = (Button)findViewById(R.id.ConverttoHome);
+	    button1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, MyHome.class);
+				context.startActivity(intent);
+			}
+		});			
 
 		spinner = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -107,6 +122,8 @@ public class MyActivity extends Activity
 				// Do nothing.
 			}        	
 		});
+		
+	
 
 	}
 	
