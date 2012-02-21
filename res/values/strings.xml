@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fundamentals of Computing</string>
 
+    <string name="app_name">Fundamentals of Computing</string>
     <string name="component_name_convert">Converter</string>
     <string name="component_name_sort">Sorting Algorithms</string>
     <string name="component_name_search">Search Algorithms</string>
-    <string name="component_name_gates">Gates</string>
-
+    <string name="component_name_gates">Logic Gates</string>
+    <string name="quit">Exit</string>
+    <string name="really_quit">Are you sure you want to quit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="numbersystem_prompt">Select Number System</string>
-    <string name="converter_marquee">Binary, Quaternary, Octal, Decimal, Hexadecimal</string>
-    <string name="sorter_marquee">Bubble Sort, Insertion Sort, Heap Sort, Merge Sort, Selection Sort, Quick Sort, Bidirectional Bubble Sort</string>
-    <string name="searcher_marquee">Binary Search, Sequential Search</string>
-    <string name="gates_marquee">OR, AND, NOR, NAND, XOR</string>
-    
-	<string name="home_label">Home</string>
-	<string name="explain_label">Explain</string>
-	<string name="converter_label">Converter</string>
-	<string name="sort_input_label">Enter numbers to sort</string> 
-	<string name="sort_label">Sort</string>	  
-	<string name="sort_output_label">Sorted numbers</string>
-	<string name="timetaken_label">Time taken</string>
-	<string name="search_label">Search</string>
-	<string name="gates_label">Gates</string>
-	
-	<string name="binary_label">Binary</string>
-	<string name="quaternary_label">Quaternary</string>
-	<string name="octal_label">Octal</string>
-	<string name="decimal_label">Decimal</string>    
-	<string name="hexadecimal_label">Hexadecimal</string>
-	    
+    <string name="converter_marquee">Binary | Quaternary | Octal | Decimal | Hexadecimal</string>
+    <string name="sorter_marquee">Bubble Sort | Insertion Sort | Heap Sort | Merge Sort | Selection Sort | Quick Sort | Bidirectional Bubble Sort</string>
+    <string name="searcher_marquee">Binary Search | Sequential Search | Hash-based Search | Binary Tree Search</string>
+    <string name="gates_marquee">OR | AND | NOR | NAND | XOR</string>
+    <string name="home_label">Home</string>
+    <string name="explain_label">Explain</string>
+    <string name="converter_label">Converter</string>
+    <string name="sort_input_label">Enter numbers to sort</string>
+    <string name="sort_label">Sort</string>
+    <string name="sort_output_label">Sorted numbers</string>
+    <string name="timetaken_label">Time taken</string>
+    <string name="search_label">Search</string>
+    <string name="gates_label">Logic Gates</string>
+    <string name="binary_label">Binary</string>
+    <string name="quaternary_label">Quaternary</string>
+    <string name="octal_label">Octal</string>
+    <string name="decimal_label">Decimal</string>
+    <string name="hexadecimal_label">Hexadecimal</string>
+
     <string-array name="numbersystem_array">
         <item>Binary</item>
         <item>Quaternary</item>
@@ -44,6 +45,6 @@
         <item>Selection Sort</item>
         <item>Quick Sort</item>
         <item>Bidirectional Bubble Sort</item>
-        </string-array>
+    </string-array>
 
 </resources>

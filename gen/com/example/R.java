@@ -9,78 +9,126 @@ package com.example;
 
 public final class R {
     public static final class array {
-        public static final int numbersystem_array=0x7f040000;
-        public static final int sort_array=0x7f040001;
+        public static final int numbersystem_array=0x7f050000;
+        public static final int sort_array=0x7f050001;
     }
     public static final class attr {
     }
+    public static final class color {
+        public static final int custom_theme_color=0x7f070000;
+    }
+    public static final class drawable {
+        public static final int bbsort=0x7f020000;
+        public static final int bubblesort=0x7f020001;
+        public static final int gradient=0x7f020002;
+        public static final int heapsort=0x7f020003;
+        public static final int insertionsort=0x7f020004;
+        public static final int logicgates=0x7f020005;
+        public static final int mergesort=0x7f020006;
+        public static final int numberconversion=0x7f020007;
+        public static final int quicksort=0x7f020008;
+        public static final int searching=0x7f020009;
+        public static final int selectionsort=0x7f02000a;
+        public static final int sorting=0x7f02000b;
+    }
     public static final class id {
-        public static final int ConverttoHome=0x7f05000c;
-        public static final int SorttoHome=0x7f050021;
-        public static final int aboutSortType=0x7f050016;
-        public static final int appHeader=0x7f05000d;
-        public static final int base10=0x7f050005;
-        public static final int base10value=0x7f05000a;
-        public static final int base16=0x7f050006;
-        public static final int base16value=0x7f05000b;
-        public static final int base2=0x7f050002;
-        public static final int base2value=0x7f050007;
-        public static final int base4=0x7f050003;
-        public static final int base4value=0x7f050008;
-        public static final int base8=0x7f050004;
-        public static final int base8value=0x7f050009;
-        public static final int converter=0x7f05000e;
-        public static final int converterInputValue=0x7f050001;
-        public static final int explainButton=0x7f050017;
-        public static final int gallery=0x7f050022;
-        public static final int gates=0x7f050014;
-        public static final int inputLabel=0x7f050018;
-        public static final int marquee_convert=0x7f05000f;
-        public static final int marquee_gates=0x7f050015;
-        public static final int marquee_search=0x7f050013;
-        public static final int marquee_sort=0x7f050011;
-        public static final int outputLabel=0x7f05001b;
-        public static final int searcher=0x7f050012;
-        public static final int sortButton=0x7f05001a;
-        public static final int sortInputValues=0x7f050019;
-        public static final int sortOutputValues=0x7f05001c;
-        public static final int sort_output_label=0x7f05001e;
-        public static final int sorter=0x7f050010;
-        public static final int spinner=0x7f050000;
-        public static final int timetaken=0x7f05001f;
-        public static final int timetakenLabel=0x7f05001d;
-        public static final int timetaken_label=0x7f050020;
+        public static final int ConverttoHome=0x7f08000c;
+        public static final int SorttoHome=0x7f080021;
+        public static final int aboutSortType=0x7f080016;
+        public static final int appHeader=0x7f08000e;
+        public static final int base10=0x7f080005;
+        public static final int base10value=0x7f08000a;
+        public static final int base16=0x7f080006;
+        public static final int base16value=0x7f08000b;
+        public static final int base2=0x7f080002;
+        public static final int base2value=0x7f080007;
+        public static final int base4=0x7f080003;
+        public static final int base4value=0x7f080008;
+        public static final int base8=0x7f080004;
+        public static final int base8value=0x7f080009;
+        public static final int converter=0x7f08000d;
+        public static final int converterInputValue=0x7f080001;
+        public static final int explainButton=0x7f080017;
+        public static final int gallery=0x7f080022;
+        public static final int gallerytoHome=0x7f080023;
+        public static final int gates=0x7f080014;
+        public static final int inputLabel=0x7f080018;
+        public static final int marquee_convert=0x7f08000f;
+        public static final int marquee_gates=0x7f080015;
+        public static final int marquee_search=0x7f080013;
+        public static final int marquee_sort=0x7f080011;
+        public static final int outputLabel=0x7f08001b;
+        public static final int searcher=0x7f080012;
+        public static final int sortButton=0x7f08001a;
+        public static final int sortInputValues=0x7f080019;
+        public static final int sortOutputValues=0x7f08001c;
+        public static final int sort_output_label=0x7f08001e;
+        public static final int sorter=0x7f080010;
+        public static final int spinner=0x7f080000;
+        public static final int timetaken=0x7f08001f;
+        public static final int timetakenLabel=0x7f08001d;
+        public static final int timetaken_label=0x7f080020;
     }
     public static final class layout {
-        public static final int convert=0x7f020000;
-        public static final int main=0x7f020001;
-        public static final int sort=0x7f020002;
-        public static final int sortgallery=0x7f020003;
+        public static final int convert=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int sort=0x7f030002;
+        public static final int sortgallery=0x7f030003;
     }
     public static final class string {
-        public static final int app_name=0x7f030000;
-        public static final int binary_label=0x7f030013;
-        public static final int component_name_convert=0x7f030001;
-        public static final int component_name_gates=0x7f030004;
-        public static final int component_name_search=0x7f030003;
-        public static final int component_name_sort=0x7f030002;
-        public static final int converter_label=0x7f03000c;
-        public static final int converter_marquee=0x7f030006;
-        public static final int decimal_label=0x7f030016;
-        public static final int explain_label=0x7f03000b;
-        public static final int gates_label=0x7f030012;
-        public static final int gates_marquee=0x7f030009;
-        public static final int hexadecimal_label=0x7f030017;
-        public static final int home_label=0x7f03000a;
-        public static final int numbersystem_prompt=0x7f030005;
-        public static final int octal_label=0x7f030015;
-        public static final int quaternary_label=0x7f030014;
-        public static final int search_label=0x7f030011;
-        public static final int searcher_marquee=0x7f030008;
-        public static final int sort_input_label=0x7f03000d;
-        public static final int sort_label=0x7f03000e;
-        public static final int sort_output_label=0x7f03000f;
-        public static final int sorter_marquee=0x7f030007;
-        public static final int timetaken_label=0x7f030010;
+        public static final int app_name=0x7f040000;
+        public static final int binary_label=0x7f040017;
+        public static final int component_name_convert=0x7f040001;
+        public static final int component_name_gates=0x7f040004;
+        public static final int component_name_search=0x7f040003;
+        public static final int component_name_sort=0x7f040002;
+        public static final int converter_label=0x7f040010;
+        public static final int converter_marquee=0x7f04000a;
+        public static final int decimal_label=0x7f04001a;
+        public static final int explain_label=0x7f04000f;
+        public static final int gates_label=0x7f040016;
+        public static final int gates_marquee=0x7f04000d;
+        public static final int hexadecimal_label=0x7f04001b;
+        public static final int home_label=0x7f04000e;
+        public static final int no=0x7f040008;
+        public static final int numbersystem_prompt=0x7f040009;
+        public static final int octal_label=0x7f040019;
+        public static final int quaternary_label=0x7f040018;
+        public static final int quit=0x7f040005;
+        public static final int really_quit=0x7f040006;
+        public static final int search_label=0x7f040015;
+        public static final int searcher_marquee=0x7f04000c;
+        public static final int sort_input_label=0x7f040011;
+        public static final int sort_label=0x7f040012;
+        public static final int sort_output_label=0x7f040013;
+        public static final int sorter_marquee=0x7f04000b;
+        public static final int timetaken_label=0x7f040014;
+        public static final int yes=0x7f040007;
     }
+    public static final class style {
+        public static final int CustomTheme=0x7f060002;
+        public static final int CustomTheme1=0x7f060001;
+        public static final int gradientTheme=0x7f060000;
+    }
+    public static final class styleable {
+        /** Attributes that can be used with a Gallery1.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Gallery1_android_galleryItemBackground com.example:android_galleryItemBackground}</code></td><td></td></tr>
+           </table>
+           @see #Gallery1_android_galleryItemBackground
+         */
+        public static final int[] Gallery1 = {
+            0x0101004c
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.R.attr#android_galleryItemBackground}
+          attribute's value can be found in the {@link #Gallery1} array.
+          @attr name android:android_galleryItemBackground
+        */
+        public static final int Gallery1_android_galleryItemBackground = 0;
+    };
 }

@@ -96,6 +96,9 @@ public class ConverterActivity extends Activity
 						if(keyCode == KeyEvent.KEYCODE_DEL){
 							return false; // allow input
 						}
+						if(keyCode == KeyEvent.KEYCODE_BACK){
+							return false; // allow input
+						}						
 						if(isNumberAllowed(keyCode, getBaseSelected(getPositionSelected()))){
 							return false; // allow input
 						}
@@ -212,5 +215,27 @@ public class ConverterActivity extends Activity
 		convertedNumber.append(myArray[Integer.valueOf(String.valueOf(decimalNumber))]);
         return convertedNumber.reverse().toString();
 	}
+	
+//  @Override
+//  public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (event.getAction() == KeyEvent.ACTION_DOWN) {
+//			if(keyCode != KeyEvent.KEYCODE_ENTER){
+//				if(keyCode == KeyEvent.KEYCODE_DEL){
+//					return false; // allow input
+//				}
+//				if(keyCode == KeyEvent.KEYCODE_BACK){
+//					return false; // allow input
+//				}						
+//				if(isNumberAllowed(keyCode, getBaseSelected(getPositionSelected()))){
+//					return false; // allow input
+//				}
+//				else{
+//					return true; // doesn't allow input
+//				}
+//			}
+//		}
+//		return false;
+//
+//  }		
 
 }

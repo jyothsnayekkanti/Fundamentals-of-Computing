@@ -1,77 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView 
-    android:id="@+id/appHeader" 
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/app_name"
-    />
-<Button android:text = "@string/component_name_convert" android:id="@+id/converter"
-        android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/appHeader"    />
-<com.example.ScrollingTextView
-    android:text="@string/converter_marquee"
-    android:singleLine="true"
-    android:ellipsize="marquee"
-    android:marqueeRepeatLimit="marquee_forever"
-    android:scrollHorizontally="true"
-    android:id="@+id/marquee_convert"
-    android:padding="5dip" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
-    android:layout_below="@id/converter" />
-<Button android:text = "@string/component_name_sort" android:id="@+id/sorter"
-        android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/marquee_convert"
-    />
-<com.example.ScrollingTextView
-    android:text="@string/sorter_marquee"
-    android:singleLine="true"
-    android:ellipsize="marquee"
-    android:marqueeRepeatLimit="marquee_forever"
-    android:scrollHorizontally="true"
-    android:id="@+id/marquee_sort"
-    android:padding="5dip" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
-    android:layout_below="@id/sorter" />
-<Button android:text = "@string/component_name_search" android:id="@+id/searcher"
-        android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/marquee_sort"
-    />
-<com.example.ScrollingTextView
-    android:text="@string/searcher_marquee"
-    android:singleLine="true"
-    android:ellipsize="marquee"
-    android:marqueeRepeatLimit="marquee_forever"
-    android:scrollHorizontally="true"
-    android:id="@+id/marquee_search"
-    android:padding="5dip" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
-    android:layout_below="@id/searcher" />
-<Button android:text = "@string/component_name_gates" android:id="@+id/gates"
-        android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/marquee_search"
-    />
-<com.example.ScrollingTextView
-    android:text="@string/gates_marquee"
-    android:singleLine="true"
-    android:ellipsize="marquee"
-    android:marqueeRepeatLimit="marquee_forever"
-    android:scrollHorizontally="true"
-    android:id="@+id/marquee_gates"
-    android:padding="5dip" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
-    android:layout_below="@id/gates" />
-</RelativeLayout>
+    android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/converter"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/appHeader"
+        android:layout_weight="1"
+        android:background="@drawable/numberconversion"
+        android:text="@string/component_name_convert"
+        android:textStyle="italic" 
+        android:textSize="30sp"
+        />
+
+    <com.example.ScrollingTextView
+        android:id="@+id/marquee_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/converter"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/converter_marquee" />
+
+    <Button
+        android:id="@+id/sorter"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/marquee_convert"
+        android:layout_weight="1"
+        android:background="@drawable/sorting"
+        android:text="@string/component_name_sort"
+        android:textStyle="italic" 
+        android:textSize="30sp" />
+
+    <com.example.ScrollingTextView
+        android:id="@+id/marquee_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sorter"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/sorter_marquee" />
+
+    <Button
+        android:id="@+id/searcher"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/marquee_sort"
+        android:layout_weight="1"
+        android:background="@drawable/searching"
+        android:text="@string/component_name_search"
+        android:textStyle="italic" 
+        android:textSize="30sp" />
+
+    <com.example.ScrollingTextView
+        android:id="@+id/marquee_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searcher"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/searcher_marquee" />
+
+    <Button
+        android:id="@+id/gates"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/marquee_search"
+        android:layout_weight="1"
+        android:background="@drawable/logicgates"
+        android:text="@string/component_name_gates"
+        android:textStyle="italic" 
+        android:textSize="30sp" />
+
+    <com.example.ScrollingTextView
+        android:id="@+id/marquee_gates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gates"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dip"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/gates_marquee" />
+
+</LinearLayout>

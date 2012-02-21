@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.algorithms.sort.SortFactory;
-import com.algorithms.sort.ISorter;
 
 public class SorterActivity extends Activity {
 	EditText input;

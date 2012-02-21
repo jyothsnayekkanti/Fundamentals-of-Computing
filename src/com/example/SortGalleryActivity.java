@@ -1,6 +1,5 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Gallery;
 
-public class SortGalleryActivity extends Activity {
+public class SortGalleryActivity extends GalleryView {
 	Gallery gallery;
 	private String sortTypeSelected;
 	public String getSortTypeSelected() {
