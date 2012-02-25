@@ -42,6 +42,21 @@ public class QuickSort implements ISorter{
 		sort(array, low, lo);
 		sort(array, lo == low ? lo+1 : lo, n);
 		return array;
+	}
+
+	@Override
+	public String bestComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String averageComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String worstComplexity() {
+		return "O(n2)";
 	}	
 
 }

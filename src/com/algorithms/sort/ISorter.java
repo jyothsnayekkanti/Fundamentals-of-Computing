@@ -6,4 +6,8 @@ public interface ISorter {
 
 	public int[] sort(int[] inputArray, int length);
 	
+	public String bestComplexity();
+	public String averageComplexity();
+	public String worstComplexity();	
+	
 }

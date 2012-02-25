@@ -22,6 +22,21 @@ public class BubbleSort implements ISorter{
 			}
 		}
 		return sortedArray;
+	}
+
+	@Override
+	public String bestComplexity() {
+		return "O(n)";
+	}
+
+	@Override
+	public String averageComplexity() {
+		return "O(n2)";
+	}
+
+	@Override
+	public String worstComplexity() {
+		return "O(n2)";
 	}	
 
 }

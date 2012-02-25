@@ -32,6 +32,24 @@ public class BidirectionalBubbleSort implements ISorter {
 			}
 		}
 		return sortedArray;
+	}
+
+	@Override
+	public String bestComplexity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String averageComplexity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String worstComplexity() {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 
 }

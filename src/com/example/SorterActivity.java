@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.algorithms.sort.ISorter;
 import com.algorithms.sort.SortFactory;
 
 public class SorterActivity extends Activity {
@@ -22,6 +23,11 @@ public class SorterActivity extends Activity {
 	Button button1;
 	String sortType = null;
 	TextView aboutSortType;
+	TextView aboutComplexityBest;
+	TextView aboutComplexityAvg;
+	TextView aboutComplexityWorst;	
+	ISorter sorter;
+	
 	
 	private String inputTextValue = null;
 
@@ -41,13 +47,20 @@ public class SorterActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
 		sortType = getIntent().getStringExtra("sortType");
+		sorter = SortFactory.createSorter(sortType);
 		setContentView(R.layout.sort);
 
 		aboutSortType = (TextView) findViewById(R.id.aboutSortType);
 		input = (EditText) findViewById(R.id.sortInputValues);
 		output = (TextView) findViewById(R.id.sortOutputValues);
+		aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
+		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
+		aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
 		
 		aboutSortType.setText(sortType);
+		aboutComplexityBest.setText(sorter.bestComplexity());
+		aboutComplexityAvg.setText(sorter.averageComplexity());	
+		aboutComplexityWorst.setText(sorter.worstComplexity());			
 		
 		input.setOnEditorActionListener(new OnEditorActionListener()
 		{
@@ -67,7 +80,7 @@ public class SorterActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = getInputArray(input.getText().toString());
-				int[] sortedArray = SortFactory.createSorter(sortType).sort(inputArray, inputArray.length);
+				int[] sortedArray = sorter.sort(inputArray, inputArray.length);
 				output.setText(getOutputText(sortedArray, sortedArray.length));
 			}
 		});

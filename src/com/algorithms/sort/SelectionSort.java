@@ -23,6 +23,21 @@ public class SelectionSort implements ISorter{
 			sortedArray[index_of_min] = temp;
 		}
 		return sortedArray;
+	}
+
+	@Override
+	public String bestComplexity() {
+		return "O(n2)";
+	}
+
+	@Override
+	public String averageComplexity() {
+		return "O(n2)";
+	}
+
+	@Override
+	public String worstComplexity() {
+		return "O(n2)";
 	}	
 
 }

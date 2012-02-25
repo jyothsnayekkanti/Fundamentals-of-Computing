@@ -51,4 +51,19 @@ public class HeapSort implements ISorter{
 		array[arr_ubound] = temp;
 		return array;
 	}
+
+	@Override
+	public String bestComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String averageComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String worstComplexity() {
+		return "O(n log n)";
+	}
 }

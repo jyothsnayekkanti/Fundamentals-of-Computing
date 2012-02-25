@@ -17,6 +17,7 @@
     <string name="gates_marquee">OR | AND | NOR | NAND | XOR</string>
     <string name="home_label">Home</string>
     <string name="explain_label">Explain</string>
+    <string name="animate_label">Animate</string>    
     <string name="converter_label">Converter</string>
     <string name="sort_input_label">Enter numbers to sort</string>
     <string name="sort_label">Sort</string>
@@ -29,6 +30,11 @@
     <string name="octal_label">Octal</string>
     <string name="decimal_label">Decimal</string>
     <string name="hexadecimal_label">Hexadecimal</string>
+    
+    <string name="complexity_label">Complexity</string>
+    <string name="complexity_label_Best">Best</string>
+    <string name="complexity_label_Avg">Average</string>
+    <string name="complexity_label_Worst">Worst</string>                
 
     <string-array name="numbersystem_array">
         <item>Binary</item>

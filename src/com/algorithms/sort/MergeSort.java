@@ -41,6 +41,21 @@ public class MergeSort implements ISorter{
 			}
 		}
 		return array;
+	}
+
+	@Override
+	public String bestComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String averageComplexity() {
+		return "O(n log n)";
+	}
+
+	@Override
+	public String worstComplexity() {
+		return "O(n log n)";
 	}		
 
 }
