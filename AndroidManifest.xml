@@ -12,6 +12,10 @@
             android:label="@string/component_name_convert" >
         </activity>
         <activity
+            android:name=".SearchActivity"
+            android:label="@string/component_name_convert" >
+        </activity>
+        <activity
             android:name=".SorterActivity"
             android:label="@string/component_name_sort" >
         </activity>

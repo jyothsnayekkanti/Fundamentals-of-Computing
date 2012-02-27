@@ -10,6 +10,16 @@ import android.widget.Button;
 
 public class MainActivity extends Activity{
 	
+	private String algorithmTypeSelected;	
+	
+	public String getAlgorithmTypeSelected() {
+		return algorithmTypeSelected;
+	}
+
+	public void setAlgorithmTypeSelected(String algorithmTypeSelected) {
+		this.algorithmTypeSelected = algorithmTypeSelected;
+	}
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -36,11 +46,25 @@ public class MainActivity extends Activity{
 //				Intent intent = new Intent(context, MySorter.class);
 //				context.startActivity(intent);
 				Intent intent = new Intent(context, GalleryView.class);
+				setAlgorithmTypeSelected("sort");
+				intent.putExtra("algorithmType", getAlgorithmTypeSelected());	
 				context.startActivity(intent);				
 			}
 		});
 	    
-	    
+	    Button button3 = (Button)findViewById(R.id.searcher);
+	    button3.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+//				Intent intent = new Intent(context, MySorter.class);
+//				context.startActivity(intent);
+				Intent intent = new Intent(context, GalleryView.class);
+				setAlgorithmTypeSelected("search");
+				intent.putExtra("algorithmType", getAlgorithmTypeSelected());				
+				context.startActivity(intent);				
+			}
+		});	    
 	
 	}
 	

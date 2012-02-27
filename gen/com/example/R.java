@@ -37,8 +37,10 @@ public final class R {
     }
     public static final class id {
         public static final int ConverttoHome=0x7f08000c;
-        public static final int SorttoHome=0x7f080031;
-        public static final int aboutSortType=0x7f080017;
+        public static final int SearchtoHome=0x7f080031;
+        public static final int SorttoHome=0x7f080037;
+        public static final int aboutSearchType=0x7f080017;
+        public static final int aboutSortType=0x7f080033;
         public static final int animateButton=0x7f080021;
         public static final int appHeader=0x7f08000e;
         public static final int base10=0x7f080005;
@@ -61,8 +63,8 @@ public final class R {
         public static final int converter=0x7f08000d;
         public static final int converterInputValue=0x7f080001;
         public static final int explainButton=0x7f080018;
-        public static final int gallery=0x7f080033;
-        public static final int gallerytoHome=0x7f080034;
+        public static final int gallery=0x7f080038;
+        public static final int gallerytoHome=0x7f080039;
         public static final int gates=0x7f080014;
         public static final int inputLabel=0x7f08001a;
         public static final int marquee_convert=0x7f08000f;
@@ -70,10 +72,13 @@ public final class R {
         public static final int marquee_search=0x7f080013;
         public static final int marquee_sort=0x7f080011;
         public static final int outputLabel=0x7f08001f;
+        public static final int searchButton=0x7f08001d;
+        public static final int searchInputValues=0x7f08001c;
+        public static final int searchOutputValues=0x7f080020;
         public static final int searcher=0x7f080012;
-        public static final int sortButton=0x7f08001d;
-        public static final int sortInputValues=0x7f08001c;
-        public static final int sortOutputValues=0x7f080020;
+        public static final int sortButton=0x7f080035;
+        public static final int sortInputValues=0x7f080034;
+        public static final int sortOutputValues=0x7f080036;
         public static final int sorter=0x7f080010;
         public static final int spinner=0x7f080000;
         public static final int tableRow1=0x7f080016;
@@ -93,42 +98,45 @@ public final class R {
     public static final class layout {
         public static final int convert=0x7f030000;
         public static final int main=0x7f030001;
-        public static final int sort=0x7f030002;
-        public static final int sortgallery=0x7f030003;
+        public static final int search=0x7f030002;
+        public static final int sort=0x7f030003;
+        public static final int sortgallery=0x7f030004;
     }
     public static final class string {
         public static final int animate_label=0x7f040010;
         public static final int app_name=0x7f040000;
-        public static final int binary_label=0x7f040018;
-        public static final int complexity_label=0x7f04001d;
-        public static final int complexity_label_Avg=0x7f04001f;
-        public static final int complexity_label_Best=0x7f04001e;
-        public static final int complexity_label_Worst=0x7f040020;
+        public static final int binary_label=0x7f04001a;
+        public static final int complexity_label=0x7f04001f;
+        public static final int complexity_label_Avg=0x7f040021;
+        public static final int complexity_label_Best=0x7f040020;
+        public static final int complexity_label_Worst=0x7f040022;
         public static final int component_name_convert=0x7f040001;
         public static final int component_name_gates=0x7f040004;
         public static final int component_name_search=0x7f040003;
         public static final int component_name_sort=0x7f040002;
         public static final int converter_label=0x7f040011;
         public static final int converter_marquee=0x7f04000a;
-        public static final int decimal_label=0x7f04001b;
+        public static final int decimal_label=0x7f04001d;
         public static final int explain_label=0x7f04000f;
-        public static final int gates_label=0x7f040017;
+        public static final int gates_label=0x7f040019;
         public static final int gates_marquee=0x7f04000d;
-        public static final int hexadecimal_label=0x7f04001c;
+        public static final int hexadecimal_label=0x7f04001e;
         public static final int home_label=0x7f04000e;
         public static final int no=0x7f040008;
         public static final int numbersystem_prompt=0x7f040009;
-        public static final int octal_label=0x7f04001a;
-        public static final int quaternary_label=0x7f040019;
+        public static final int octal_label=0x7f04001c;
+        public static final int quaternary_label=0x7f04001b;
         public static final int quit=0x7f040005;
         public static final int really_quit=0x7f040006;
-        public static final int search_label=0x7f040016;
+        public static final int search_input_label=0x7f040013;
+        public static final int search_label=0x7f040018;
+        public static final int search_output_label=0x7f040016;
         public static final int searcher_marquee=0x7f04000c;
         public static final int sort_input_label=0x7f040012;
-        public static final int sort_label=0x7f040013;
-        public static final int sort_output_label=0x7f040014;
+        public static final int sort_label=0x7f040014;
+        public static final int sort_output_label=0x7f040015;
         public static final int sorter_marquee=0x7f04000b;
-        public static final int timetaken_label=0x7f040015;
+        public static final int timetaken_label=0x7f040017;
         public static final int yes=0x7f040007;
     }
     public static final class style {

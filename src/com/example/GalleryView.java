@@ -25,9 +25,28 @@ public class GalleryView extends Activity {
 	}
 	public void setSortTypeSelected(String sortTypeSelected) {
 		this.sortTypeSelected = sortTypeSelected;
+	}
+	
+	private String searchTypeSelected;
+	public String getSearchTypeSelected() {
+		return searchTypeSelected;
+	}
+	public void setSearchTypeSelected(String searchTypeSelected) {
+		this.searchTypeSelected = searchTypeSelected;
 	}	
+	
+	private String algorithmTypeSelected = "sort";	
+	
+	public String getAlgorithmTypeSelected() {
+		return algorithmTypeSelected;
+	}
+
+	public void setAlgorithmTypeSelected(String algorithmTypeSelected) {
+		this.algorithmTypeSelected = algorithmTypeSelected;
+	}	
+	
 	Button button1;
-	Integer[] pics = {
+	Integer[] sortPics = {
 			R.drawable.bubblesort,
 			R.drawable.insertionsort,
 			R.drawable.heapsort,
@@ -37,9 +56,15 @@ public class GalleryView extends Activity {
 			R.drawable.bbsort
 	};
 	
+	Integer[] searchPics = {
+			R.drawable.bubblesort,
+			R.drawable.insertionsort
+	};	
+	
 	//String array holding the values
-	final String [] text=new String[]{"Bubble Sort","Insertion Sort","Heap Sort",
+	final String [] sortText=new String[]{"Bubble Sort","Insertion Sort","Heap Sort",
 			"Merge Sort","Selection Sort","Quick Sort", "Bidirectional Bubble Sort"};
+	final String [] searchText=new String[]{"Binary Search","Sequential Search"};	
 	
 	ImageView imageView;
 
@@ -48,6 +73,7 @@ public class GalleryView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
+		algorithmTypeSelected = getIntent().getStringExtra("algorithmType");		
 		setContentView(R.layout.sortgallery);
 
 		button1 = (Button)findViewById(R.id.gallerytoHome);
@@ -67,11 +93,19 @@ public class GalleryView extends Activity {
 		gallery.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
-					View view, int pos, long id) {	
-				setSortTypeSelected(text[pos].toString());
+					View view, int pos, long id) {
+				if(algorithmTypeSelected.equalsIgnoreCase("sort")){
+				setSortTypeSelected(sortText[pos].toString());
 				Intent intent = new Intent(context, SorterActivity.class);
 				intent.putExtra("sortType", getSortTypeSelected());
 				context.startActivity(intent);	
+				}
+				if(algorithmTypeSelected.equalsIgnoreCase("search")){
+				setSortTypeSelected(searchText[pos].toString());
+				Intent intent = new Intent(context, SearchActivity.class);
+				intent.putExtra("searchType", getSortTypeSelected());
+				context.startActivity(intent);	
+				}
 			}			
 		}); 
 		gallery.setAdapter(new ImageAdapter(this));
@@ -92,8 +126,11 @@ public class GalleryView extends Activity {
 
 		@Override
 		public int getCount() {
-
-			return pics.length;
+			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			return sortPics.length;
+			if(algorithmTypeSelected.equalsIgnoreCase("search"))
+				return searchPics.length;
+			return 0;
 		}
 
 		@Override
@@ -114,12 +151,18 @@ public class GalleryView extends Activity {
 	        layout.setOrientation(LinearLayout.VERTICAL);			
 			ImageView iv = new ImageView(ctx);
 			TextView tv = new TextView(ctx);
-			iv.setImageResource(pics[arg0]);
+			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			iv.setImageResource(sortPics[arg0]);
+			if(algorithmTypeSelected.equalsIgnoreCase("search"))
+			iv.setImageResource(searchPics[arg0]);			
 			iv.setScaleType(ImageView.ScaleType.FIT_XY);
 			iv.setLayoutParams(new Gallery.LayoutParams(150,120));
 			iv.setBackgroundResource(imageBackground);
-			tv.setText(text[arg0]);
-	        layout.addView(iv);
+			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			tv.setText(sortText[arg0]);
+			if(algorithmTypeSelected.equalsIgnoreCase("search"))
+			tv.setText(searchText[arg0]);
+			layout.addView(iv);
 	        layout.addView(tv);
 	        return layout;			
 		}
