@@ -14,12 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.algorithms.AlgorithmHelper;
 import com.algorithms.search.ISearcher;
 import com.algorithms.search.SearchFactory;
 
 public class SearchActivity extends Activity {
-	EditText input;
+	TextView input;
 	TextView output;
+	EditText searchElement;
 	Button button1;
 	String searchType = null;
 	TextView aboutSearchType;
@@ -51,8 +53,9 @@ public class SearchActivity extends Activity {
 		setContentView(R.layout.search);
 
 		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
-		input = (EditText) findViewById(R.id.searchInputValues);
+		input = (TextView) findViewById(R.id.searchInputValues);
 		output = (TextView) findViewById(R.id.searchOutputValues);
+		searchElement = (EditText) findViewById(R.id.searchInputElement);
 		aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
 		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
 		aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
@@ -60,31 +63,53 @@ public class SearchActivity extends Activity {
 		aboutSearchType.setText(searchType);
 		aboutComplexityBest.setText(searcher.bestComplexity());
 		aboutComplexityAvg.setText(searcher.averageComplexity());	
-		aboutComplexityWorst.setText(searcher.worstComplexity());			
+		aboutComplexityWorst.setText(searcher.worstComplexity());	
 		
-		input.setOnEditorActionListener(new OnEditorActionListener()
-		{
+		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+		input.setText(AlgorithmHelper.getInputString(inputArray));
+		searchElement.setText("0");
+		
+//		input.setOnEditorActionListener(new OnEditorActionListener()
+//		{
+//			@Override
+//			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
+//				if(textView.getText().length() != 0){
+//                    // set comma separated
+//					input.setText(input.getText()+",");
+//				}
+//				return true;
+//			}    
+//		});
+		
+	    Button generateButton = (Button)findViewById(R.id.generateSearchButton);
+	    generateButton.setOnClickListener(new OnClickListener() {
+			
 			@Override
-			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
-				if(textView.getText().length() != 0){
-                    // set comma separated
-					input.setText(input.getText()+",");
-				}
-				return true;
-			}    
+			public void onClick(View v) {
+				//int[] inputArray = getInputArray(input.getText().toString());
+				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+				input.setText(AlgorithmHelper.getInputString(inputArray));
+				//int elementIndex = searcher.contains(inputArray, inputArray.length);
+				//output.setText(getResult(elementIndex));
+				
+			}
 		});
-		
-	    Button button = (Button)findViewById(R.id.searchButton);
-	    button.setOnClickListener(new OnClickListener() {
+	    
+	    
+	    Button searchButton = (Button)findViewById(R.id.searchButton);
+	    searchButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = getInputArray(input.getText().toString());
-				int elementIndex = searcher.contains(inputArray, inputArray.length);
-				output.setText(getResult(elementIndex));
+				int element = Integer.parseInt(searchElement.getText().toString());
+//				int elementIndex = searcher.contains(inputArray, element);
+//				output.setText(getResult(elementIndex));
+				boolean isEementFound = searcher.contains(inputArray, element);
+				output.setText(getResultText(isEementFound));
 				
 			}
-		});
+		});	    
 	    
 	    button1 = (Button)findViewById(R.id.SearchtoHome);
 	    button1.setOnClickListener(new OnClickListener() {
@@ -125,5 +150,20 @@ public class SearchActivity extends Activity {
 		}
 		return result;
 	}
+	
+	private String getResultText(boolean isEementFound){
+		String result = null;
+		
+		if(!isEementFound)
+		{
+			result = "Given number does not exist";
+		}
+		else 
+		{
+			result = "Given number found";
+		}
+		return result;
+	}
+		
 	
 }

@@ -14,13 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.algorithms.AlgorithmHelper;
 import com.algorithms.sort.ISorter;
 import com.algorithms.sort.SortFactory;
 
 public class SorterActivity extends Activity {
-	EditText input;
+	TextView input;
 	TextView output;
 	Button button1;
+	Button button2;
 	String sortType = null;
 	TextView aboutSortType;
 	TextView aboutComplexityBest;
@@ -51,7 +53,7 @@ public class SorterActivity extends Activity {
 		setContentView(R.layout.sort);
 
 		aboutSortType = (TextView) findViewById(R.id.aboutSortType);
-		input = (EditText) findViewById(R.id.sortInputValues);
+		input = (TextView) findViewById(R.id.sortInputValues);
 		output = (TextView) findViewById(R.id.sortOutputValues);
 		aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
 		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
@@ -60,22 +62,36 @@ public class SorterActivity extends Activity {
 		aboutSortType.setText(sortType);
 		aboutComplexityBest.setText(sorter.bestComplexity());
 		aboutComplexityAvg.setText(sorter.averageComplexity());	
-		aboutComplexityWorst.setText(sorter.worstComplexity());			
+		aboutComplexityWorst.setText(sorter.worstComplexity());	
 		
-		input.setOnEditorActionListener(new OnEditorActionListener()
-		{
+		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+		input.setText(AlgorithmHelper.getInputString(inputArray));		
+		
+//		input.setOnEditorActionListener(new OnEditorActionListener()
+//		{
+//			@Override
+//			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
+//				if(textView.getText().length() != 0){
+//                    // set comma separated
+//					input.setText(input.getText()+",");
+//				}
+//				return true;
+//			}    
+//		});
+		
+	    Button generateButton = (Button)findViewById(R.id.generateSortButton);
+	    generateButton.setOnClickListener(new OnClickListener() {
+			
 			@Override
-			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
-				if(textView.getText().length() != 0){
-                    // set comma separated
-					input.setText(input.getText()+",");
-				}
-				return true;
-			}    
-		});
+			public void onClick(View v) {
+				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+				input.setText(AlgorithmHelper.getInputString(inputArray));
+				
+			}
+		});		
 		
-	    Button button = (Button)findViewById(R.id.sortButton);
-	    button.setOnClickListener(new OnClickListener() {
+	    Button sortButton = (Button)findViewById(R.id.sortButton);
+	    sortButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -93,7 +109,7 @@ public class SorterActivity extends Activity {
 				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
 			}
-		});	    
+		});	     
 
 	}
 	

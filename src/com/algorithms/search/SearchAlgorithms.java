@@ -28,12 +28,12 @@ public class SearchAlgorithms {
 		System.out.println("Element to search : "+element);
 		startTime = getCurrentTimeInMillisecs();
 		System.out.println(startTime);
-//		elementExists = searcher.contains(inputArray, element);
-		elementIndex = searcher.contains(inputArray, element);
+		elementExists = searcher.contains(inputArray, element);
+//		elementIndex = searcher.contains(inputArray, element);
 		endTime = getCurrentTimeInMillisecs();
 		System.out.println(endTime);
-//		System.out.println("isElementExist : "+elementExists);
-		System.out.println("ElementExists at : "+elementIndex);
+		System.out.println("isElementExist : "+elementExists);
+//		System.out.println("ElementExists at : "+elementIndex);
 		System.out.println("Time taken to search using "+searcher.searchType()+" : "+ (endTime-startTime));		
 	}
 

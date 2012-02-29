@@ -26,6 +26,7 @@
     <string name="search_output_label">Contains</string>    
     <string name="timetaken_label">Time taken</string>
     <string name="search_label">Search</string>
+    <string name="generate_label">Generate</string>    
     <string name="gates_label">Logic Gates</string>
     <string name="binary_label">Binary</string>
     <string name="quaternary_label">Quaternary</string>

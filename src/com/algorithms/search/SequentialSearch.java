@@ -7,27 +7,27 @@ public class SequentialSearch implements ISearcher {
 		return "Sequential Search";
 	}
 
-//	@Override
-//	public boolean contains(int[] inputArray, int element) {
-//		for (int i : inputArray) {
-//			if (i==element){
-//				return true;
-//			}
-//		}
-//		return false; 
-//	}
-	
 	@Override
-	public int contains(int[] inputArray, int element) {
-		int j = 1;
+	public boolean contains(int[] inputArray, int element) {
 		for (int i : inputArray) {
 			if (i==element){
-				return j;
+				return true;
 			}
-			j++;
 		}
-		return 0; 
-	}	
+		return false; 
+	}
+	
+//	@Override
+//	public int contains(int[] inputArray, int element) {
+//		int j = 1;
+//		for (int i : inputArray) {
+//			if (i==element){
+//				return j;
+//			}
+//			j++;
+//		}
+//		return 0; 
+//	}	
 
 	@Override
 	public String bestComplexity() {
