@@ -13,13 +13,11 @@
         android:layout_marginTop="25dp"
          android:textColor="@color/black_color"         
         android:layout_below="@+id/appHeader"
+        android:cropToPadding="true"
         android:layout_weight="1"
         android:background="@drawable/numberconversion"
-        android:text="@string/component_name_convert"
-        android:textStyle="italic" 
-        android:textSize="15sp"
-        />
-
+        /> 
+    
     <com.example.ScrollingTextView
         android:id="@+id/marquee_convert"
         android:layout_width="wrap_content"
@@ -43,9 +41,7 @@
         android:layout_below="@+id/marquee_convert"
         android:layout_weight="1"
         android:background="@drawable/sorting"
-        android:text="@string/component_name_sort"
-        android:textStyle="italic" 
-        android:textSize="15sp" />
+        />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_sort"
@@ -70,9 +66,7 @@
         android:layout_below="@+id/marquee_sort"
         android:layout_weight="1"
         android:background="@drawable/searching"
-        android:text="@string/component_name_search"
-        android:textStyle="italic" 
-        android:textSize="15sp" />
+        />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_search"
@@ -97,9 +91,7 @@
         android:layout_below="@+id/marquee_search"
         android:layout_weight="1"
         android:background="@drawable/logicgates"
-        android:text="@string/component_name_gates"
-        android:textStyle="italic" 
-        android:textSize="15sp" />
+        />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_gates"

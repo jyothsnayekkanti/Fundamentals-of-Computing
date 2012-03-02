@@ -101,6 +101,25 @@ public class SorterActivity extends Activity {
 			}
 		});
 	    
+	    Button animateButton = (Button)findViewById(R.id.animateButton);
+	    animateButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				setContentView(R.layout.sortanimate);
+			}
+		});
+	    
+	    Button explainButton = (Button)findViewById(R.id.explainButton);
+	    explainButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				context.startActivity(intent);
+			}
+		});		    
+	    
 	    button1 = (Button)findViewById(R.id.SorttoHome);
 	    button1.setOnClickListener(new OnClickListener() {
 			
