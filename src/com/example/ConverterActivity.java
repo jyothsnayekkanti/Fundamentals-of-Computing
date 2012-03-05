@@ -83,7 +83,9 @@ public class ConverterActivity extends Activity
 		octal = (TextView) findViewById(R.id.base8value);
 		decimal = (TextView) findViewById(R.id.base10value); 
         hexadecimal = (TextView) findViewById(R.id.base16value);
-		input = (EditText) findViewById(R.id.converterInputValue);		
+		input = (EditText) findViewById(R.id.converterInputValue);	
+		
+	
 		
 		input.setOnEditorActionListener(new OnEditorActionListener()
 		{
@@ -130,13 +132,179 @@ public class ConverterActivity extends Activity
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 			public void onItemSelected(AdapterView<?> parent,
 					View view, int pos, long id) {
+				String allowedRegex = "[a-f0-9]";
 				setPositionSelected(pos);
 				if(pos == 4){
 					input.setInputType(1);
+					allowedRegex = "[a-f0-9]";
+				    InputFilter[] filters = new InputFilter[1];
+
+				    filters[0] = new InputFilter() {
+
+				        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+				        if (end > start) {
+				            String destTxt = dest.toString();
+				            String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
+
+//				            if (!resultingTxt.matches("[0123456789]*[\\:]?[0123456789]*[,.]?[0123456789]*")) {
+				            if (!resultingTxt.matches("[a-f0-9]*")) {
+
+				            if (source instanceof Spanned) {
+				                SpannableString sp = new SpannableString("");
+				                return sp;
+				            } else {
+				                return "";
+				            }
+
+				            }
+				            
+				        }
+
+				        return null;
+				        }
+
+				    };
+
+				input.setFilters(filters);					
 				}
 				else{
+					if(pos == 0){allowedRegex = "[0-1]";
+					
+				    InputFilter[] filters = new InputFilter[1];
+
+				    filters[0] = new InputFilter() {
+
+				        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+				        if (end > start) {
+				            String destTxt = dest.toString();
+				            String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
+
+//				            if (!resultingTxt.matches("[0123456789]*[\\:]?[0123456789]*[,.]?[0123456789]*")) {
+				            if (!resultingTxt.matches("[0-1]*")) {
+
+				            if (source instanceof Spanned) {
+				                SpannableString sp = new SpannableString("");
+				                return sp;
+				            } else {
+				                return "";
+				            }
+
+				            }
+				            
+				        }
+
+				        return null;
+				        }
+
+				    };
+
+				input.setFilters(filters);					
+					
+					}
+					if(pos == 1){allowedRegex = "[0-3]";
+					
+				    InputFilter[] filters = new InputFilter[1];
+
+				    filters[0] = new InputFilter() {
+
+				        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+				        if (end > start) {
+				            String destTxt = dest.toString();
+				            String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
+
+//				            if (!resultingTxt.matches("[0123456789]*[\\:]?[0123456789]*[,.]?[0123456789]*")) {
+				            if (!resultingTxt.matches("[0-3]*")) {
+
+				            if (source instanceof Spanned) {
+				                SpannableString sp = new SpannableString("");
+				                return sp;
+				            } else {
+				                return "";
+				            }
+
+				            }
+				            
+				        }
+
+				        return null;
+				        }
+
+				    };
+
+				input.setFilters(filters);					
+					
+					}
+					if(pos == 2){allowedRegex = "[0-7]";
+					
+				    InputFilter[] filters = new InputFilter[1];
+
+				    filters[0] = new InputFilter() {
+
+				        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+				        if (end > start) {
+				            String destTxt = dest.toString();
+				            String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
+
+//				            if (!resultingTxt.matches("[0123456789]*[\\:]?[0123456789]*[,.]?[0123456789]*")) {
+				            if (!resultingTxt.matches("[0-7]*")) {
+
+				            if (source instanceof Spanned) {
+				                SpannableString sp = new SpannableString("");
+				                return sp;
+				            } else {
+				                return "";
+				            }
+
+				            }
+				            
+				        }
+
+				        return null;
+				        }
+
+				    };
+
+				input.setFilters(filters);					
+					
+					}
+					if(pos == 3){allowedRegex = "[0-9]";
+					
+				    InputFilter[] filters = new InputFilter[1];
+
+				    filters[0] = new InputFilter() {
+
+				        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+				        if (end > start) {
+				            String destTxt = dest.toString();
+				            String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
+
+//				            if (!resultingTxt.matches("[0123456789]*[\\:]?[0123456789]*[,.]?[0123456789]*")) {
+				            if (!resultingTxt.matches("[0-9]*")) {
+
+				            if (source instanceof Spanned) {
+				                SpannableString sp = new SpannableString("");
+				                return sp;
+				            } else {
+				                return "";
+				            }
+
+				            }
+				            
+				        }
+
+				        return null;
+				        }
+
+				    };
+
+				input.setFilters(filters);					
+					
+					}
 					input.setInputType(2);
 				}
+				
+					
+				
 				input.setText("");
 				input.requestFocus();
 			}
