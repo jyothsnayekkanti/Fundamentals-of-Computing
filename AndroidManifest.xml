@@ -34,6 +34,10 @@
             android:label="@string/component_name_explain" >
         </activity>
         <activity
+            android:name=".AnimateSortActivity"
+            android:label="@string/component_name_sort" >
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="Fundamentals Of Computing" >
             <intent-filter>

@@ -1,7 +1,6 @@
 package com.example;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;

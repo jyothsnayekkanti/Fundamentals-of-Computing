@@ -6,12 +6,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
-import android.widget.*;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 public class ConverterActivity extends Activity
@@ -75,8 +83,8 @@ public class ConverterActivity extends Activity
 		octal = (TextView) findViewById(R.id.base8value);
 		decimal = (TextView) findViewById(R.id.base10value); 
         hexadecimal = (TextView) findViewById(R.id.base16value);
-		input = (EditText) findViewById(R.id.converterInputValue);
-
+		input = (EditText) findViewById(R.id.converterInputValue);		
+		
 		input.setOnEditorActionListener(new OnEditorActionListener()
 		{
 			@Override
@@ -91,7 +99,12 @@ public class ConverterActivity extends Activity
 		{
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				System.out.println(keyCode);
+				if(keyCode == KeyEvent.FLAG_SOFT_KEYBOARD){
+					System.out.println(event);
+				}
 				if (event.getAction() == KeyEvent.ACTION_DOWN) {
+					System.out.println(event);
 					if(keyCode != KeyEvent.KEYCODE_ENTER){
 						if(keyCode == KeyEvent.KEYCODE_DEL){
 							return false; // allow input
@@ -109,6 +122,7 @@ public class ConverterActivity extends Activity
 				}
 				return false;
 			}
+			
 		});
 
 
@@ -117,11 +131,17 @@ public class ConverterActivity extends Activity
 			public void onItemSelected(AdapterView<?> parent,
 					View view, int pos, long id) {
 				setPositionSelected(pos);
+				if(pos == 4){
+					input.setInputType(1);
+				}
+				else{
+					input.setInputType(2);
+				}
 				input.setText("");
 				input.requestFocus();
 			}
 
-			public void onNothingSelected(AdapterView parent) {
+			public void onNothingSelected(@SuppressWarnings("rawtypes") AdapterView parent) {
 				// Do nothing.
 			}        	
 		});
@@ -153,6 +173,7 @@ public class ConverterActivity extends Activity
 		return baseSelected;
 	}	
 
+	@SuppressWarnings("rawtypes")
 	public List base10AllowedNumberList(){
 		return null;
 	}
@@ -214,28 +235,6 @@ public class ConverterActivity extends Activity
 
 		convertedNumber.append(myArray[Integer.valueOf(String.valueOf(decimalNumber))]);
         return convertedNumber.reverse().toString();
-	}
-	
-//  @Override
-//  public boolean onKeyDown(int keyCode, KeyEvent event) {
-//		if (event.getAction() == KeyEvent.ACTION_DOWN) {
-//			if(keyCode != KeyEvent.KEYCODE_ENTER){
-//				if(keyCode == KeyEvent.KEYCODE_DEL){
-//					return false; // allow input
-//				}
-//				if(keyCode == KeyEvent.KEYCODE_BACK){
-//					return false; // allow input
-//				}						
-//				if(isNumberAllowed(keyCode, getBaseSelected(getPositionSelected()))){
-//					return false; // allow input
-//				}
-//				else{
-//					return true; // doesn't allow input
-//				}
-//			}
-//		}
-//		return false;
-//
-//  }		
+	}		
 
 }
