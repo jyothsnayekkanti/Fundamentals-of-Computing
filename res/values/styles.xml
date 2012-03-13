@@ -10,7 +10,8 @@
     </style>
 
     <color name="custom_theme_color">#00FF33</color>
-    <color name="black_color">#000000</color>    
+    <color name="black_color">#000000</color>
+    <color name="white_color">#FFFFFF</color>    
 
     <style name="CustomTheme1" parent="android:Theme.Light">
         <item name="android:windowBackground">@color/custom_theme_color</item>

@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+
+import com.common.customlayout.CustomWebView;
 
 public class ConverterActivity extends Activity
 {
@@ -32,6 +35,8 @@ public class ConverterActivity extends Activity
     TextView hexadecimal;
 	EditText input;
 	Button button1;
+	
+	WebView webview;		
     
     final static String[] myArray = new String[]{"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
 	private int positionSelected = 0;
@@ -62,6 +67,11 @@ public class ConverterActivity extends Activity
 		super.onCreate(savedInstanceState);
 		final Context context = this;		
 		setContentView(R.layout.convert);
+		
+		webview = (WebView) findViewById(R.id.webview);
+		webview.setWebViewClient(new CustomWebView());
+		webview.getSettings().setJavaScriptEnabled(true);
+		webview.loadUrl("http://www.google.com");			
 		
 	    button1 = (Button)findViewById(R.id.ConverttoHome);
 	    button1.setOnClickListener(new OnClickListener() {

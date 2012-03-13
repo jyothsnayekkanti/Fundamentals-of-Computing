@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+<LinearLayout 
+    android:id="@+id/toolbar"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" >
+    
+	<Button  android:id="@+id/ConverttoHome" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/home"/>
+    <Button android:id="@+id/convertermenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary" android:enabled="false" />
+    <Button android:id="@+id/sortermenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"/>
+    <Button android:id="@+id/searchmenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/search"/>
+    <Button android:id="@+id/gatesmenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/pcb"/>        
+    <Button android:id="@+id/quitmenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"/>
+    <Button android:id="@+id/helpmenu" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/question"/>        
+    
+</LinearLayout>
+
+<RelativeLayout android:id="@+id/body"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
         android:orientation="vertical">
     <Spinner
             android:id="@+id/spinner"
@@ -36,6 +57,15 @@
     <Button android:id="@+id/base10explain" android:layout_width="20dp"  android:layout_height="20dp"  android:layout_below="@+id/base8"  android:layout_marginTop="2dp"  android:text="@string/e_label"  android:background="@drawable/explain" android:layout_alignParentRight="true"  />
     <Button android:id="@+id/base16explain" android:layout_width="20dp"  android:layout_height="20dp" android:layout_below="@+id/base10"  android:layout_marginTop="2dp"  android:text="@string/e_label"  android:background="@drawable/explain" android:layout_alignParentRight="true"  />
     
-<Button android:text = "@string/home_label" android:id="@+id/ConverttoHome"         android:layout_width="wrap_content" 
-    android:layout_height="wrap_content" android:layout_alignParentBottom="true"/>    
+    <WebView 
+        android:id="@+id/webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/base16"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+    />    
+    
+    
 </RelativeLayout>
+</LinearLayout>

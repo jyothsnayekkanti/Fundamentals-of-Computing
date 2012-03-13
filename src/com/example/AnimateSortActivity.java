@@ -2,17 +2,32 @@ package com.example;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class AnimateSortActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new DrawView(this));
+		final Context context = this;
+        setContentView(R.layout.animation);
+        
+	    Button animateButton = (Button)findViewById(R.id.animateButton);
+	    animateButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        setContentView(new DrawView(context));			
+			}
+		});        
+        
+//        setContentView(new DrawView(this));
     }
 
     public class DrawView extends View {
