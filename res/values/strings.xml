@@ -20,7 +20,7 @@
     <string name="explain_label">Explain</string>
     <string name="animate_label">Animate</string>    
     <string name="converter_label">Converter</string>
-    <string name="sort_input_label">Enter numbers to sort</string>
+    <string name="sort_input_label">Generate numbers to sort</string>
     <string name="search_input_label">Enter number to search</string>    
     <string name="sort_label">Sort</string>
     <string name="sort_output_label">Sorted numbers</string>

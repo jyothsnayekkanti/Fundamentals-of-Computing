@@ -20,7 +20,6 @@ public class SearchActivity extends Activity {
 	TextView input;
 	TextView output;
 	EditText searchElement;
-	Button button1;
 	String searchType = null;
 	TextView aboutSearchType;
 	TextView aboutComplexityBest;
@@ -28,9 +27,7 @@ public class SearchActivity extends Activity {
 	TextView aboutComplexityWorst;	
 	ISearcher searcher;
 	
-	
 	private String inputTextValue = null;
-
 
 	public String getInputTextValue() {
 		return inputTextValue;
@@ -67,55 +64,99 @@ public class SearchActivity extends Activity {
 		input.setText(AlgorithmHelper.getInputString(inputArray));
 		searchElement.setText("0");
 		
-//		input.setOnEditorActionListener(new OnEditorActionListener()
-//		{
-//			@Override
-//			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
-//				if(textView.getText().length() != 0){
-//                    // set comma separated
-//					input.setText(input.getText()+",");
-//				}
-//				return true;
-//			}    
-//		});
-		
 	    Button generateButton = (Button)findViewById(R.id.generateSearchButton);
 	    generateButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//int[] inputArray = getInputArray(input.getText().toString());
 				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
 				input.setText(AlgorithmHelper.getInputString(inputArray));
-				//int elementIndex = searcher.contains(inputArray, inputArray.length);
-				//output.setText(getResult(elementIndex));
-				
 			}
 		});
-	    
 	    
 	    Button searchButton = (Button)findViewById(R.id.searchButton);
 	    searchButton.setOnClickListener(new OnClickListener() {
 			
+	    	@Override
+	    	public void onClick(View v) {
+	    		int[] inputArray = getInputArray(input.getText().toString());
+	    		int element = Integer.parseInt(searchElement.getText().toString());
+	    		boolean isEementFound = searcher.contains(inputArray, element);
+	    		output.setText(getResultText(isEementFound));
+	    	}
+	    });	    
+	    
+	    Button animateButton = (Button)findViewById(R.id.animateButton);
+	    animateButton.setOnClickListener(new OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
-				int[] inputArray = getInputArray(input.getText().toString());
-				int element = Integer.parseInt(searchElement.getText().toString());
-//				int elementIndex = searcher.contains(inputArray, element);
-//				output.setText(getResult(elementIndex));
-				boolean isEementFound = searcher.contains(inputArray, element);
-				output.setText(getResultText(isEementFound));
-				
+//				setContentView(R.layout.sortanimate);
+				Intent intent = new Intent(context, AnimateSortActivity.class);
+				context.startActivity(intent);				
 			}
-		});	    
+		});
 	    
-	    button1 = (Button)findViewById(R.id.SearchtoHome);
-	    button1.setOnClickListener(new OnClickListener() {
+	    Button explainButton = (Button)findViewById(R.id.explainButton);
+	    explainButton.setOnClickListener(new OnClickListener() {
 			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				context.startActivity(intent);
+			}
+		});
+	    
+		Button toHomeButton = (Button)findViewById(R.id.home);
+		toHomeButton.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
+			}
+		});
+		
+		Button toConverterButton = (Button)findViewById(R.id.converter);
+		toConverterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, ConverterActivity.class);
+				context.startActivity(intent);
+			}
+		});
+
+		Button toSorterButton = (Button)findViewById(R.id.sorter);
+		toSorterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "sort");	
+				context.startActivity(intent);				
+			}
+		});
+
+		Button toSearcherButton = (Button)findViewById(R.id.searcher);
+		toSearcherButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "search");				
+				context.startActivity(intent);				
+			}
+		});	    
+
+		Button toGatesButton = (Button)findViewById(R.id.gates);
+		toGatesButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "gates");				
+				context.startActivity(intent);				
 			}
 		});	    
 
@@ -133,21 +174,6 @@ public class SearchActivity extends Activity {
 			i++;
 		}
 		return array;
-	}
-	
-	@SuppressWarnings("unused")
-	private String getResult(int index){
-		String result = null;
-		
-		if(index == 0)
-		{
-			result = "Given number does not exist";
-		}
-		else 
-		{
-			result = "Given number exists at "+index;
-		}
-		return result;
 	}
 	
 	private String getResultText(boolean isEementFound){

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+<LinearLayout android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" >
+	<Button  android:id="@+id/home" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/home"/>
+    <Button android:id="@+id/converter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary"/>
+    <Button android:id="@+id/sorter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"/>
+    <Button android:id="@+id/searcher" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/search" android:enabled="false" />
+    <Button android:id="@+id/gates" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/pcb"/>        
+    <Button android:id="@+id/quit" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"/>
+    <Button android:id="@+id/help" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/question"/>        
+</LinearLayout>
+
+<LinearLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -102,24 +118,7 @@
         <TableRow android:id="@+id/tableRow9"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
         <TextView android:id="@+id/complexityLabelWorst"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Worst"/>                            
         <TextView android:id="@+id/complexityLabelWorstValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"/>                            
-        </TableRow>            
-        
-                                                 <TableRow
-            android:id="@+id/tableRow10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-    <Button
-        android:id="@+id/SearchtoHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_label" /> 
-        </TableRow>
-        
-        <TableRow android:id="@+id/tableRow11"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
-            </TableRow>                                                 
-                                                 
-                                                 
-                                                 
-   
+        </TableRow>                                                         
 
+</LinearLayout>
 </LinearLayout>

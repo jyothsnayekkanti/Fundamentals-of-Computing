@@ -8,16 +8,26 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
-
+public class LogicGatesActivity extends Activity {
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		final Context context = this;
-		setContentView(R.layout.main);
+		setContentView(R.layout.gates);	
+		
+		Button toHomeButton = (Button)findViewById(R.id.home);
+		toHomeButton.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, MainActivity.class);
+				context.startActivity(intent);
+			}
+		});
+		
 		Button toConverterButton = (Button)findViewById(R.id.converter);
 		toConverterButton.setOnClickListener(new OnClickListener() {
 
@@ -59,8 +69,7 @@ public class MainActivity extends Activity {
 				intent.putExtra("componentType", "gates");				
 				context.startActivity(intent);				
 			}
-		});
+		});		
 		
 	}
-
 }

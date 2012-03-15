@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" > 
+    android:orientation="vertical" >
 
     <Button
         android:id="@+id/converter"
-        android:layout_width="120dp"        
+        android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="25dp"
-         android:textColor="@color/black_color"         
-        android:cropToPadding="true"
         android:layout_weight="1"
         android:background="@drawable/numberconversion"
-        /> 
-    
+        android:cropToPadding="true"
+        android:textColor="@color/black_color" />
+
     <com.example.ScrollingTextView
         android:id="@+id/marquee_convert"
         android:layout_width="wrap_content"
@@ -31,15 +29,14 @@
 
     <Button
         android:id="@+id/sorter"
-        android:layout_width="120dp"        
+        android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="25dp"
-        android:textColor="@color/black_color"
         android:layout_weight="1"
         android:background="@drawable/sorting"
-        />
+        android:textColor="@color/black_color" />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_sort"
@@ -54,15 +51,14 @@
 
     <Button
         android:id="@+id/searcher"
-        android:layout_width="120dp"        
+        android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="25dp"
-        android:textColor="@color/black_color"
         android:layout_weight="1"
         android:background="@drawable/searching"
-        />
+        android:textColor="@color/black_color" />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_search"
@@ -77,15 +73,14 @@
 
     <Button
         android:id="@+id/gates"
-        android:layout_width="120dp"        
+        android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="25dp"
-        android:textColor="@color/black_color"
         android:layout_weight="1"
         android:background="@drawable/logicgates"
-        />
+        android:textColor="@color/black_color" />
 
     <com.example.ScrollingTextView
         android:id="@+id/marquee_gates"

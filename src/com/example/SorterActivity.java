@@ -18,8 +18,6 @@ import com.algorithms.sort.SortFactory;
 public class SorterActivity extends Activity {
 	TextView input;
 	TextView output;
-	Button button1;
-	Button button2;
 	String sortType = null;
 	TextView aboutSortType;
 	TextView aboutComplexityBest;
@@ -62,19 +60,7 @@ public class SorterActivity extends Activity {
 		aboutComplexityWorst.setText(sorter.worstComplexity());	
 		
 		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
-		input.setText(AlgorithmHelper.getInputString(inputArray));		
-		
-//		input.setOnEditorActionListener(new OnEditorActionListener()
-//		{
-//			@Override
-//			public boolean onEditorAction(TextView textView, int arg1, KeyEvent keyEvent) {
-//				if(textView.getText().length() != 0){
-//                    // set comma separated
-//					input.setText(input.getText()+",");
-//				}
-//				return true;
-//			}    
-//		});
+		input.setText(AlgorithmHelper.getInputString(inputArray));
 		
 	    Button generateButton = (Button)findViewById(R.id.generateSortButton);
 	    generateButton.setOnClickListener(new OnClickListener() {
@@ -119,15 +105,58 @@ public class SorterActivity extends Activity {
 			}
 		});		    
 	    
-	    button1 = (Button)findViewById(R.id.SorttoHome);
-	    button1.setOnClickListener(new OnClickListener() {
-			
+		Button toHomeButton = (Button)findViewById(R.id.home);
+		toHomeButton.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
 			}
-		});	     
+		});
+		
+		Button toConverterButton = (Button)findViewById(R.id.converter);
+		toConverterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, ConverterActivity.class);
+				context.startActivity(intent);
+			}
+		});
+
+		Button toSorterButton = (Button)findViewById(R.id.sorter);
+		toSorterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "sort");	
+				context.startActivity(intent);				
+			}
+		});
+
+		Button toSearcherButton = (Button)findViewById(R.id.searcher);
+		toSearcherButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "search");				
+				context.startActivity(intent);				
+			}
+		});	    
+
+		Button toGatesButton = (Button)findViewById(R.id.gates);
+		toGatesButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "gates");				
+				context.startActivity(intent);				
+			}
+		});     
 
 	}
 	

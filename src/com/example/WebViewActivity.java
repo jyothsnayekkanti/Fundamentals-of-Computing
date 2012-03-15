@@ -19,7 +19,8 @@ public class WebViewActivity extends Activity {
 		webview = (WebView) findViewById(R.id.webview);
 		webview.setWebViewClient(new CustomWebViewClient());
 		webview.getSettings().setJavaScriptEnabled(true);
-		webview.loadUrl("http://www.google.com");		
+//		webview.loadUrl("http://www.google.com");
+		webview.loadUrl("http://fundamentalsofcomputing.herokuapp.com");
 
 	}	
 

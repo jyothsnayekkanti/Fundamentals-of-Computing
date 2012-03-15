@@ -19,7 +19,9 @@ import android.widget.TextView;
 
 public class GalleryView extends Activity {
 	Gallery gallery;
+	
 	private String sortTypeSelected;
+	
 	public String getSortTypeSelected() {
 		return sortTypeSelected;
 	}
@@ -28,24 +30,32 @@ public class GalleryView extends Activity {
 	}
 	
 	private String searchTypeSelected;
+	
 	public String getSearchTypeSelected() {
 		return searchTypeSelected;
 	}
 	public void setSearchTypeSelected(String searchTypeSelected) {
 		this.searchTypeSelected = searchTypeSelected;
-	}	
+	}
 	
-	private String algorithmTypeSelected = "sort";	
+	private String gateTypeSelected;
 	
-	public String getAlgorithmTypeSelected() {
-		return algorithmTypeSelected;
+	public String getGateTypeSelected() {
+		return gateTypeSelected;
+	}
+	public void setGateTypeSelected(String gateTypeSelected) {
+		this.gateTypeSelected = gateTypeSelected;
 	}
 
-	public void setAlgorithmTypeSelected(String algorithmTypeSelected) {
-		this.algorithmTypeSelected = algorithmTypeSelected;
+	private String componentTypeSelected = "sort";
+	
+	public String getAlgorithmTypeSelected() {
+		return componentTypeSelected;
+	}
+	public void setAlgorithmTypeSelected(String componentTypeSelected) {
+		this.componentTypeSelected = componentTypeSelected;
 	}	
 	
-	Button button1;
 	Integer[] sortPics = {
 			R.drawable.bubblesort,
 			R.drawable.insertionsort,
@@ -59,12 +69,18 @@ public class GalleryView extends Activity {
 	Integer[] searchPics = {
 			R.drawable.bubblesort,
 			R.drawable.insertionsort
-	};	
+	};
+	
+	Integer[] gatesPics = {
+			R.drawable.bubblesort,
+			R.drawable.insertionsort
+	};		
 	
 	//String array holding the values
 	final String [] sortText=new String[]{"Bubble Sort","Insertion Sort","Heap Sort",
 			"Merge Sort","Selection Sort","Quick Sort", "Bidirectional Bubble Sort"};
-	final String [] searchText=new String[]{"Binary Search","Sequential Search"};	
+	final String [] searchText=new String[]{"Binary Search","Sequential Search"};
+	final String [] gatesText=new String[]{"OR","AND","NOR","NAND","XOR"};	
 	
 	ImageView imageView;
 
@@ -73,39 +89,86 @@ public class GalleryView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
-		algorithmTypeSelected = getIntent().getStringExtra("algorithmType");		
+		
+		componentTypeSelected = getIntent().getStringExtra("componentType");		
 		setContentView(R.layout.sortgallery);
 
-		button1 = (Button)findViewById(R.id.gallerytoHome);
-		button1.setOnClickListener(new OnClickListener() {
+		Button toHomeButton = (Button)findViewById(R.id.home);
+		toHomeButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, MainActivity.class);
 				context.startActivity(intent);
 			}
+		});
+		
+		Button toConverterButton = (Button)findViewById(R.id.converter);
+		toConverterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, ConverterActivity.class);
+				context.startActivity(intent);
+			}
+		});
+
+		Button toSorterButton = (Button)findViewById(R.id.sorter);
+		toSorterButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "sort");	
+				context.startActivity(intent);				
+			}
+		});
+
+		Button toSearcherButton = (Button)findViewById(R.id.searcher);
+		toSearcherButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "search");				
+				context.startActivity(intent);				
+			}
+		});	    
+
+		Button toGatesButton = (Button)findViewById(R.id.gates);
+		toGatesButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, GalleryView.class);
+				intent.putExtra("componentType", "gates");				
+				context.startActivity(intent);				
+			}
 		});	        
 
 		gallery = (Gallery)findViewById(R.id.gallery);
-
-
-
 		gallery.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int pos, long id) {
-				if(algorithmTypeSelected.equalsIgnoreCase("sort")){
+				if(componentTypeSelected.equalsIgnoreCase("sort")){
 				setSortTypeSelected(sortText[pos].toString());
 				Intent intent = new Intent(context, SorterActivity.class);
 				intent.putExtra("sortType", getSortTypeSelected());
 				context.startActivity(intent);	
 				}
-				if(algorithmTypeSelected.equalsIgnoreCase("search")){
-				setSortTypeSelected(searchText[pos].toString());
+				if(componentTypeSelected.equalsIgnoreCase("search")){
+				setSearchTypeSelected(searchText[pos].toString());
 				Intent intent = new Intent(context, SearchActivity.class);
 				intent.putExtra("searchType", getSortTypeSelected());
 				context.startActivity(intent);	
 				}
+				if(componentTypeSelected.equalsIgnoreCase("gates")){
+				setGateTypeSelected(gatesText[pos].toString());
+				Intent intent = new Intent(context, LogicGatesActivity.class);
+				intent.putExtra("gateType", getGateTypeSelected());
+				context.startActivity(intent);	
+				}				
 			}			
 		}); 
 		gallery.setAdapter(new ImageAdapter(this));
@@ -126,10 +189,12 @@ public class GalleryView extends Activity {
 
 		@Override
 		public int getCount() {
-			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			if(componentTypeSelected.equalsIgnoreCase("sort"))
 			return sortPics.length;
-			if(algorithmTypeSelected.equalsIgnoreCase("search"))
+			if(componentTypeSelected.equalsIgnoreCase("search"))
 				return searchPics.length;
+			if(componentTypeSelected.equalsIgnoreCase("gates"))
+				return gatesPics.length;			
 			return 0;
 		}
 
@@ -151,17 +216,25 @@ public class GalleryView extends Activity {
 	        layout.setOrientation(LinearLayout.VERTICAL);			
 			ImageView iv = new ImageView(ctx);
 			TextView tv = new TextView(ctx);
-			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			
+			if(componentTypeSelected.equalsIgnoreCase("sort"))
 			iv.setImageResource(sortPics[arg0]);
-			if(algorithmTypeSelected.equalsIgnoreCase("search"))
-			iv.setImageResource(searchPics[arg0]);			
+			if(componentTypeSelected.equalsIgnoreCase("search"))
+			iv.setImageResource(searchPics[arg0]);
+			if(componentTypeSelected.equalsIgnoreCase("gates"))
+			iv.setImageResource(gatesPics[arg0]);
+			
 			iv.setScaleType(ImageView.ScaleType.FIT_XY);
 			iv.setLayoutParams(new Gallery.LayoutParams(150,120));
 			iv.setBackgroundResource(imageBackground);
-			if(algorithmTypeSelected.equalsIgnoreCase("sort"))
+			
+			if(componentTypeSelected.equalsIgnoreCase("sort"))
 			tv.setText(sortText[arg0]);
-			if(algorithmTypeSelected.equalsIgnoreCase("search"))
+			if(componentTypeSelected.equalsIgnoreCase("search"))
 			tv.setText(searchText[arg0]);
+			if(componentTypeSelected.equalsIgnoreCase("gates"))
+			tv.setText(gatesText[arg0]);
+			
 			layout.addView(iv);
 	        layout.addView(tv);
 	        return layout;			
