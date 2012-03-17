@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.algorithms.AlgorithmHelper;
 import com.algorithms.search.ISearcher;
@@ -18,7 +19,7 @@ import com.algorithms.search.SearchFactory;
 
 public class SearchActivity extends Activity {
 	TextView input;
-	TextView output;
+//	TextView output;
 	EditText searchElement;
 	String searchType = null;
 	TextView aboutSearchType;
@@ -49,7 +50,7 @@ public class SearchActivity extends Activity {
 
 		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
 		input = (TextView) findViewById(R.id.searchInputValues);
-		output = (TextView) findViewById(R.id.searchOutputValues);
+//		output = (TextView) findViewById(R.id.searchOutputValues);
 		searchElement = (EditText) findViewById(R.id.searchInputElement);
 		aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
 		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
@@ -80,9 +81,22 @@ public class SearchActivity extends Activity {
 	    	@Override
 	    	public void onClick(View v) {
 	    		int[] inputArray = getInputArray(input.getText().toString());
-	    		int element = Integer.parseInt(searchElement.getText().toString());
-	    		boolean isEementFound = searcher.contains(inputArray, element);
-	    		output.setText(getResultText(isEementFound));
+	    		int element;
+	    		if(null != searchElement.getText() && !searchElement.getText().toString().equals("")){
+	    		element = Integer.parseInt(searchElement.getText().toString());
+	    		boolean isEementFound = false;
+	    		isEementFound = searcher.contains(inputArray, element);
+	    		getResultText(isEementFound);
+	    		//output.setText(getResultText(isEementFound));
+	    		}
+	    		else
+	    		{
+	    			// Create a piece of toast.
+	    			Toast pieceToast = Toast.makeText(getApplicationContext(), "Enter number to Search", Toast.LENGTH_SHORT);
+
+	    			// Show the toast.
+	    			pieceToast.show();	    			
+	    		}
 	    	}
 	    });	    
 	    
@@ -181,11 +195,21 @@ public class SearchActivity extends Activity {
 		
 		if(!isEementFound)
 		{
-			result = "Given number does not exist";
+//			result = "Given number does not exist";
+			// Create a piece of toast.
+			Toast pieceToast = Toast.makeText(getApplicationContext(), "Given number does not exist", Toast.LENGTH_SHORT);
+
+			// Show the toast.
+			pieceToast.show();	   
 		}
 		else 
 		{
-			result = "Given number found";
+//			result = "Given number found";
+			// Create a piece of toast.
+			Toast pieceToast = Toast.makeText(getApplicationContext(), "Given number found", Toast.LENGTH_SHORT);
+
+			// Show the toast.
+			pieceToast.show();	   			
 		}
 		return result;
 	}

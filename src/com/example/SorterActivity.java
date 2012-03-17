@@ -2,6 +2,8 @@ package com.example;
 
 import java.util.StringTokenizer;
 
+import org.omg.CORBA.INV_IDENT;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +26,7 @@ public class SorterActivity extends Activity {
 	TextView aboutComplexityAvg;
 	TextView aboutComplexityWorst;	
 	ISorter sorter;
+	Button sortButton;
 	
 	
 	private String inputTextValue = null;
@@ -60,7 +63,11 @@ public class SorterActivity extends Activity {
 		aboutComplexityWorst.setText(sorter.worstComplexity());	
 		
 		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
-		input.setText(AlgorithmHelper.getInputString(inputArray));
+//		input.setText(AlgorithmHelper.getInputString(inputArray));
+		input.setText("");
+		output.setText("");
+//		int[] sortedArray = sorter.sort(inputArray, inputArray.length);
+//		output.setText(getOutputText(sortedArray, sortedArray.length));		
 		
 	    Button generateButton = (Button)findViewById(R.id.generateSortButton);
 	    generateButton.setOnClickListener(new OnClickListener() {
@@ -69,11 +76,11 @@ public class SorterActivity extends Activity {
 			public void onClick(View v) {
 				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
 				input.setText(AlgorithmHelper.getInputString(inputArray));
-				
+				output.setText("");
 			}
 		});		
 		
-	    Button sortButton = (Button)findViewById(R.id.sortButton);
+	    sortButton = (Button)findViewById(R.id.sortButton);
 	    sortButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -175,10 +182,13 @@ public class SorterActivity extends Activity {
 	}
 	
 	private String getOutputText(int[] sortedArray, int length){
-		String outputText = ""+sortedArray[0];
+		String outputText = "";
+		if(length != 0){
+		outputText = ""+sortedArray[0];
 		for(int i=1; i<length; i++)
 		{
 			outputText = outputText + "," +sortedArray[i];
+		}
 		}
 		return outputText;
 	}

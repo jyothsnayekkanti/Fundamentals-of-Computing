@@ -160,7 +160,7 @@ public class GalleryView extends Activity {
 				if(componentTypeSelected.equalsIgnoreCase("search")){
 				setSearchTypeSelected(searchText[pos].toString());
 				Intent intent = new Intent(context, SearchActivity.class);
-				intent.putExtra("searchType", getSortTypeSelected());
+				intent.putExtra("searchType", getSearchTypeSelected());
 				context.startActivity(intent);	
 				}
 				if(componentTypeSelected.equalsIgnoreCase("gates")){

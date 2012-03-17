@@ -20,14 +20,14 @@
     <string name="explain_label">Explain</string>
     <string name="animate_label">Animate</string>    
     <string name="converter_label">Converter</string>
-    <string name="sort_input_label">Generate numbers to sort</string>
+    <string name="sort_input_label">Generate Numbers to Sort</string>
     <string name="search_input_label">Enter number to search</string>    
     <string name="sort_label">Sort</string>
-    <string name="sort_output_label">Sorted numbers</string>
+    <string name="sort_output_label">Sort numbers</string>
     <string name="search_output_label">Contains</string>    
     <string name="timetaken_label">Time taken</string>
     <string name="search_label">Search</string>
-    <string name="generate_label">Generate</string>    
+    <string name="generate_label">Regenerate</string>    
     <string name="gates_label">Logic Gates</string>
     <string name="binary_label">Binary</string>
     <string name="quaternary_label">Quaternary</string>

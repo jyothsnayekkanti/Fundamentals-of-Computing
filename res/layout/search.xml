@@ -16,9 +16,11 @@
 </LinearLayout>
 
 <LinearLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+     android:layout_marginTop="10dp"
+     >
 
 
 
@@ -26,9 +28,18 @@
         <TableRow android:id="@+id/tableRow1"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
         <TextView android:id="@+id/aboutSearchType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
 
-        <Button android:id="@+id/explainButton"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_marginTop="2dp"  android:text="@string/explain_label" />            
+        <Button android:id="@+id/explainButton"  android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                 android:background="@drawable/help" />            
         </TableRow>
-
+        </LinearLayout>
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+     android:layout_marginTop="10dp"
+     >
         <TableRow android:id="@+id/tableRow2"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
             <TextView
                 android:id="@+id/inputLabel"
@@ -49,10 +60,10 @@
             </TextView>
                          <Button
                 android:id="@+id/generateSearchButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/generate_label" />
+                 android:background="@drawable/help"/>
         </TableRow>
         <TableRow android:id="@+id/tableRow3a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
             <EditText
@@ -65,28 +76,19 @@
                        
             <Button
                 android:id="@+id/searchButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/search_label" />
+                 android:background="@drawable/help" />
         </TableRow>
         
         <TableRow android:id="@+id/tableRow4"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/outputLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+        <Button android:id="@+id/animateButton"  android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="2dp"
-                android:text="@string/search_output_label" >
-            </TextView> 
-                                   <TextView
-                android:id="@+id/searchOutputValues"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp">
-            </TextView>
-        <Button android:id="@+id/animateButton"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_marginTop="2dp"  android:text="@string/animate_label" />            
+                 android:background="@drawable/help" />            
         </TableRow>
         <TableRow android:id="@+id/tableRow5"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
             <TextView
@@ -103,7 +105,14 @@
                 android:layout_marginTop="2dp" >
             </TextView>                                             
                                    </TableRow> 
-                                   
+        </LinearLayout>
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+     >
+        
         <TableRow android:id="@+id/tableRow6"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
         <TextView android:id="@+id/complexityLabel"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label"/>
         </TableRow>
