@@ -38,6 +38,10 @@
             android:label="@string/component_name_sort" >
         </activity>
         <activity
+            android:name=".LogicGatesActivity"
+            android:label="@string/component_name_sort" >
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="Fundamentals Of Computing" >
             <intent-filter>

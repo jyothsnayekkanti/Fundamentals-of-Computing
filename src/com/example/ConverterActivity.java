@@ -61,7 +61,7 @@ public class ConverterActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		final Context context = this;		
-		setContentView(R.layout.convert);
+		setContentView(R.layout.convert);	
 
 		webview = (WebView) findViewById(R.id.webview);
 		webview.setWebViewClient(new CustomWebView());
@@ -163,9 +163,9 @@ public class ConverterActivity extends Activity
 					};
 					input.setFilters(filters);	
 					
-					webview = (WebView) findViewById(R.id.webview);
-					webview.setWebViewClient(new CustomWebView());
-					webview.getSettings().setJavaScriptEnabled(true);
+//					webview = (WebView) findViewById(R.id.webview);
+//					webview.setWebViewClient(new CustomWebView());
+//					webview.getSettings().setJavaScriptEnabled(true);
 					webview.loadUrl("http://www.google.com"); // hexadecimal					
 				}
 				else
@@ -222,9 +222,9 @@ public class ConverterActivity extends Activity
 						};
 						input.setFilters(filters);	
 						
-						webview = (WebView) findViewById(R.id.webview);
-						webview.setWebViewClient(new CustomWebView());
-						webview.getSettings().setJavaScriptEnabled(true);
+//						webview = (WebView) findViewById(R.id.webview);
+//						webview.setWebViewClient(new CustomWebView());
+//						webview.getSettings().setJavaScriptEnabled(true);
 						webview.loadUrl("http://www.google.com"); // quaternary						
 					}
 					if(pos == 2)
@@ -250,9 +250,9 @@ public class ConverterActivity extends Activity
 						};
 						input.setFilters(filters);
 						
-						webview = (WebView) findViewById(R.id.webview);
-						webview.setWebViewClient(new CustomWebView());
-						webview.getSettings().setJavaScriptEnabled(true);
+//						webview = (WebView) findViewById(R.id.webview);
+//						webview.setWebViewClient(new CustomWebView());
+//						webview.getSettings().setJavaScriptEnabled(true);
 						webview.loadUrl("http://www.google.com"); // octal						
 					}
 					if(pos == 3)
@@ -279,9 +279,9 @@ public class ConverterActivity extends Activity
 						};
 						input.setFilters(filters);
 						
-						webview = (WebView) findViewById(R.id.webview);
-						webview.setWebViewClient(new CustomWebView());
-						webview.getSettings().setJavaScriptEnabled(true);
+//						webview = (WebView) findViewById(R.id.webview);
+//						webview.setWebViewClient(new CustomWebView());
+//						webview.getSettings().setJavaScriptEnabled(true);
 						webview.loadUrl("http://www.google.com"); // decimal						
 					}
 					input.setInputType(2);

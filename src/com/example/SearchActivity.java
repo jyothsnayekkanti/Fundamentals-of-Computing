@@ -117,6 +117,8 @@ public class SearchActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "search");
+				intent.putExtra("type", searchType);					
 				context.startActivity(intent);
 			}
 		});

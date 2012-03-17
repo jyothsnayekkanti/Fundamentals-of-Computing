@@ -108,6 +108,8 @@ public class SorterActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "sort");
+				intent.putExtra("type", sortType);	
 				context.startActivity(intent);
 			}
 		});		    
