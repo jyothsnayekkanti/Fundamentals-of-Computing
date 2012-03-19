@@ -57,6 +57,11 @@ public class QuickSort implements ISorter{
 	@Override
 	public String worstComplexity() {
 		return "O(n2)";
+	}
+
+	@Override
+	public String describe() {
+		return "Quick sort is one of the fastest and simplest sorting algorithm. Quick sort is a comparison sort. The working of  quick sort algorithm is depending on a divide-and-conquer strategy. A divide and conquer strategy is  dividing  an array  into two sub-arrays.";
 	}	
 
 }

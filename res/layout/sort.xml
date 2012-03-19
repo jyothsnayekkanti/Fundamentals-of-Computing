@@ -23,13 +23,15 @@
 
 
 
-        <TableRow android:id="@+id/tableRow1"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow1"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/aboutSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
-
+        
         <Button android:id="@+id/explainButton"  android:layout_width="20dp"  android:layout_height="20dp"  android:layout_marginTop="2dp"  android:background="@drawable/help"/>            
         </TableRow>
-
-        <TableRow android:id="@+id/tableRow2"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow1a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
+        <TextView android:id="@+id/describeSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"/>
+        </TableRow>
+        <TableRow android:id="@+id/tableRow2"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
             <TextView
                 android:id="@+id/inputLabel"
                 android:layout_width="wrap_content"
@@ -50,7 +52,7 @@
             
         </TableRow>
 
-        <TableRow android:id="@+id/tableRow3"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow3"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
             <TextView
                 android:id="@+id/sortInputValues"
                 android:layout_width="300dp"
@@ -65,7 +67,7 @@
 
         </TableRow>        
 
-        <TableRow android:id="@+id/tableRow4"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow4"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/outputLabel"
@@ -84,7 +86,7 @@
             
         </TableRow>        
 
-        <TableRow android:id="@+id/tableRow4a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow4a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
             <TextView
                 android:id="@+id/sortOutputValues"
                 android:layout_width="250dp"
@@ -93,7 +95,7 @@
             </TextView>
         <Button android:id="@+id/animateButton"  android:layout_width="20dp"  android:layout_height="20dp"  android:layout_marginTop="2dp"   android:background="@drawable/help" />            
         </TableRow>
-        <TableRow android:id="@+id/tableRow5"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow5"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
             <TextView
                 android:id="@+id/timetakenLabel"
                 android:layout_width="wrap_content"
@@ -109,18 +111,18 @@
             </TextView>                                             
                                    </TableRow> 
                                    
-        <TableRow android:id="@+id/tableRow6"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow6"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/complexityLabel"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label"/>
         </TableRow>
-        <TableRow android:id="@+id/tableRow7"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow7"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/complexityLabelBest"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Best"/>
         <TextView android:id="@+id/complexityLabelBestValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"/>
         </TableRow>
-        <TableRow android:id="@+id/tableRow8"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow8"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/complexityLabelAverage"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Avg"/>
         <TextView android:id="@+id/complexityLabelAverageValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"/>
         </TableRow>
-        <TableRow android:id="@+id/tableRow9"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+        <TableRow android:id="@+id/tableRow9"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/complexityLabelWorst"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Worst"/>                            
         <TextView android:id="@+id/complexityLabelWorstValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"/>                            
         </TableRow>                                                         

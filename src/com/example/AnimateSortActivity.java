@@ -4,27 +4,34 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class AnimateSortActivity extends Activity {
+	
+	View vieweg;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		final Context context = this;
         setContentView(R.layout.animation);
         
-	    Button animateButton = (Button)findViewById(R.id.animateButton);
-	    animateButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-		        setContentView(new DrawView(context));			
-			}
-		});        
+//	    Button animateButton = (Button)findViewById(R.id.animateButton);
+//	    animateButton.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//		        setContentView(new DrawView(context));
+//			}
+//		}); 
+	    
+	    vieweg = (View) findViewById(R.id.vieweg);
+	    vieweg = new DrawView(context);
         
 //        setContentView(new DrawView(this));
     }
@@ -34,21 +41,28 @@ public class AnimateSortActivity extends Activity {
         Path path = new Path();
         public DrawView(Context context) {
             super(context);
-            paint.setColor(Color.YELLOW);
+            paint.setColor(Color.YELLOW); 
         }
 
         @Override
         public void onDraw(Canvas canvas){
             paint.setStrokeWidth(3);
+//            PathEffect pe = new DashPathEffect(new float[] {10, 5, 5, 5}, 3);
+//            paint.setPathEffect(pe);
+            for(int x = 0; x<20; x++){
             canvas.drawLine(0, 20, 240, 20, paint);
-            canvas.drawLine(0, 40, 140, 40, paint);
-            canvas.drawLine(0, 60, 200, 60, paint);
-            canvas.drawLine(0, 80, 10, 80, paint);
-            canvas.drawLine(0, 100, 250, 100, paint);
-            canvas.drawLine(0, 120, 100, 120, paint);
-            canvas.drawRect(0, 10, 60, 140, paint);
-            //canvas.drawPath(path, paint);
+            }
+//            canvas.drawLine(0, 40, 140, 40, paint);
+//            canvas.drawLine(0, 60, 200, 60, paint);
+//            canvas.drawLine(0, 80, 10, 80, paint);
+//            canvas.drawLine(0, 100, 250, 100, paint);
+//            canvas.drawLine(0, 120, 100, 120, paint);
+//            canvas.drawPath(path, paint);
         }
+        
+        
+        
+        
 /*        @Override
         public boolean onTouchEvent(final MotionEvent motionEvent){
             //path.lineTo(motionEvent.getX(), motionEvent.getY());

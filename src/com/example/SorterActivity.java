@@ -21,7 +21,9 @@ public class SorterActivity extends Activity {
 	TextView input;
 	TextView output;
 	String sortType = null;
+	String sortDescription = null;
 	TextView aboutSortType;
+	TextView describeSortType;
 	TextView aboutComplexityBest;
 	TextView aboutComplexityAvg;
 	TextView aboutComplexityWorst;	
@@ -48,9 +50,11 @@ public class SorterActivity extends Activity {
 		final Context context = this;
 		sortType = getIntent().getStringExtra("sortType");
 		sorter = SortFactory.createSorter(sortType);
+		sortDescription = sorter.describe();
 		setContentView(R.layout.sort);
 
 		aboutSortType = (TextView) findViewById(R.id.aboutSortType);
+		describeSortType = (TextView) findViewById(R.id.describeSortType);
 		input = (TextView) findViewById(R.id.sortInputValues);
 		output = (TextView) findViewById(R.id.sortOutputValues);
 		aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
@@ -58,6 +62,7 @@ public class SorterActivity extends Activity {
 		aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
 		
 		aboutSortType.setText(sortType);
+		describeSortType.setText(sortDescription);
 		aboutComplexityBest.setText(sorter.bestComplexity());
 		aboutComplexityAvg.setText(sorter.averageComplexity());	
 		aboutComplexityWorst.setText(sorter.worstComplexity());	

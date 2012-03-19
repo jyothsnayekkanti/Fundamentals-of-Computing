@@ -38,6 +38,11 @@ public class SelectionSort implements ISorter{
 	@Override
 	public String worstComplexity() {
 		return "O(n2)";
+	}
+
+	@Override
+	public String describe() {
+		return "Selection sort  is probably the most intuitive sorting algorithm to invent. In selection sorting algorithm, find the minimum value in the array then swap it first position. In next step leave the first value and find the minimum value within remaining values. Then swap it with the value of minimum index position. Sort the remaining  values by using same steps.";
 	}	
 
 }

@@ -66,4 +66,9 @@ public class HeapSort implements ISorter{
 	public String worstComplexity() {
 		return "O(n log n)";
 	}
+
+	@Override
+	public String describe() {
+		return "Heap Sort";
+	}
 }
