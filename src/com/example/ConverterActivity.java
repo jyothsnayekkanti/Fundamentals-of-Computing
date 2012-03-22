@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.common.customlayout.CustomWebView;
@@ -26,11 +27,11 @@ import com.common.customlayout.CustomWebView;
 public class ConverterActivity extends Activity
 {
 	Spinner spinner;
-	TextView binary;
-	TextView quaternary;
-	TextView octal;
-	TextView decimal;
-	TextView hexadecimal;
+	Button binary;
+	Button quaternary;
+	Button octal;
+	Button decimal;
+	Button hexadecimal;
 	EditText input;
 	WebView webview;		
 
@@ -126,12 +127,21 @@ public class ConverterActivity extends Activity
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		
-		binary = (TextView) findViewById(R.id.base2value);
-		quaternary = (TextView) findViewById(R.id.base4value);
-		octal = (TextView) findViewById(R.id.base8value);
-		decimal = (TextView) findViewById(R.id.base10value); 
-		hexadecimal = (TextView) findViewById(R.id.base16value);
-		input = (EditText) findViewById(R.id.converterInputValue);	
+		binary = (Button) findViewById(R.id.base2value);
+		quaternary = (Button) findViewById(R.id.base4value);
+		octal = (Button) findViewById(R.id.base8value);
+		decimal = (Button) findViewById(R.id.base10value); 
+		hexadecimal = (Button) findViewById(R.id.base16value);
+		input = (EditText) findViewById(R.id.converterInputValue);
+		
+		binary.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, AnimateSortActivity.class);
+				context.startActivity(intent);				
+			}
+		});
 
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener()
 		{
