@@ -1,23 +1,20 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class GalleryView extends Activity {
+public class GalleryView extends MenuActivity {
 	Gallery gallery;
 	
 	private String sortTypeSelected;
@@ -93,58 +90,12 @@ public class GalleryView extends Activity {
 		componentTypeSelected = getIntent().getStringExtra("componentType");		
 		setContentView(R.layout.sortgallery);
 
-		Button toHomeButton = (Button)findViewById(R.id.home);
-		toHomeButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, MainActivity.class);
-				context.startActivity(intent);
-			}
-		});
-		
-		Button toConverterButton = (Button)findViewById(R.id.converter);
-		toConverterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ConverterActivity.class);
-				context.startActivity(intent);
-			}
-		});
-
-		Button toSorterButton = (Button)findViewById(R.id.sorter);
-		toSorterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "sort");	
-				context.startActivity(intent);				
-			}
-		});
-
-		Button toSearcherButton = (Button)findViewById(R.id.searcher);
-		toSearcherButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "search");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-		Button toGatesButton = (Button)findViewById(R.id.gates);
-		toGatesButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "gates");				
-				context.startActivity(intent);				
-			}
-		});	        
+		View menuView = (View) findViewById(R.id.menus);
+		(menuView.findViewById(R.id.home)).setOnClickListener(toHomeButtonListener);		
+		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
+		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
+		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
+		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);	       
 
 		gallery = (Gallery)findViewById(R.id.gallery);
 		gallery.setOnItemClickListener(new OnItemClickListener() {

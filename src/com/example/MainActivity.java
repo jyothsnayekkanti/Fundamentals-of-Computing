@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends MenuActivity {
 
 	/** Called when the activity is first created. */
 	@Override
@@ -17,50 +17,21 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
 		setContentView(R.layout.main);
-
-		Button toConverterButton = (Button)findViewById(R.id.converter);
-		toConverterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ConverterActivity.class);
-				context.startActivity(intent);
-			}
-		});
-
-		Button toSorterButton = (Button)findViewById(R.id.sorter);
-		toSorterButton.setOnClickListener(new OnClickListener() {
+		
+		Button egButton = (Button) findViewById(R.id.eg);
+		egButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "sort");	
-				context.startActivity(intent);				
-			}
-		});
-
-		Button toSearcherButton = (Button)findViewById(R.id.searcher);
-		toSearcherButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "search");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-		Button toGatesButton = (Button)findViewById(R.id.gates);
-		toGatesButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "gates");				
-				context.startActivity(intent);				
+				setContentView(R.layout.eg);
 			}
 		});
 		
+		
+		((Button)findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
+		((Button)findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
+		((Button)findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
+		((Button)findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
 	}
 
 }

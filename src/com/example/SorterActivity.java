@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.StringTokenizer;
 
-import org.omg.CORBA.INV_IDENT;
+
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,7 +17,7 @@ import com.algorithms.AlgorithmHelper;
 import com.algorithms.sort.ISorter;
 import com.algorithms.sort.SortFactory;
 
-public class SorterActivity extends Activity {
+public class SorterActivity extends MenuActivity {
 	TextView input;
 	TextView output;
 	String sortType = null;
@@ -80,7 +80,7 @@ public class SorterActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
-				input.setText(AlgorithmHelper.getInputString(inputArray));
+				input.setText(AlgorithmHelper.getInputString(inputArray," | "));
 				output.setText("");
 			}
 		});		
@@ -90,7 +90,7 @@ public class SorterActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				int[] inputArray = getInputArray(input.getText().toString());
+				int[] inputArray = AlgorithmHelper.getInputArray(input.getText().toString()," | ");
 				int[] sortedArray = sorter.sort(inputArray, inputArray.length);
 				output.setText(getOutputText(sortedArray, sortedArray.length));
 			}
@@ -119,73 +119,12 @@ public class SorterActivity extends Activity {
 			}
 		});		    
 	    
-		Button toHomeButton = (Button)findViewById(R.id.home);
-		toHomeButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, MainActivity.class);
-				context.startActivity(intent);
-			}
-		});
-		
-		Button toConverterButton = (Button)findViewById(R.id.converter);
-		toConverterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ConverterActivity.class);
-				context.startActivity(intent);
-			}
-		});
-
-		Button toSorterButton = (Button)findViewById(R.id.sorter);
-		toSorterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "sort");	
-				context.startActivity(intent);				
-			}
-		});
-
-		Button toSearcherButton = (Button)findViewById(R.id.searcher);
-		toSearcherButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "search");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-		Button toGatesButton = (Button)findViewById(R.id.gates);
-		toGatesButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "gates");				
-				context.startActivity(intent);				
-			}
-		});     
-
-	}
-	
-	private int[] getInputArray(String inputText)
-	{
-		
-		StringTokenizer st = new StringTokenizer(inputText, ",");
-		int[] array = new int[st.countTokens()];
-		int i = 0;
-		while(st.hasMoreElements())
-		{
-			array[i] = Integer.parseInt(st.nextToken());
-			i++;
-		}
-		return array;
+		View menuView = (View) findViewById(R.id.menus);
+		(menuView.findViewById(R.id.home)).setOnClickListener(toHomeButtonListener);		
+		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
+		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
+		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
+		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);
 	}
 	
 	private String getOutputText(int[] sortedArray, int length){
@@ -194,7 +133,7 @@ public class SorterActivity extends Activity {
 		outputText = ""+sortedArray[0];
 		for(int i=1; i<length; i++)
 		{
-			outputText = outputText + "," +sortedArray[i];
+			outputText = outputText + " | " +sortedArray[i];
 		}
 		}
 		return outputText;

@@ -15,25 +15,20 @@ import android.widget.Button;
 
 public class AnimateSortActivity extends Activity {
 	
-	View vieweg;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		final Context context = this;
         setContentView(R.layout.animation);
         
-//	    Button animateButton = (Button)findViewById(R.id.animateButton);
-//	    animateButton.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//		        setContentView(new DrawView(context));
-//			}
-//		}); 
-	    
-	    vieweg = (View) findViewById(R.id.vieweg);
-	    vieweg = new DrawView(context);
+	    Button animateButton = (Button)findViewById(R.id.animateButton);
+	    animateButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        setContentView(new DrawView(context));
+			}
+		});
         
-//        setContentView(new DrawView(this));
     }
 
     public class DrawView extends View {

@@ -7,6 +7,7 @@
         <item name="android:typeface">serif</item>
         <item name="android:textStyle">italic</item>
         <item name="android:background">@drawable/gradient</item>
+        <item name="android:textColor">@color/white_color</item>
     </style>
 
     <color name="custom_theme_color">#00FF33</color>
@@ -19,6 +20,7 @@
         <item name="android:colorBackground">@color/custom_theme_color</item>
         <item name="android:typeface">serif</item>
         <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/white_color</item>
     </style>
 
     <style name="CustomTheme">
@@ -26,10 +28,15 @@
         <item name="android:textStyle">italic</item>
     </style>
     
+    <style name="SpinnerTheme">
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">italic</item>        
+    </style>    
+    
     <style name="CustomTheme2" parent="android:Theme.Light">
         <item name="android:typeface">serif</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/white_color</item>
         <item name="android:colorBackground">@color/black_color</item>
     </style>    
 

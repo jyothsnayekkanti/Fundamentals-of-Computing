@@ -4,15 +4,7 @@
               android:layout_height="fill_parent"
         android:orientation="vertical">
 
-<LinearLayout android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" >
-	<Button  android:id="@+id/home" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/home"/>
-    <Button android:id="@+id/converter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary" android:enabled="false" />
-    <Button android:id="@+id/sorter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"/>
-    <Button android:id="@+id/searcher" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/search"/>
-    <Button android:id="@+id/gates" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/pcb"/>        
-    <Button android:id="@+id/quit" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"/>
-    <Button android:id="@+id/help" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/question"/>        
-</LinearLayout>
+<include layout="@layout/menu"  android:id="@+id/menus"/>
 
 <RelativeLayout 
     android:orientation="vertical"

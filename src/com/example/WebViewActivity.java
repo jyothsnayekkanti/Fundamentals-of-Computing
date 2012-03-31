@@ -31,8 +31,39 @@ public class WebViewActivity extends Activity {
 	private String getUrl(String componentType, String type){
 		StringBuffer url = new StringBuffer("http://fundamentalsofcomputing.herokuapp.com");
 		
-		
-		if(componentType.equalsIgnoreCase("sort")){
+		if(componentType.equalsIgnoreCase("convert")){
+			if(type.equalsIgnoreCase("Binary"))
+			{
+				url.append("/");
+				url.append("insertion_sort");
+				url.append(".html");
+			}
+			else if(type.equalsIgnoreCase("Quaternary"))
+			{
+				url.append("/");
+				url.append("insertion_sort");
+				url.append(".html");
+			}
+			else if(type.equalsIgnoreCase("Octal"))
+			{
+				url.append("/");
+				url.append("insertion_sort");
+				url.append(".html");
+			}
+			else if(type.equalsIgnoreCase("Decimal"))
+			{
+				url.append("/");
+				url.append("insertion_sort");
+				url.append(".html");
+			}
+			else if(type.equalsIgnoreCase("Hexadecimal"))
+			{
+				url.append("/");
+				url.append("insertion_sort");
+				url.append(".html");
+			}
+		}		
+		else if(componentType.equalsIgnoreCase("sort")){
 			if(type.equalsIgnoreCase("Bubble Sort"))
 			{
 				url.append("/");

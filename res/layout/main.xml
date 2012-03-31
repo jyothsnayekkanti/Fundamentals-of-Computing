@@ -92,5 +92,7 @@
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:text="@string/gates_marquee" />
+    
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="eg" android:id="@+id/eg"/>
 
 </LinearLayout>

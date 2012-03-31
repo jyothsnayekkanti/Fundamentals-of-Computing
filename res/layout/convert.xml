@@ -3,22 +3,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
 
-<LinearLayout android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" >
-	<Button  android:id="@+id/home" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/home"/>
-    <Button android:id="@+id/converter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary" android:enabled="false" />
-    <Button android:id="@+id/sorter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"/>
-    <Button android:id="@+id/searcher" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/search"/>
-    <Button android:id="@+id/gates" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/pcb"/>        
-    <Button android:id="@+id/quit" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"/>
-    <Button android:id="@+id/help" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/question"/>        
-</LinearLayout>
+<include layout="@layout/menu" android:id="@+id/menus"/>
 
 <RelativeLayout android:id="@+id/body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
     <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:prompt="@string/numbersystem_prompt" 
+            android:prompt="@string/numbersystem_prompt"  style="@color/black_color"
+            
             />
     <EditText android:id="@+id/converterInputValue" android:layout_height="wrap_content" android:layout_width="200dp"  android:layout_toRightOf="@id/spinner" android:inputType="number" />    
     
@@ -34,15 +27,11 @@
     <Button android:id="@+id/base10value" android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_below="@+id/base8value" android:layout_marginTop="2dp" android:layout_marginLeft="80dp" android:layout_marginRight="10dp" android:layout_alignParentRight="true"  android:paddingRight="10dp"  style="@style/CustomTheme2" android:background="@color/black_color"/>
     <Button android:id="@+id/base16value" android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_below="@+id/base10value" android:layout_marginTop="2dp" android:layout_marginLeft="80dp" android:layout_marginRight="10dp" android:layout_alignParentRight="true"  android:paddingRight="10dp"  style="@style/CustomTheme2" android:background="@color/black_color"/>
     
-
-    <WebView 
-        android:id="@+id/webview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/base16"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-    />    
+    <TextView android:id="@+id/explainNumberSystem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/base16" android:layout_marginTop="20dp" android:textSize="10dp" android:paddingRight="10dp" android:paddingLeft="10dp"/>
+    
+    <TextView android:id="@+id/explainHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="Click on the number system label to know more" android:layout_below="@+id/explainNumberSystem" android:layout_marginTop="30dp"/>
+    
+    <TextView android:id="@+id/animateHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="Click on the value to see the conversion" android:layout_below="@+id/explainHelp" android:layout_marginTop="2dp"/>
     
 </RelativeLayout>
 

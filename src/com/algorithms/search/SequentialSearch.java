@@ -31,20 +31,26 @@ public class SequentialSearch implements ISearcher {
 
 	@Override
 	public String bestComplexity() {
-		// TODO Auto-generated method stub
+		// TODO
 		return null;
 	}
 
 	@Override
 	public String averageComplexity() {
-		// TODO Auto-generated method stub
+		// TODO
 		return null;
 	}
 
 	@Override
 	public String worstComplexity() {
-		// TODO Auto-generated method stub
+		// TODO
 		return null;
+	}
+
+	@Override
+	public String describe() {
+		// TODO Auto-generated method stub
+		return "Linear searching is a good way to find an element from the array. The array can be of any order, it checks whether a certain element (number , string , etc. ) is in a specified array or not. Basically it is used for small arrays. ";
 	}
 
 }

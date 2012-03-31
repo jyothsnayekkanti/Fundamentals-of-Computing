@@ -56,20 +56,23 @@ public class BinarySearch implements ISearcher {
 
 	@Override
 	public String bestComplexity() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(1)";
 	}
 
 	@Override
 	public String averageComplexity() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(log n)";
 	}
 
 	@Override
 	public String worstComplexity() {
+		return "O(log n)";
+	}
+
+	@Override
+	public String describe() {
 		// TODO Auto-generated method stub
-		return null;
+		return "The advantage of a binary search over a linear search is astounding for large numbers. It can be done either recursively or iteratively.                                                                                                                                         .";
 	}
 
 }

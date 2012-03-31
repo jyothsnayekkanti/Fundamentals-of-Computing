@@ -11,6 +11,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -19,12 +21,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.common.customlayout.CustomWebView;
 
-public class ConverterActivity extends Activity
+public class ConverterActivity extends MenuActivity
 {
 	Spinner spinner;
 	Button binary;
@@ -32,9 +33,34 @@ public class ConverterActivity extends Activity
 	Button octal;
 	Button decimal;
 	Button hexadecimal;
+	
+	Button binaryLabel;
+	Button quaternaryLabel;
+	Button octalLabel;
+	Button decimalLabel;
+	Button hexadecimalLabel;	
+	
 	EditText input;
-	WebView webview;		
 
+    public int getInputBase() {
+        return inputBase;
+    }
+
+    public void setInputBase(int inputBase) {
+        this.inputBase = inputBase;
+    }
+
+    int inputBase = 2;
+//	WebView webview;	
+	TextView explain;
+	
+	
+	String explainBinary = "TODO BINARY From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
+	String explainQuaternary = "TODO QUATERNARY From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
+	String explainOctal = "TODO OCTAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
+	String explainDecimal = "TODO DECIMAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";	
+	String explainHexadecimal = "TODO HEXADECIMAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
+	
 	final static String[] myArray = new String[]{"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
 
 	private int positionSelected = 0;
@@ -63,64 +89,19 @@ public class ConverterActivity extends Activity
 		super.onCreate(savedInstanceState);
 		final Context context = this;		
 		setContentView(R.layout.convert);	
-
-		webview = (WebView) findViewById(R.id.webview);
-		webview.setWebViewClient(new CustomWebView());
-		webview.getSettings().setJavaScriptEnabled(true);
-		webview.loadUrl("http://www.google.com"); // default binary
-
-		Button toHomeButton = (Button)findViewById(R.id.home);
-		toHomeButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, MainActivity.class);
-				context.startActivity(intent);
-			}
-		});
 		
-		Button toConverterButton = (Button)findViewById(R.id.converter);
-		toConverterButton.setOnClickListener(new OnClickListener() {
+		View menuView = (View) findViewById(R.id.menus);
+		(menuView.findViewById(R.id.home)).setOnClickListener(toHomeButtonListener);		
+		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
+		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
+		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
+		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
 
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ConverterActivity.class);
-				context.startActivity(intent);
-			}
-		});
-
-		Button toSorterButton = (Button)findViewById(R.id.sorter);
-		toSorterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "sort");	
-				context.startActivity(intent);				
-			}
-		});
-
-		Button toSearcherButton = (Button)findViewById(R.id.searcher);
-		toSearcherButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "search");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-		Button toGatesButton = (Button)findViewById(R.id.gates);
-		toGatesButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "gates");				
-				context.startActivity(intent);				
-			}
-		});
+//		webview = (WebView) findViewById(R.id.webview);
+//		webview.setWebViewClient(new CustomWebView());
+//		webview.getSettings().setJavaScriptEnabled(true);
+//		webview.loadUrl("http://www.google.com"); // default binary
+		
 		
 		spinner = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbersystem_array, android.R.layout.simple_spinner_item);
@@ -134,14 +115,156 @@ public class ConverterActivity extends Activity
 		hexadecimal = (Button) findViewById(R.id.base16value);
 		input = (EditText) findViewById(R.id.converterInputValue);
 		
+		binaryLabel = (Button) findViewById(R.id.base2);
+		quaternaryLabel = (Button) findViewById(R.id.base4);
+		octalLabel = (Button) findViewById(R.id.base8);
+		decimalLabel = (Button) findViewById(R.id.base10); 
+		hexadecimalLabel = (Button) findViewById(R.id.base16);
+		
+		explain = (TextView) findViewById(R.id.explainNumberSystem);
+		
+		explain.setText(explainBinary);
+		
+//		TextView logo_name = (TextView) findViewById(R.id.ids);
+//		Animation fade_name = AnimationUtils.loadAnimation(this, R.anim.fineanim);
+//		logo_name.startAnimation(fade_name);
+
+		
 		binary.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(context, AnimateSortActivity.class);
-				context.startActivity(intent);				
+				Intent intent = new Intent(context, AnimateConverterActivity.class);
+
+                System.out.println("getInputBase()"+getInputBase());
+                System.out.println("input.getText()"+input.getText());
+                System.out.println("binary.getText()"+binary.getText());
+
+                intent.putExtra("inputType", getInputBase());
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputType", 2);
+                intent.putExtra("decimalValue", Integer.parseInt(decimal.getText().toString()));
+                intent.putExtra("outputValue", binary.getText().toString());
+				context.startActivity(intent);			
+				
 			}
 		});
+		
+		quaternary.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, AnimateConverterActivity.class);
+                intent.putExtra("inputType", getInputBase());
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputType", 4);
+                intent.putExtra("decimalValue", Integer.parseInt(decimal.getText().toString()));
+                intent.putExtra("outputValue", quaternary.getText().toString());
+				context.startActivity(intent);			
+				
+			}
+		});
+		
+		octal.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, AnimateConverterActivity.class);
+                intent.putExtra("inputType", getInputBase());
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputType", 8);
+                intent.putExtra("decimalValue", Integer.parseInt(decimal.getText().toString()));
+                intent.putExtra("outputValue", octal.getText().toString());
+				context.startActivity(intent);			
+				
+			}
+		});
+		
+		decimal.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, AnimateConverterActivity.class);
+                intent.putExtra("inputType", getInputBase());
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputType", 10);
+                intent.putExtra("decimalValue", Integer.parseInt(decimal.getText().toString()));
+                intent.putExtra("outputValue", decimal.getText().toString());
+				context.startActivity(intent);			
+				
+			}
+		});
+		
+		hexadecimal.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, AnimateConverterActivity.class);
+                intent.putExtra("inputType", getInputBase());
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputType", 16);
+                intent.putExtra("decimalValue", Integer.parseInt(decimal.getText().toString()));
+                intent.putExtra("outputValue", hexadecimal.getText().toString());
+				context.startActivity(intent);			
+				
+			}
+		});
+		
+		
+		binaryLabel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "convert");
+				intent.putExtra("type", "Binary");					
+				context.startActivity(intent);		
+			}
+		});
+		
+		quaternaryLabel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "convert");
+				intent.putExtra("type", "Quaternary");					
+				context.startActivity(intent);		
+			}
+		});
+		
+		octalLabel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "convert");
+				intent.putExtra("type", "Octal");					
+				context.startActivity(intent);		
+			}
+		});
+		
+		decimalLabel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "convert");
+				intent.putExtra("type", "Decimal");					
+				context.startActivity(intent);		
+			}
+		});
+		
+		hexadecimalLabel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(context, WebViewActivity.class);
+				intent.putExtra("componentType", "convert");
+				intent.putExtra("type", "Hexadecimal");					
+				context.startActivity(intent);		
+			}
+		});			
 
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener()
 		{
@@ -149,6 +272,7 @@ public class ConverterActivity extends Activity
 			{
 				String allowedRegex = "[a-f0-9]";
 				setPositionSelected(pos);
+                setInputBase(getBaseSelected(getPositionSelected()));
 				if(pos == 4)
 				{
 					input.setInputType(1);
@@ -176,7 +300,8 @@ public class ConverterActivity extends Activity
 //					webview = (WebView) findViewById(R.id.webview);
 //					webview.setWebViewClient(new CustomWebView());
 //					webview.getSettings().setJavaScriptEnabled(true);
-					webview.loadUrl("http://www.google.com"); // hexadecimal					
+//					webview.loadUrl("http://www.google.com"); // hexadecimal
+					explain.setText(explainHexadecimal);
 				}
 				else
 				{
@@ -203,10 +328,11 @@ public class ConverterActivity extends Activity
 						};
 						input.setFilters(filters);
 						
-						webview = (WebView) findViewById(R.id.webview);
-						webview.setWebViewClient(new CustomWebView());
-						webview.getSettings().setJavaScriptEnabled(true);
-						webview.loadUrl("http://www.google.com"); // binary						
+//						webview = (WebView) findViewById(R.id.webview);
+//						webview.setWebViewClient(new CustomWebView());
+//						webview.getSettings().setJavaScriptEnabled(true);
+//						webview.loadUrl("http://www.google.com"); // binary
+						explain.setText(explainBinary);
 					}
 					if(pos == 1)
 					{
@@ -235,7 +361,8 @@ public class ConverterActivity extends Activity
 //						webview = (WebView) findViewById(R.id.webview);
 //						webview.setWebViewClient(new CustomWebView());
 //						webview.getSettings().setJavaScriptEnabled(true);
-						webview.loadUrl("http://www.google.com"); // quaternary						
+//						webview.loadUrl("http://www.google.com"); // quaternary
+						explain.setText(explainQuaternary);
 					}
 					if(pos == 2)
 					{
@@ -263,7 +390,8 @@ public class ConverterActivity extends Activity
 //						webview = (WebView) findViewById(R.id.webview);
 //						webview.setWebViewClient(new CustomWebView());
 //						webview.getSettings().setJavaScriptEnabled(true);
-						webview.loadUrl("http://www.google.com"); // octal						
+//						webview.loadUrl("http://www.google.com"); // octal
+						explain.setText(explainOctal);
 					}
 					if(pos == 3)
 					{
@@ -292,11 +420,19 @@ public class ConverterActivity extends Activity
 //						webview = (WebView) findViewById(R.id.webview);
 //						webview.setWebViewClient(new CustomWebView());
 //						webview.getSettings().setJavaScriptEnabled(true);
-						webview.loadUrl("http://www.google.com"); // decimal						
+//						webview.loadUrl("http://www.google.com"); // decimal
+						explain.setText(explainDecimal);
 					}
 					input.setInputType(2);
 				}
 				input.setText("");
+				
+				binary.setText("");
+				quaternary.setText("");
+				octal.setText("");
+				decimal.setText("");
+				hexadecimal.setText("");
+				
 				input.requestFocus();
 			}
 
@@ -361,6 +497,7 @@ public class ConverterActivity extends Activity
 			baseSelected = 16;
 			break;			
 		}
+        setInputBase(baseSelected);
 		return baseSelected;
 	}	
 

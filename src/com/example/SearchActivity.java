@@ -1,8 +1,6 @@
 package com.example;
 
-import java.util.StringTokenizer;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,12 +16,15 @@ import com.algorithms.AlgorithmHelper;
 import com.algorithms.search.ISearcher;
 import com.algorithms.search.SearchFactory;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends MenuActivity {
+	Spinner spinner;	
 	TextView input;
 //	TextView output;
 	EditText searchElement;
 	String searchType = null;
-	TextView aboutSearchType;
+	String searchDescription = null;
+//	TextView aboutSearchType;
+	TextView describeSearchType;	
 	TextView aboutComplexityBest;
 	TextView aboutComplexityAvg;
 	TextView aboutComplexityWorst;	
@@ -45,10 +47,13 @@ public class SearchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
 		searchType = getIntent().getStringExtra("searchType");
+		//searchType = "Binary Search";
 		searcher = SearchFactory.createSearcher(searchType);
-		setContentView(R.layout.search);
+		searchDescription = searcher.describe();
+		setContentView(R.layout.searchtabs);
 
-		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
+//		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
+		describeSearchType = (TextView) findViewById(R.id.describeSearchType);
 		input = (TextView) findViewById(R.id.searchInputValues);
 //		output = (TextView) findViewById(R.id.searchOutputValues);
 		searchElement = (EditText) findViewById(R.id.searchInputElement);
@@ -56,13 +61,14 @@ public class SearchActivity extends Activity {
 		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
 		aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
 		
-		aboutSearchType.setText(searchType);
+//		aboutSearchType.setText(searchType);
+		describeSearchType.setText(searchDescription);
 		aboutComplexityBest.setText(searcher.bestComplexity());
 		aboutComplexityAvg.setText(searcher.averageComplexity());	
 		aboutComplexityWorst.setText(searcher.worstComplexity());	
 		
 		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
-		input.setText(AlgorithmHelper.getInputString(inputArray));
+		input.setText(AlgorithmHelper.getInputString(inputArray," | "));
 		searchElement.setText("0");
 		
 	    Button generateButton = (Button)findViewById(R.id.generateSearchButton);
@@ -71,7 +77,7 @@ public class SearchActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
-				input.setText(AlgorithmHelper.getInputString(inputArray));
+				input.setText(AlgorithmHelper.getInputString(inputArray," | "));
 			}
 		});
 	    
@@ -80,7 +86,7 @@ public class SearchActivity extends Activity {
 			
 	    	@Override
 	    	public void onClick(View v) {
-	    		int[] inputArray = getInputArray(input.getText().toString());
+	    		int[] inputArray = AlgorithmHelper.getInputArray(input.getText().toString()," | ");
 	    		int element;
 	    		if(null != searchElement.getText() && !searchElement.getText().toString().equals("")){
 	    		element = Integer.parseInt(searchElement.getText().toString());
@@ -123,73 +129,56 @@ public class SearchActivity extends Activity {
 			}
 		});
 	    
-		Button toHomeButton = (Button)findViewById(R.id.home);
-		toHomeButton.setOnClickListener(new OnClickListener() {
+		View menuView = (View) findViewById(R.id.menus);
+		(menuView.findViewById(R.id.home)).setOnClickListener(toHomeButtonListener);		
+		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
+		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
+		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
+		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);	    
 
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, MainActivity.class);
-				context.startActivity(intent);
-			}
-		});
+//		spinner = (Spinner) findViewById(R.id.spinner);
+//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.search_array, android.R.layout.simple_spinner_item);
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		spinner.setAdapter(adapter);
+//		
+//		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+//			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) 
+//			{
+//				if(pos == 0){
+//				searchType = "Binary Search";
+//				}
+//				else{
+//					searchType = "Sequential Search";
+//				}
+//				searcher = SearchFactory.createSearcher(searchType);
+//				searchDescription = searcher.describe();
+//				//setContentView(R.layout.search);
+//
+////				aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
+//				describeSearchType = (TextView) findViewById(R.id.describeSearchType);
+//				input = (TextView) findViewById(R.id.searchInputValues);
+////				output = (TextView) findViewById(R.id.searchOutputValues);
+//				searchElement = (EditText) findViewById(R.id.searchInputElement);
+//				aboutComplexityBest = (TextView) findViewById(R.id.complexityLabelBestValue);
+//				aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
+//				aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
+//				
+////				aboutSearchType.setText(searchType);
+//				describeSearchType.setText(searchDescription);
+//				aboutComplexityBest.setText(searcher.bestComplexity());
+//				aboutComplexityAvg.setText(searcher.averageComplexity());	
+//				aboutComplexityWorst.setText(searcher.worstComplexity());	
+//				
+////				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+////				input.setText(AlgorithmHelper.getInputString(inputArray));
+//				searchElement.setText("0");				
+//			}
+//			
+//			public void onNothingSelected(@SuppressWarnings("rawtypes") AdapterView parent) {
+//				// Do nothing.
+//			} 			
+//		});
 		
-		Button toConverterButton = (Button)findViewById(R.id.converter);
-		toConverterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ConverterActivity.class);
-				context.startActivity(intent);
-			}
-		});
-
-		Button toSorterButton = (Button)findViewById(R.id.sorter);
-		toSorterButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "sort");	
-				context.startActivity(intent);				
-			}
-		});
-
-		Button toSearcherButton = (Button)findViewById(R.id.searcher);
-		toSearcherButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "search");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-		Button toGatesButton = (Button)findViewById(R.id.gates);
-		toGatesButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, GalleryView.class);
-				intent.putExtra("componentType", "gates");				
-				context.startActivity(intent);				
-			}
-		});	    
-
-	}
-	
-	private int[] getInputArray(String inputText)
-	{
-		
-		StringTokenizer st = new StringTokenizer(inputText, ",");
-		int[] array = new int[st.countTokens()];
-		int i = 0;
-		while(st.hasMoreElements())
-		{
-			array[i] = Integer.parseInt(st.nextToken());
-			i++;
-		}
-		return array;
 	}
 	
 	private String getResultText(boolean isEementFound){

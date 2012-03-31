@@ -12,6 +12,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="numbersystem_prompt">Select Number System</string>
+    <string name="sort_prompt">Select Sort Type</string>
+    <string name="search_prompt">Select Search Type</string>
     <string name="converter_marquee">Binary | Quaternary | Octal | Decimal | Hexadecimal</string>
     <string name="sorter_marquee">Bubble Sort | Insertion Sort | Heap Sort | Merge Sort | Selection Sort | Quick Sort | Bidirectional Bubble Sort</string>
     <string name="searcher_marquee">Binary Search | Sequential Search | Hash-based Search | Binary Tree Search</string>
@@ -58,5 +60,8 @@
         <item>Quick Sort</item>
         <item>Bidirectional Bubble Sort</item>
     </string-array>
-
+    <string-array name="search_array">
+        <item>Binary Search</item>
+        <item>Sequential Search</item>
+    </string-array>
 </resources>
