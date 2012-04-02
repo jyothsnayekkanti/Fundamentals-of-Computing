@@ -112,7 +112,7 @@ public class SearchActivity extends MenuActivity {
 			@Override
 			public void onClick(View v) {
 //				setContentView(R.layout.sortanimate);
-				Intent intent = new Intent(context, AnimateSortActivity.class);
+				Intent intent = new Intent(context, AnimateSearchActivity.class);
 				context.startActivity(intent);				
 			}
 		});

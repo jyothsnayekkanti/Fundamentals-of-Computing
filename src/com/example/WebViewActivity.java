@@ -1,14 +1,18 @@
 package com.example;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.common.customlayout.CustomWebView;
 
 public class WebViewActivity extends Activity {
-	
-	WebView webview;	
+
+	WebView webview;
 	String componentType;
 	String type;
 
@@ -24,13 +28,19 @@ public class WebViewActivity extends Activity {
 		webview = (WebView) findViewById(R.id.webview);
 		webview.setWebViewClient(new CustomWebView());
 		webview.getSettings().setJavaScriptEnabled(true);
-		webview.loadUrl(getUrl(componentType, type));
+        if(isNetworkAvailable()){
+            webview.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+            webview.loadUrl(getUrl(componentType, type));
+        }else{
+            webview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            webview.loadUrl(getUrl(componentType, type));
+        }
 
 	}	
 	
 	private String getUrl(String componentType, String type){
 		StringBuffer url = new StringBuffer("http://fundamentalsofcomputing.herokuapp.com");
-		
+
 		if(componentType.equalsIgnoreCase("convert")){
 			if(type.equalsIgnoreCase("Binary"))
 			{
@@ -106,7 +116,7 @@ public class WebViewActivity extends Activity {
 				url.append("insertion_sort");
 				url.append(".html");
 			}
-			
+
 		}
 		else if(componentType.equalsIgnoreCase("search")){
 			if(type.equalsIgnoreCase("Binary Search"))
@@ -120,7 +130,7 @@ public class WebViewActivity extends Activity {
 				url.append("/");
 				url.append("insertion_sort");
 				url.append(".html");
-			}			
+			}
 		}
 		else if(componentType.equalsIgnoreCase("gates")){
 			if(type.equalsIgnoreCase("OR"))
@@ -159,5 +169,9 @@ public class WebViewActivity extends Activity {
 		
 	}
 
-
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null;
+    }
 }
