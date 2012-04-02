@@ -29,7 +29,8 @@ public class SorterActivity extends MenuActivity {
 	TextView aboutComplexityWorst;	
 	ISorter sorter;
 	Button sortButton;
-	
+	int[] inputArray;
+	int[] sortedArray;
 	
 	private String inputTextValue = null;
 
@@ -67,7 +68,7 @@ public class SorterActivity extends MenuActivity {
 		aboutComplexityAvg.setText(sorter.averageComplexity());	
 		aboutComplexityWorst.setText(sorter.worstComplexity());	
 		
-		int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+		inputArray = AlgorithmHelper.getRandonNumberArray(10);
 //		input.setText(AlgorithmHelper.getInputString(inputArray));
 		input.setText("");
 		output.setText("");
@@ -79,7 +80,7 @@ public class SorterActivity extends MenuActivity {
 			
 			@Override
 			public void onClick(View v) {
-				int[] inputArray = AlgorithmHelper.getRandonNumberArray(10);
+				inputArray = AlgorithmHelper.getRandonNumberArray(10);
 				input.setText(AlgorithmHelper.getInputString(inputArray," | "));
 				output.setText("");
 			}
@@ -91,7 +92,7 @@ public class SorterActivity extends MenuActivity {
 			@Override
 			public void onClick(View v) {
 				int[] inputArray = AlgorithmHelper.getInputArray(input.getText().toString()," | ");
-				int[] sortedArray = sorter.sort(inputArray, inputArray.length);
+				sortedArray = sorter.sort(inputArray, inputArray.length);
 				output.setText(getOutputText(sortedArray, sortedArray.length));
 			}
 		});
@@ -103,6 +104,11 @@ public class SorterActivity extends MenuActivity {
 			public void onClick(View v) {
 //				setContentView(R.layout.sortanimate);
 				Intent intent = new Intent(context, AnimateSortActivity.class);
+                intent.putExtra("inputArray", inputArray);
+                intent.putExtra("inputValue", input.getText().toString());
+                intent.putExtra("outputArray", sortedArray);
+                intent.putExtra("sortType", sortType);
+                intent.putExtra("outputValue", output.getText().toString());				
 				context.startActivity(intent);				
 			}
 		});

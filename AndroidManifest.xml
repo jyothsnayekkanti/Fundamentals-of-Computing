@@ -50,6 +50,10 @@
             android:label="@string/component_name_search" >
         </activity>
         <activity
+            android:name=".egactivity"
+            android:label="@string/component_name_search" >
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="Fundamentals Of Computing" >
             <intent-filter>

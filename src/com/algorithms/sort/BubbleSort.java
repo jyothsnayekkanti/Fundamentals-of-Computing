@@ -1,5 +1,10 @@
 package com.algorithms.sort;
 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import com.example.R;
+
 public class BubbleSort implements ISorter{
 
 	@Override  
@@ -42,6 +47,22 @@ public class BubbleSort implements ISorter{
 	@Override
 	public String describe() {
 		return "Bubble sort is a simplest sorting algorithm. Bubble sort is also known as exchange sort.  In bubble sort algorithm array is traversed from 0 to the length-1 index of the array and compared one element to the next element and swap values in between if the next element is less than the previous element. In other words, bubble sorting algorithm compare two values and put the largest value at largest index. The algorithm follow the same steps repeatedly until the values of array is sorted.";
-	}	
+	}
+	
+	public void animate(int inputArray[])
+	{
+		int length = inputArray.length;
+		int[] sortedArray = inputArray;
+		int i, j,t=0;
+		for(i = 0; i < length; i++){
+			for(j = 1; j < (length-i); j++){
+				if(sortedArray[j-1] > sortedArray[j]){
+					t = sortedArray[j-1];
+					sortedArray[j-1]=sortedArray[j];
+					sortedArray[j]=t;
+				}
+			}
+		}		
+	}
 
 }

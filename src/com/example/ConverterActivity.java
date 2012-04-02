@@ -124,10 +124,6 @@ public class ConverterActivity extends MenuActivity
 		explain = (TextView) findViewById(R.id.explainNumberSystem);
 		
 		explain.setText(explainBinary);
-		
-//		TextView logo_name = (TextView) findViewById(R.id.ids);
-//		Animation fade_name = AnimationUtils.loadAnimation(this, R.anim.fineanim);
-//		logo_name.startAnimation(fade_name);
 
 		
 		binary.setOnClickListener(new OnClickListener() {
