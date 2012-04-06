@@ -97,22 +97,7 @@
                 android:layout_marginTop="2dp">
             </TextView>
         <Button android:id="@+id/animateButton"  android:layout_width="20dp"  android:layout_height="20dp"  android:layout_marginTop="2dp"   android:background="@drawable/animate" />            
-        </TableRow>
-        <TableRow android:id="@+id/tableRow5"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
-            <TextView
-                android:id="@+id/timetakenLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="@string/timetaken_label" >
-            </TextView>  
-            <TextView
-                android:id="@+id/timetaken"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp" >
-            </TextView>                                             
-                                   </TableRow> 
+        </TableRow> 
 </LinearLayout>
 
 <include layout="@layout/spacer" />
@@ -125,9 +110,9 @@
         <TextView android:id="@+id/complexityLabelAverage"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Avg" android:layout_below="@+id/complexityLabelBest"/>
         <TextView android:id="@+id/complexityLabelWorst"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Worst" android:layout_below="@+id/complexityLabelAverage"/>                            
         
-        <TextView android:id="@+id/complexityLabelBestValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelBest" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabel" android:layout_marginLeft="80dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
-        <TextView android:id="@+id/complexityLabelAverageValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelAverage" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelBestValue" android:layout_marginLeft="80dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
-        <TextView android:id="@+id/complexityLabelWorstValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelWorst" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelAverageValue" android:layout_marginLeft="80dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>                            
+        <TextView android:id="@+id/complexityLabelBestValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelBest" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabel" android:layout_marginLeft="93dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
+        <TextView android:id="@+id/complexityLabelAverageValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelAverage" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelBestValue" android:layout_marginLeft="65dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
+        <TextView android:id="@+id/complexityLabelWorstValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelWorst" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelAverageValue" android:layout_marginLeft="78dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>                            
    
 </RelativeLayout>
 

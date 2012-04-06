@@ -13,7 +13,9 @@
     <color name="custom_theme_color">#00FF33</color>
     <color name="black_color">#000000</color>
     <color name="white_color">#FFFFFF</color>
-    <color name="green_color">#7FFF00</color>    
+    <color name="green_color">#7FFF00</color> 
+    <color name="deeppink_color">#8B0A50</color>
+    <color name="deeppurple_color">#871F78</color>   
 
     <style name="CustomTheme1" parent="android:Theme.Light">
         <item name="android:windowBackground">@color/custom_theme_color</item>
@@ -40,4 +42,12 @@
         <item name="android:colorBackground">@color/black_color</item>
     </style>    
 
+    <style name="HelpTheme" parent="android:Theme.Light">
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">12dip</item>        
+        <item name="android:textColor">@color/deeppurple_color</item>
+        <item name="android:colorBackground">@color/black_color</item>
+    </style>     
+    
 </resources>

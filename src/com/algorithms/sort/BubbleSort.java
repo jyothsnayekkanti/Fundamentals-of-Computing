@@ -46,7 +46,7 @@ public class BubbleSort implements ISorter{
 
 	@Override
 	public String describe() {
-		return "Bubble sort is a simplest sorting algorithm. Bubble sort is also known as exchange sort.  In bubble sort algorithm array is traversed from 0 to the length-1 index of the array and compared one element to the next element and swap values in between if the next element is less than the previous element. In other words, bubble sorting algorithm compare two values and put the largest value at largest index. The algorithm follow the same steps repeatedly until the values of array is sorted.";
+		return "Bubble sort is a simplest sorting algorithm. Bubble sort is also known as exchange sort.  Bubble sorting algorithm compare two values and put the largest value at largest index. The algorithm follow the same steps repeatedly until the values of array is sorted.";
 	}
 	
 	public void animate(int inputArray[])

@@ -63,15 +63,4 @@ public class MenuActivity extends Activity {
 			context.startActivity(intent);			
 		}
 	};	
-	
-	
-	 OnClickListener toGatesButtonListener = new OnClickListener() {
-		 
-		 @Override
-		public void onClick(View v) {
-			Intent intent = new Intent(context, GalleryView.class);
-			intent.putExtra("componentType", "gates");				
-			context.startActivity(intent);				
-		}
-	};
 }

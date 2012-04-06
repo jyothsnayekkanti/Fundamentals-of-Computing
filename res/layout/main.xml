@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/converter"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
@@ -29,7 +29,7 @@
 
     <Button
         android:id="@+id/sorter"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
@@ -51,7 +51,7 @@
 
     <Button
         android:id="@+id/searcher"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
@@ -70,29 +70,6 @@
         android:scrollHorizontally="true"
         android:singleLine="true"
         android:text="@string/searcher_marquee" />
-
-    <Button
-        android:id="@+id/gates"
-        android:layout_width="120dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_weight="1"
-        android:background="@drawable/logicgates"
-        android:textColor="@color/black_color" />
-
-    <com.example.ScrollingTextView
-        android:id="@+id/marquee_gates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:padding="5dip"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="@string/gates_marquee" />
     
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="eg" android:id="@+id/eg"/>
 
 </LinearLayout>

@@ -77,7 +77,7 @@ public class WebViewActivity extends Activity {
 			if(type.equalsIgnoreCase("Bubble Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("bubble_sort");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Insertion Sort"))

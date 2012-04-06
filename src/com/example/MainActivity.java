@@ -18,20 +18,20 @@ public class MainActivity extends MenuActivity {
 		final Context context = this;
 		setContentView(R.layout.main);
 		
-		Button egButton = (Button) findViewById(R.id.eg);
-		egButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				setContentView(R.layout.eg);
-			}
-		});
+//		Button egButton = (Button) findViewById(R.id.eg);
+//		egButton.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				setContentView(R.layout.eg);
+//			}
+//		});
 		
 		
 		((Button)findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		((Button)findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		((Button)findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-		((Button)findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
+//		((Button)findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
 	}
 
 }

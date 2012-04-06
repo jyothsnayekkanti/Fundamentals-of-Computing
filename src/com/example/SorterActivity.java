@@ -130,7 +130,7 @@ public class SorterActivity extends MenuActivity {
 		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);
+//		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);
 	}
 	
 	private String getOutputText(int[] sortedArray, int length){

@@ -181,18 +181,29 @@ public class AnimateSortActivity extends Activity {
 		int length = inputArray.length;
 		sortedArray = inputArray;
 		for(i=0; i<10; i++){
+			
+//			try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}			
+			
 			for(j=1; j<9;j++){
+//				try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+				
 				if(sortedArray[j-1]>sortedArray[j])
 				{
-//						try {
-//							Thread.sleep(1000);
-//						} catch (InterruptedException e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						}
-					getLineView(j-1).setBackgroundColor(Color.RED);
-					getLineView(j).setBackgroundColor(Color.BLUE);
-					getNumberView(j).startAnimation(fade_loop1);
+
+
+
+					
+//					getNumberView(j-1).startAnimation(fade_loop1);
             		t = 0;
             		u = 0;
 					t = sortedArray[j-1];
@@ -200,9 +211,15 @@ public class AnimateSortActivity extends Activity {
 					sortedArray[j-1]=u;
 					sortedArray[j]=t;  
 					getNumberView(j-1).setText(String.valueOf(u));
-					getLineView(j-1).setBackgroundColor(Color.WHITE);
+					getLineView(j-1).setText(String.valueOf(u));
+					getLineView(j-1).setBackgroundColor(Color.BLUE);
+					getNumberView(j-1).setBackgroundColor(Color.BLUE);
+					//					getLineView(j-1).setBackgroundColor(Color.WHITE);
 					getNumberView(j).setText(String.valueOf(t));
-					getLineView(j).setBackgroundColor(Color.WHITE); 
+					getLineView(j).setText(String.valueOf(t));
+					getLineView(j).setBackgroundColor(Color.RED);
+					getNumberView(j).setBackgroundColor(Color.RED);
+					//					getLineView(j).setBackgroundColor(Color.WHITE); 
 					
 					
 					//getNumberView(j-1).startAnimation(fade_loop1);
@@ -223,7 +240,7 @@ public class AnimateSortActivity extends Activity {
 						@Override
 						public void onAnimationEnd(Animation animation) {
 							getNumberView(j).setText(String.valueOf(t));
-							getLineView(j).setBackgroundColor(Color.WHITE);
+//							getLineView(j).setBackgroundColor(Color.WHITE);
 							//getNumberView(j).startAnimation(fade_loop2);
 
 						}
@@ -234,7 +251,10 @@ public class AnimateSortActivity extends Activity {
 				}
 				else
 				{
-					getNumberView(j).startAnimation(fade_loop1);
+//					getNumberView(j-1).setBackgroundColor(Color.WHITE);
+					//getNumberView(j-1).startAnimation(fade_loop2);
+//					getNumberView(j).setBackgroundColor(Color.WHITE);
+					//getNumberView(j).startAnimation(fade_loop2);					
 				}
 			}
 		}

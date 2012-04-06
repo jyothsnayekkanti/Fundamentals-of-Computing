@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.common.customlayout.CustomWebView;
@@ -55,11 +56,11 @@ public class ConverterActivity extends MenuActivity
 	TextView explain;
 	
 	
-	String explainBinary = "TODO BINARY From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
-	String explainQuaternary = "TODO QUATERNARY From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
-	String explainOctal = "TODO OCTAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
-	String explainDecimal = "TODO DECIMAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";	
-	String explainHexadecimal = "TODO HEXADECIMAL From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";
+	String explainBinary = "The Binary Number System is the most basic number system that most machines (and electricaldevices) use to communicate. The binary number system is also known as the base-2 number system, because each position in the number represents an incremental number with a base of 2. \n \n Since the number system is represented in “twos”, there are only 2 numbers that can be a value in each position of the base-2 number. Each position can only contain a 0 or a 1";
+	String explainQuaternary = "Quaternary is the base-4 numeral system. It uses the digits 0, 1, 2 and 3 to represent any real number. Quaternary numbers are used in the representation of 2D Hilbert curves. \n Here a real number between 0 and 1 is converted into the quaternary system. Every single digit now indicates in which of the respective 4 sub-quadrants the number will be projected. \n \n Quaternary line codes have been used for transmission, from the invention of the telegraph to the 2B1Q code used in modern ISDN circuits.";
+	String explainOctal = "The Octal Numeral System, or oct for short, is the base-8 number system, and uses the digits 0 to 7. \n \n Octal is sometimes used in computing instead of hexadecimal, most often in modern times in conjunction with file permissions under Unix systems. It has the advantage of not requiring any extra symbols as digits. The way we count in the hexadecimal number system is 0,1,2,3,4,5,6,7 and then 10. It is also used for digital displays.";
+	String explainDecimal = "From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";	
+	String explainHexadecimal = "The Hexadecimal Number System is used as an intermediary system in computers, such as a representation of memory addresses or a representation of colors. The hexadecimal number system is also known as the base-16 number system, because each position in the number represents an incremental number with a base of 16. \n \n Since the number system is represented in “sixteens”, there are only 10 numbers and 5 letters that can be a value in each position of the base-16 number. The way we count in the hexadecimal number system is 0,1,2,3,4,5,6,7,8,9,10,A,B,C,D,E,F and then 10,11..18,19,1A so on.";
 	
 	final static String[] myArray = new String[]{"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
 
@@ -95,7 +96,7 @@ public class ConverterActivity extends MenuActivity
 		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
+//		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
 
 //		webview = (WebView) findViewById(R.id.webview);
 //		webview.setWebViewClient(new CustomWebView());
@@ -526,8 +527,16 @@ public class ConverterActivity extends MenuActivity
 
 	public void setValues(String str, int baseSelected)
 	{
-		Long decimalValue = 0l;
-		decimalValue = Long.parseLong(str, baseSelected);
+		int decimalValue = 0;
+		try {
+			decimalValue = Integer.parseInt(str, baseSelected);
+		} catch (NumberFormatException e) {
+			// Create a piece of toast.
+			Toast pieceToast = Toast.makeText(getApplicationContext(), "Enter a valid integer value. Input value is out if range.", Toast.LENGTH_SHORT);
+
+			// Show the toast.
+			pieceToast.show();	    						
+		}
 
 		binary.setText(decimalToAnother(decimalValue, 2));
 		quaternary.setText(decimalToAnother(decimalValue, 4));
@@ -541,13 +550,13 @@ public class ConverterActivity extends MenuActivity
 	// return representation of a number decimalNumber
 	// in the system based on radix 
 	//
-	public String decimalToAnother(Long decimalNumber, int radix)
+	public String decimalToAnother(int decimalNumber, int radix)
 	{
 		StringBuffer convertedNumber = new StringBuffer("");
 		while (decimalNumber >= radix)
 		{
 			int reminder = (int) (decimalNumber % radix);
-			decimalNumber =  Long.valueOf((int)Math.floor(decimalNumber/radix));
+			decimalNumber =  (int)Math.floor(decimalNumber/radix);
 			convertedNumber.append(myArray[reminder]);
 		}
 

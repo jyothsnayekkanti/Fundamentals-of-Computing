@@ -183,11 +183,11 @@ public class AnimateConverterActivity extends Activity {
 
     }
 
-    final static String[] binaryPositionArray = new String[]{"1","2","4","8","16","32","64","128","256"};
-    final static String[] quaternaryPositionArray = new String[]{"1","4","16","64","256","1024","4096","8192","16384"};
-    final static String[] octalPositionArray = new String[]{"1","8","64","512","4096","32768","262144","2097152","16777216"};
-    final static String[] decimalPositionArray = new String[]{"1","10","100","1000","10000","100000","1000000","10000000","100000000"};
-    final static String[] hexadecimalPositionArray = new String[]{"1","16","256","4096","65536","1048576","16777216","268435456","4294967296"};
+    final static String[] binaryPositionArray = new String[]{"1","2","4","8","16","32","64","128","256","512"};
+    final static String[] quaternaryPositionArray = new String[]{"1","4","16","64","256","1024","4096","8192","16384","65536"};
+    final static String[] octalPositionArray = new String[]{"1","8","64","512","4096","32768","262144","2097152","16777216","134217728"};
+    final static String[] decimalPositionArray = new String[]{"1","10","100","1000","10000","100000","1000000","10000000","100000000","1000000000"};
+    final static String[] hexadecimalPositionArray = new String[]{"1","16","256","4096","65536","1048576","16777216","268435456","4294967296","68719476736"};
 
     private String getCalculationStep(int[] inputArray, String[] postionArray){
         String calculationStep = "";
@@ -210,7 +210,7 @@ public class AnimateConverterActivity extends Activity {
 
     private String[] getPositionArray(int inputTypeBase)
     {
-        String[] positionArray = new String[]{"1","2","4","8","16","32","64","128","256"};
+        String[] positionArray = new String[]{"1","2","4","8","16","32","64","128","256","512"};
         switch(inputTypeBase)
         {
             case 2:
@@ -234,7 +234,7 @@ public class AnimateConverterActivity extends Activity {
 
     private String getPositionText(int inputTypeBase, int inputValueSize){
         String positionText = "";
-        String[] positionArray = new String[]{"1","2","4","8","16","32","64","128","256"};
+        String[] positionArray = new String[]{"1","2","4","8","16","32","64","128","256","512"};
 
         positionArray = getPositionArray(inputTypeBase);
 
