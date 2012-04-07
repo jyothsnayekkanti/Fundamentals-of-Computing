@@ -34,7 +34,6 @@ public class AlgorithmHelper {
 		for(int i=0; i<inputIntArray.length; i++){
 			if(i==0)
 			{
-				System.out.println("inputIntArray["+i+"]"+inputIntArray[i]);
                 inputString = ""+inputIntArray[i];
 			}
 			else
@@ -46,20 +45,14 @@ public class AlgorithmHelper {
     public static int[] getInputArray(String inputText, String token)
     {
         int[] array;
-        System.out.println("inputTextinputTextinputTextinputText"+inputText);
         if(token.equalsIgnoreCase(""))
         {
             array = new int[inputText.length()];
             for(int i=0; i< inputText.length(); i++)
             {
-                System.out.println("inputText.charAt("+i+")"+inputText.charAt(i));
                 array[i] =  Integer.parseInt(""+inputText.charAt(i));
             }
             
-            for(int i=0; i<array.length; i++)
-            {
-                System.out.println(i+"th element is : "+array[i]);
-            }
             return array;
         }
         else{
@@ -73,6 +66,6 @@ public class AlgorithmHelper {
         }
         return array;
         }
-    }
+    }    
 
 }

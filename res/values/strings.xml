@@ -37,6 +37,9 @@
     <string name="decimal_label">Decimal</string>
     <string name="hexadecimal_label">Hexadecimal</string>
     
+    <string name="conversion_help_knowmore_label">"Press the number system label to know more"</string>
+    <string name="conversion_help_viewconversion_label">"Press the value to view the conversion"</string>
+    
     <string name="e_label">e</string>
     
     <string name="complexity_label">Complexity</string>

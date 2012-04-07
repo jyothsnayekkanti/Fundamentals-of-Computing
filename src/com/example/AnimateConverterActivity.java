@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.StringTokenizer;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -23,7 +25,7 @@ public class AnimateConverterActivity extends Activity {
     TextView calculate;
     TextView result;
     TextView converttosystem;
-    TextView step1;
+    TextView steps;
     TextView systemresult;
     
     int inputTypeBase;
@@ -34,7 +36,6 @@ public class AnimateConverterActivity extends Activity {
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		final Context context = this;
         inputTypeBase = getIntent().getIntExtra("inputType",2);
         inputValue = getIntent().getStringExtra("inputValue");
         outputType = getIntent().getIntExtra("outputType", 2);
@@ -49,10 +50,21 @@ public class AnimateConverterActivity extends Activity {
         calculate = (TextView) findViewById(R.id.calculate);
         result = (TextView) findViewById(R.id.result);
         converttosystem = (TextView) findViewById(R.id.converttosystem);
-        step1 = (TextView) findViewById(R.id.step1);
+        steps = (TextView) findViewById(R.id.steps);
+        
+        steps.setText("  ");
+        
         systemresult = (TextView) findViewById(R.id.systemresult);
 
-        inputvalue.setText(AlgorithmHelper.getInputString(AlgorithmHelper.getInputArray(inputValue,"")," | "));
+
+        if(inputTypeBase == 10)
+        {
+        	inputvalue.setText("");
+        }
+        else if(inputTypeBase != 16)
+        	inputvalue.setText(AlgorithmHelper.getInputString(AlgorithmHelper.getInputArray(inputValue,"")," | "));        
+        else
+        	inputvalue.setText(getInputString(getInputStringArray(inputValue,"")," | "));	
 
 
 
@@ -64,7 +76,16 @@ public class AnimateConverterActivity extends Activity {
         final Animation fade_name5 = AnimationUtils.loadAnimation(this, R.anim.fineanim);
         final Animation fade_name6 = AnimationUtils.loadAnimation(this, R.anim.fineanim);
         final Animation fade_name7 = AnimationUtils.loadAnimation(this, R.anim.fineanim);
-        inputvalue.startAnimation(fade_name1);
+
+        if(inputTypeBase == 10)
+        {
+            result.setText(""+decimalValue);
+            result.startAnimation(fade_name4);        	
+        }
+        else
+        {
+        	inputvalue.startAnimation(fade_name1);
+        }
 
         fade_name1.setAnimationListener(new AnimationListener() {
             public void onAnimationEnd(Animation animation) {
@@ -74,29 +95,29 @@ public class AnimateConverterActivity extends Activity {
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
 
         fade_name2.setAnimationListener(new AnimationListener() {
             public void onAnimationEnd(Animation animation) {
-                calculate.setText(getCalculationStep(AlgorithmHelper.getInputArray(inputValue,""),getPositionArray(inputTypeBase)));
+                calculate.setText(getCalculationStep(getInputStringArray(inputValue,""),getPositionArray(inputTypeBase)));
                 calculate.startAnimation(fade_name3);
             }
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
 
@@ -108,34 +129,37 @@ public class AnimateConverterActivity extends Activity {
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
 
         fade_name4.setAnimationListener(new AnimationListener() {
             public void onAnimationEnd(Animation animation) {
+            	if(outputType != 10){            	
                 converttosystem.setText(outputType + " | "+decimalValue);
                 converttosystem.startAnimation(fade_name5);
+            	}
             }
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
         
         fade_name5.setAnimationListener(new AnimationListener() {
             public void onAnimationEnd(Animation animation) {
+
                 int quotient = decimalValue/outputType;
                 int reminder = decimalValue%outputType;
 
@@ -148,18 +172,18 @@ public class AnimateConverterActivity extends Activity {
                     step.append("      | "+quotient+" - "+reminder);
                 }
 
-                step1.setText(step.toString());
-                step1.startAnimation(fade_name6);
+                steps.setText(step.toString());
+                steps.startAnimation(fade_name6);
             }
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
         
@@ -171,12 +195,12 @@ public class AnimateConverterActivity extends Activity {
 
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
 
             @Override
             public void onAnimationStart(Animation arg0) {
-                // TODO Auto-generated method stub
+            	// Do nothing.
             }
         });
         
@@ -189,19 +213,16 @@ public class AnimateConverterActivity extends Activity {
     final static String[] decimalPositionArray = new String[]{"1","10","100","1000","10000","100000","1000000","10000000","100000000","1000000000"};
     final static String[] hexadecimalPositionArray = new String[]{"1","16","256","4096","65536","1048576","16777216","268435456","4294967296","68719476736"};
 
-    private String getCalculationStep(int[] inputArray, String[] postionArray){
+    private String getCalculationStep(String[] inputArray, String[] postionArray){
         String calculationStep = "";
         int j = inputArray.length-1;
         for(int i=0; i<inputArray.length ; i++){
             if(i==0)
             {
-                System.out.println(inputArray[i]);
-                System.out.println(postionArray[j]);
                 calculationStep = ""+ inputArray[i] + " * " + postionArray[j];
             }
             else{
-                System.out.println();
-            calculationStep = calculationStep + " + " + inputArray[i] + " * " + postionArray[j];
+            	calculationStep = calculationStep + " + " + inputArray[i] + " * " + postionArray[j];
             }
             j--;
         }
@@ -248,10 +269,6 @@ public class AnimateConverterActivity extends Activity {
         }
         return positionText;
     }
-    
-    private int getLength(String text){
-        return 0;
-    }
 
     public class DrawView extends View {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -274,4 +291,72 @@ public class AnimateConverterActivity extends Activity {
             }
         }
     }
+    
+    public static int[] getInputIntArray(String inputText, String token)
+    {
+        int[] array;
+        if(token.equalsIgnoreCase(""))
+        {
+            array = new int[inputText.length()];
+            for(int i=0; i< inputText.length(); i++)
+            {
+                array[i] =  Integer.parseInt(""+inputText.charAt(i));
+            }
+            
+            return array;
+        }
+        else{
+        StringTokenizer st = new StringTokenizer(inputText, token);
+        array = new int[st.countTokens()];
+        int i = 0;
+        while(st.hasMoreElements())
+        {
+            array[i] = Integer.parseInt(st.nextToken());
+            i++;
+        }
+        return array;
+        }
+    } 
+    
+    public static String[] getInputStringArray(String inputText, String token)
+    {
+        String[] array;
+        if(token.equalsIgnoreCase(""))
+        {
+            array = new String[inputText.length()];
+            for(int i=0; i< inputText.length(); i++)
+            {
+                array[i] =  ""+inputText.charAt(i);
+            }
+            
+            return array;
+        }
+        else{
+        StringTokenizer st = new StringTokenizer(inputText, token);
+        array = new String[st.countTokens()];
+        int i = 0;
+        while(st.hasMoreElements())
+        {
+            array[i] = st.nextToken();
+            i++;
+        }
+        return array;
+        }
+    }
+ 
+    
+	public static String getInputString(String[] inputArray,String token){
+		String inputString = "";
+		String[] inputIntArray = inputArray;
+		for(int i=0; i<inputIntArray.length; i++){
+			if(i==0)
+			{
+                inputString = ""+inputIntArray[i];
+			}
+			else
+			inputString = inputString + token + inputIntArray[i];
+		}
+		return inputString;
+	}    
+    
 }

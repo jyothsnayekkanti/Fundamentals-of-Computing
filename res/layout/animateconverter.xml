@@ -10,7 +10,7 @@
 <TextView android:id="@+id/calculate" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" />
 <TextView android:id="@+id/result" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
 <TextView android:id="@+id/converttosystem" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
-<TextView android:id="@+id/step1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
+<TextView android:id="@+id/steps" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
 <TextView android:id="@+id/systemresult" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
 
 

@@ -676,8 +676,6 @@ public class AnimateSortActivity extends Activity {
 ////        					sortedArray[j]=t;
 ////        					(getNumberView(j-1)).setWidth(2 * sortedArray[j-i]);
 ////        					(getNumberView(j)).setWidth(2 * sortedArray[j]);
-////        					System.out.println("i"+i);
-////        					System.out.println("j"+j);
 ////        					int x = sortedArray[j-i];
 ////        					(getNumberView(j-1)).setText(String.valueOf(x));
 //        				//	(getLineView(j-1)).setWidth(2 * x);					
@@ -717,8 +715,6 @@ public class AnimateSortActivity extends Activity {
 //					sortedArray[j]=t;
 ////					(getNumberView(j-1)).setWidth(2 * sortedArray[j-i]);
 ////					(getNumberView(j)).setWidth(2 * sortedArray[j]);
-//					System.out.println("i"+i);
-//					System.out.println("j"+j);
 //					int x = sortedArray[j-i];
 //					(getNumberView(j-1)).setText(String.valueOf(x));
 //				//	(getLineView(j-1)).setWidth(2 * x);					

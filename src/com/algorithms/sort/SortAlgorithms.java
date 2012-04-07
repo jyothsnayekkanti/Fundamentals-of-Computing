@@ -33,14 +33,9 @@ public class SortAlgorithms {
 	public static void sort(ISorter sorter, int[] inputArray, int length){
 		long startTime;
 		long endTime;
-		System.out.println("Input Array : "+inputArray[0] + ","+inputArray[1] + ","+inputArray[2] + ","+inputArray[3] + ","+inputArray[4]);
 		startTime = getCurrentTimeInMillisecs();
-		System.out.println(startTime);
 		int[] sortedArray = sorter.sort(inputArray, length);
 		endTime = getCurrentTimeInMillisecs();
-		System.out.println(endTime);
-		System.out.println("Sorted Array using "+sorter.sortType()+" : "+sortedArray[0] + ","+sortedArray[1] + ","+sortedArray[2] + ","+sortedArray[3] + ","+sortedArray[4]);
-		System.out.println("Time taken using "+sorter.sortType()+" : "+ (endTime-startTime));		
 	}
 
 	private static int[] getRandonNumberArray(int length)

@@ -1,6 +1,5 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +10,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -21,10 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
-
-import com.common.customlayout.CustomWebView;
+import android.widget.Toast;
 
 public class ConverterActivity extends MenuActivity
 {
@@ -52,11 +46,10 @@ public class ConverterActivity extends MenuActivity
     }
 
     int inputBase = 2;
-//	WebView webview;	
 	TextView explain;
 	
 	
-	String explainBinary = "The Binary Number System is the most basic number system that most machines (and electricaldevices) use to communicate. The binary number system is also known as the base-2 number system, because each position in the number represents an incremental number with a base of 2. \n \n Since the number system is represented in “twos”, there are only 2 numbers that can be a value in each position of the base-2 number. Each position can only contain a 0 or a 1";
+	String explainBinary = "The Binary Number System is the most basic number system that most machines (and electrical devices) use to communicate. The binary number system is also known as the base-2 number system, because each position in the number represents an incremental number with a base of 2. \n \n Since the number system is represented in “twos”, there are only 2 numbers that can be a value in each position of the base-2 number. Each position can only contain a 0 or a 1";
 	String explainQuaternary = "Quaternary is the base-4 numeral system. It uses the digits 0, 1, 2 and 3 to represent any real number. Quaternary numbers are used in the representation of 2D Hilbert curves. \n Here a real number between 0 and 1 is converted into the quaternary system. Every single digit now indicates in which of the respective 4 sub-quadrants the number will be projected. \n \n Quaternary line codes have been used for transmission, from the invention of the telegraph to the 2B1Q code used in modern ISDN circuits.";
 	String explainOctal = "The Octal Numeral System, or oct for short, is the base-8 number system, and uses the digits 0 to 7. \n \n Octal is sometimes used in computing instead of hexadecimal, most often in modern times in conjunction with file permissions under Unix systems. It has the advantage of not requiring any extra symbols as digits. The way we count in the hexadecimal number system is 0,1,2,3,4,5,6,7 and then 10. It is also used for digital displays.";
 	String explainDecimal = "From the very beginning, people have used their fingures to count. \n \n It's no coincidence that the word digit can refer to fingures or toes as well as numbers or that the words five and fist have similar roots. So in that sense, using a base-ten, or decimal (from the Latin for ten), number system is completely arbitrary. \n \n There is no special symbol for ten. The way we count in the decimal number system is 0,1,2,3,4,5,6,7,8,9 and then 10.";	
@@ -96,12 +89,6 @@ public class ConverterActivity extends MenuActivity
 		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-//		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);		
-
-//		webview = (WebView) findViewById(R.id.webview);
-//		webview.setWebViewClient(new CustomWebView());
-//		webview.getSettings().setJavaScriptEnabled(true);
-//		webview.loadUrl("http://www.google.com"); // default binary
 		
 		
 		spinner = (Spinner) findViewById(R.id.spinner);
@@ -125,7 +112,11 @@ public class ConverterActivity extends MenuActivity
 		explain = (TextView) findViewById(R.id.explainNumberSystem);
 		
 		explain.setText(explainBinary);
-
+		binary.setEnabled(false);
+		quaternary.setEnabled(true);
+		octal.setEnabled(true);
+		decimal.setEnabled(true);
+		hexadecimal.setEnabled(true);
 		
 		binary.setOnClickListener(new OnClickListener() {
 			
@@ -133,9 +124,6 @@ public class ConverterActivity extends MenuActivity
 			public void onClick(View arg0) {
 				Intent intent = new Intent(context, AnimateConverterActivity.class);
 
-                System.out.println("getInputBase()"+getInputBase());
-                System.out.println("input.getText()"+input.getText());
-                System.out.println("binary.getText()"+binary.getText());
 
                 intent.putExtra("inputType", getInputBase());
                 intent.putExtra("inputValue", input.getText().toString());
@@ -267,13 +255,11 @@ public class ConverterActivity extends MenuActivity
 		{
 			public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) 
 			{
-				String allowedRegex = "[a-f0-9]";
 				setPositionSelected(pos);
                 setInputBase(getBaseSelected(getPositionSelected()));
 				if(pos == 4)
 				{
 					input.setInputType(1);
-					allowedRegex = "[a-f0-9]";
 					InputFilter[] filters = new InputFilter[1];
 					filters[0] = new InputFilter() {
 						public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -294,17 +280,17 @@ public class ConverterActivity extends MenuActivity
 					};
 					input.setFilters(filters);	
 					
-//					webview = (WebView) findViewById(R.id.webview);
-//					webview.setWebViewClient(new CustomWebView());
-//					webview.getSettings().setJavaScriptEnabled(true);
-//					webview.loadUrl("http://www.google.com"); // hexadecimal
 					explain.setText(explainHexadecimal);
+					binary.setEnabled(true);
+					quaternary.setEnabled(true);
+					octal.setEnabled(true);
+					decimal.setEnabled(true);
+					hexadecimal.setEnabled(false);
 				}
 				else
 				{
 					if(pos == 0)
 					{
-						allowedRegex = "[0-1]";
 						InputFilter[] filters = new InputFilter[1];
 						filters[0] = new InputFilter() {
 							public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -325,15 +311,15 @@ public class ConverterActivity extends MenuActivity
 						};
 						input.setFilters(filters);
 						
-//						webview = (WebView) findViewById(R.id.webview);
-//						webview.setWebViewClient(new CustomWebView());
-//						webview.getSettings().setJavaScriptEnabled(true);
-//						webview.loadUrl("http://www.google.com"); // binary
 						explain.setText(explainBinary);
+						binary.setEnabled(false);
+						quaternary.setEnabled(true);
+						octal.setEnabled(true);
+						decimal.setEnabled(true);
+						hexadecimal.setEnabled(true);						
 					}
 					if(pos == 1)
 					{
-						allowedRegex = "[0-3]";
 						InputFilter[] filters = new InputFilter[1];
 						filters[0] = new InputFilter() {
 							public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -354,16 +340,16 @@ public class ConverterActivity extends MenuActivity
 							}
 						};
 						input.setFilters(filters);	
-						
-//						webview = (WebView) findViewById(R.id.webview);
-//						webview.setWebViewClient(new CustomWebView());
-//						webview.getSettings().setJavaScriptEnabled(true);
-//						webview.loadUrl("http://www.google.com"); // quaternary
+					
 						explain.setText(explainQuaternary);
+						binary.setEnabled(true);
+						quaternary.setEnabled(false);
+						octal.setEnabled(true);
+						decimal.setEnabled(true);
+						hexadecimal.setEnabled(true);						
 					}
 					if(pos == 2)
 					{
-						allowedRegex = "[0-7]";
 						InputFilter[] filters = new InputFilter[1];
 						filters[0] = new InputFilter() {
 							public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -384,15 +370,15 @@ public class ConverterActivity extends MenuActivity
 						};
 						input.setFilters(filters);
 						
-//						webview = (WebView) findViewById(R.id.webview);
-//						webview.setWebViewClient(new CustomWebView());
-//						webview.getSettings().setJavaScriptEnabled(true);
-//						webview.loadUrl("http://www.google.com"); // octal
 						explain.setText(explainOctal);
+						binary.setEnabled(true);
+						quaternary.setEnabled(true);
+						octal.setEnabled(false);
+						decimal.setEnabled(true);
+						hexadecimal.setEnabled(true);
 					}
 					if(pos == 3)
 					{
-						allowedRegex = "[0-9]";
 						InputFilter[] filters = new InputFilter[1];
 						filters[0] = new InputFilter() {
 							public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -413,12 +399,13 @@ public class ConverterActivity extends MenuActivity
 							}
 						};
 						input.setFilters(filters);
-						
-//						webview = (WebView) findViewById(R.id.webview);
-//						webview.setWebViewClient(new CustomWebView());
-//						webview.getSettings().setJavaScriptEnabled(true);
-//						webview.loadUrl("http://www.google.com"); // decimal
+
 						explain.setText(explainDecimal);
+						binary.setEnabled(true);
+						quaternary.setEnabled(true);
+						octal.setEnabled(true);
+						decimal.setEnabled(false);
+						hexadecimal.setEnabled(true);
 					}
 					input.setInputType(2);
 				}
@@ -538,7 +525,16 @@ public class ConverterActivity extends MenuActivity
 			pieceToast.show();	    						
 		}
 
-		binary.setText(decimalToAnother(decimalValue, 2));
+		String binaryValue = decimalToAnother(decimalValue, 2);
+		if(binaryValue.length() > 25)
+		{
+			binary.setTextSize(12);
+		}
+		else
+		{
+			binary.setTextSize(15);
+		}
+		binary.setText(binaryValue);
 		quaternary.setText(decimalToAnother(decimalValue, 4));
 		octal.setText(decimalToAnother(decimalValue, 8));
 		this.decimal.setText(decimalToAnother(decimalValue, 10));
