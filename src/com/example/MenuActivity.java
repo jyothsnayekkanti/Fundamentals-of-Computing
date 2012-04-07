@@ -62,5 +62,16 @@ public class MenuActivity extends Activity {
 			
 			context.startActivity(intent);			
 		}
+	};
+	
+	OnClickListener helpButtonListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(context, HelpActivity.class);
+			context.startActivity(intent);
+//			setContentView(R.layout.help);
+		}
 	};	
+	
 }

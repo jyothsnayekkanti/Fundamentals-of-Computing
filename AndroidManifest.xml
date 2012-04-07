@@ -60,6 +60,10 @@
             android:label="@string/component_name_search" >
         </activity>
         <activity
+            android:name=".HelpActivity"
+            android:label="@string/component_name_help" >
+        </activity>        
+        <activity
             android:name=".MainActivity"
             android:label="Fundamentals Of Computing" >
             <intent-filter>

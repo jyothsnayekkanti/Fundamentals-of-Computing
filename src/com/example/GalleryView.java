@@ -95,7 +95,8 @@ public class GalleryView extends MenuActivity {
 		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-//		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);	       
+//		(menuView.findViewById(R.id.gates)).setOnClickListener(toGatesButtonListener);
+		(menuView.findViewById(R.id.help)).setOnClickListener(helpButtonListener);		
 
 		gallery = (Gallery)findViewById(R.id.gallery);
 		gallery.setOnItemClickListener(new OnItemClickListener() {
