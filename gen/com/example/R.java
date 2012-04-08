@@ -59,7 +59,8 @@ public final class R {
         public static final int system_binary=0x7f02001c;
     }
     public static final class id {
-        public static final int aboutSortType=0x7f090066;
+        public static final int aboutSearchType=0x7f090066;
+        public static final int aboutSortType=0x7f090069;
         public static final int animateButton=0x7f09001b;
         public static final int animateHelp=0x7f09002c;
         public static final int base10=0x7f090023;
@@ -84,13 +85,13 @@ public final class R {
         public static final int converterInputValue=0x7f09001f;
         public static final int converttosystem=0x7f090004;
         public static final int describeSearchType=0x7f09004c;
-        public static final int describeSortType=0x7f090067;
+        public static final int describeSortType=0x7f09006a;
         public static final int explainButton=0x7f09004d;
         public static final int explainHelp=0x7f09002b;
         public static final int explainNumberSystem=0x7f09002a;
-        public static final int gallery=0x7f09006e;
+        public static final int gallery=0x7f090071;
         public static final int generateSearchButton=0x7f090052;
-        public static final int generateSortButton=0x7f090068;
+        public static final int generateSortButton=0x7f09006b;
         public static final int help=0x7f09004a;
         public static final int helpanimate=0x7f09003f;
         public static final int helpanimatetext=0x7f090040;
@@ -139,7 +140,7 @@ public final class R {
         public static final int marquee_search=0x7f090047;
         public static final int marquee_sort=0x7f090045;
         public static final int menus=0x7f09001d;
-        public static final int outputLabel=0x7f09006a;
+        public static final int outputLabel=0x7f09006d;
         public static final int positionset=0x7f090001;
         public static final int quit=0x7f090049;
         public static final int result=0x7f090003;
@@ -147,22 +148,23 @@ public final class R {
         public static final int searchInputElement=0x7f090054;
         public static final int searchInputValues=0x7f090051;
         public static final int searcher=0x7f090046;
-        public static final int sortButton=0x7f09006b;
-        public static final int sortInputValues=0x7f090069;
-        public static final int sortOutputValues=0x7f09006d;
+        public static final int sortButton=0x7f09006e;
+        public static final int sortInputValues=0x7f09006c;
+        public static final int sortOutputValues=0x7f090070;
         public static final int sorter=0x7f090044;
-        public static final int space1=0x7f09006f;
-        public static final int space2=0x7f090070;
+        public static final int space1=0x7f090072;
+        public static final int space2=0x7f090067;
         public static final int spinner=0x7f09001e;
         public static final int steps=0x7f090005;
         public static final int systemresult=0x7f090006;
+        public static final int tableRow0=0x7f090068;
         public static final int tableRow1=0x7f090065;
         public static final int tableRow1a=0x7f09004b;
         public static final int tableRow2=0x7f09004e;
         public static final int tableRow3=0x7f090050;
         public static final int tableRow3a=0x7f090053;
         public static final int tableRow4=0x7f090056;
-        public static final int tableRow4a=0x7f09006c;
+        public static final int tableRow4a=0x7f09006f;
         public static final int tableRow5=0x7f090057;
         public static final int tableRow6=0x7f09005a;
         public static final int tableRow7=0x7f09005c;
@@ -172,7 +174,7 @@ public final class R {
         public static final int timetakenLabel=0x7f090058;
         public static final int toolbar=0x7f09002e;
         public static final int vieweg=0x7f09001c;
-        public static final int webview=0x7f090071;
+        public static final int webview=0x7f090073;
     }
     public static final class layout {
         public static final int animateconverter=0x7f030000;

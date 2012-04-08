@@ -25,7 +25,7 @@
         <Button android:id="@+id/explainButton"  android:layout_width="25dp"  android:layout_height="25dp"  android:layout_marginTop="2dp"  android:background="@drawable/help"/>            
         </TableRow>
         <TableRow android:id="@+id/tableRow1a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
-        <TextView android:id="@+id/describeSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"/>
+        <TextView android:id="@+id/describeSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"  android:textStyle="normal" />
         </TableRow>
         
         

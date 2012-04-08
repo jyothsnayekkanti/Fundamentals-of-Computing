@@ -72,7 +72,7 @@ public class BinarySearch implements ISearcher {
 	@Override
 	public String describe() {
 		// TODO Auto-generated method stub
-		return "The advantage of a binary search over a linear search is astounding for large numbers. It can be done either recursively or iteratively.                                                                                                                                         .";
+		return "The advantage of a binary search over a linear search is astounding for large numbers. It can be done either recursively or iteratively.\n";
 	}
 
 }

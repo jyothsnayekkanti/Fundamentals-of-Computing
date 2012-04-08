@@ -23,7 +23,7 @@ public class SearchActivity extends MenuActivity {
 	EditText searchElement;
 	String searchType = null;
 	String searchDescription = null;
-//	TextView aboutSearchType;
+	TextView aboutSearchType;
 	TextView describeSearchType;	
 	TextView aboutComplexityBest;
 	TextView aboutComplexityAvg;
@@ -47,12 +47,11 @@ public class SearchActivity extends MenuActivity {
 		super.onCreate(savedInstanceState);
 		final Context context = this;
 		searchType = getIntent().getStringExtra("searchType");
-		//searchType = "Binary Search";
 		searcher = SearchFactory.createSearcher(searchType);
 		searchDescription = searcher.describe();
 		setContentView(R.layout.searchtabs);
 
-//		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
+		aboutSearchType = (TextView) findViewById(R.id.aboutSearchType);
 		describeSearchType = (TextView) findViewById(R.id.describeSearchType);
 		input = (TextView) findViewById(R.id.searchInputValues);
 //		output = (TextView) findViewById(R.id.searchOutputValues);
@@ -61,7 +60,7 @@ public class SearchActivity extends MenuActivity {
 		aboutComplexityAvg = (TextView) findViewById(R.id.complexityLabelAverageValue);
 		aboutComplexityWorst = (TextView) findViewById(R.id.complexityLabelWorstValue);		
 		
-//		aboutSearchType.setText(searchType);
+		aboutSearchType.setText(searchType);
 		describeSearchType.setText(searchDescription);
 		aboutComplexityBest.setText(searcher.bestComplexity());
 		aboutComplexityAvg.setText(searcher.averageComplexity());	

@@ -1,112 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-<include layout="@layout/menu"  android:id="@+id/menus"/>
-<TabHost
-    android:id="@android:id/tabhost"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       >
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" android:layout_height="fill_parent"  android:orientation="vertical" >
 
+    <TabHost android:id="@android:id/tabhost" android:layout_width="wrap_content" android:layout_height="wrap_content" >
 
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" >
 
-<LinearLayout 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-     >
-        <TextView android:id="@+id/describeSearchType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"/>
-        <Button android:id="@+id/explainButton"  android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="2dp"
-                 android:background="@drawable/help" />
-
-        </LinearLayout>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-     >
-        <TableRow android:id="@+id/tableRow2"  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:layout_marginTop="5dp">
-            <TextView
-                android:id="@+id/inputLabel"
+            <TabWidget android:id="@android:id/tabs" android:layout_width="wrap_content" android:layout_height="10dp" />
+			
+			<include android:id="@+id/menus" layout="@layout/menu" />
+			
+			<TableRow
+                android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/search_input_label" >
-            </TextView>
-        </TableRow>
+                android:layout_marginTop="5dp" >
 
-        <TableRow android:id="@+id/tableRow3"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/searchInputValues"
-                android:layout_width="300dp"
+                <TextView
+                    android:id="@+id/aboutSearchType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+
+                <Button
+                    android:id="@+id/explainButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/help" />
+            </TableRow>
+            
+    		<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >
+                
+                <TextView
+                    android:id="@+id/describeSearchType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textSize="10dp"  android:textStyle="normal" />
+
+			</TableRow>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/space2" android:layout_width="fill_parent" android:layout_height="10dp" >
+    
+</TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:inputType="number"
-                >
-            </TextView>
-                         <Button
-                android:id="@+id/generateSearchButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="2dp"
-                 android:background="@drawable/refresh"/>
-        </TableRow>
-        <TableRow android:id="@+id/tableRow3a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
-            <EditText
-                android:id="@+id/searchInputElement"
-                android:layout_width="200dp"
+                android:orientation="vertical" >
+                
+                <TableRow
+                    android:id="@+id/tableRow0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/inputLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Generate new set of numbers" >
+                    </TextView>
+                    
+                    <Button
+                        android:id="@+id/generateSearchButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/refresh" />                    
+                    
+                </TableRow>                
+
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/searchInputValues"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:inputType="number" >
+                    </TextView>
+
+
+                </TableRow>
+                
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/inputLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_input_label" >
+                    </TextView>
+                </TableRow>                
+
+                <TableRow
+                    android:id="@+id/tableRow3a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <EditText
+                        android:id="@+id/searchInputElement"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:inputType="number" >
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/searchButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/search" />
+                    
+                    <Button
+                        android:id="@+id/animateButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/animate" />                    
+                    
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+
+                </TableRow>
+            </LinearLayout>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/space2" android:layout_width="fill_parent" android:layout_height="10dp" >
+    
+</TableRow>
+            <RelativeLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:inputType="number" >
-            </EditText> 
-                       
-            <Button
-                android:id="@+id/searchButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="2dp"
-                 android:background="@drawable/search" />
-        </TableRow>
-        
-        <TableRow android:id="@+id/tableRow4"  android:layout_width="wrap_content"  android:layout_height="wrap_content" >
+                android:layout_marginTop="5dp" >
 
+                <TextView
+                    android:id="@+id/complexityLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/complexity_label" />
 
-        <Button android:id="@+id/animateButton"  android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="2dp"
-                 android:background="@drawable/animate" />            
-        </TableRow> 
+                <TextView
+                    android:id="@+id/complexityLabelBest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/complexityLabel"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/complexity_label_Best" />
+
+                <TextView
+                    android:id="@+id/complexityLabelAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/complexityLabelBest"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/complexity_label_Avg" />
+
+                <TextView
+                    android:id="@+id/complexityLabelWorst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/complexityLabelAverage"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/complexity_label_Worst" />
+
+                <TextView
+                    android:id="@+id/complexityLabelBestValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/complexityLabel"
+                    android:layout_marginLeft="93dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/complexityLabelBest"
+                    android:paddingRight="10dp" />
+
+                <TextView
+                    android:id="@+id/complexityLabelAverageValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/complexityLabelBestValue"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/complexityLabelAverage"
+                    android:paddingRight="10dp" />
+
+                <TextView
+                    android:id="@+id/complexityLabelWorstValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/complexityLabelAverageValue"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/complexityLabelWorst"
+                    android:paddingRight="10dp" />
+            </RelativeLayout>
         </LinearLayout>
+    </TabHost>
 
-<RelativeLayout android:layout_width="fill_parent"  android:layout_height="wrap_content" android:layout_marginTop="5dp">                                   
-
-        <TextView android:id="@+id/complexityLabel"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label"/>
-
-        <TextView android:id="@+id/complexityLabelBest"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Best" android:layout_below="@+id/complexityLabel"/>
-        <TextView android:id="@+id/complexityLabelAverage"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Avg" android:layout_below="@+id/complexityLabelBest"/>
-        <TextView android:id="@+id/complexityLabelWorst"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/complexity_label_Worst" android:layout_below="@+id/complexityLabelAverage"/>                            
-        
-        <TextView android:id="@+id/complexityLabelBestValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelBest" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabel" android:layout_marginLeft="93dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
-        <TextView android:id="@+id/complexityLabelAverageValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelAverage" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelBestValue" android:layout_marginLeft="65dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>
-        <TextView android:id="@+id/complexityLabelWorstValue"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:layout_toRightOf="@+id/complexityLabelWorst" android:layout_alignParentRight="true" android:layout_below="@+id/complexityLabelAverageValue" android:layout_marginLeft="78dp" android:layout_marginRight="10dp" android:paddingRight="10dp"/>                            
-   
-</RelativeLayout>          
-            
-            
-
-    </LinearLayout>
-</TabHost>
-    </LinearLayout>
+</LinearLayout>
