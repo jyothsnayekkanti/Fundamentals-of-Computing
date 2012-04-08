@@ -72,6 +72,16 @@ public class MenuActivity extends Activity {
 			context.startActivity(intent);
 //			setContentView(R.layout.help);
 		}
-	};	
+	};
+	
+	
+	OnClickListener quitButtonListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+
+			finish();
+		}
+	};
 	
 }
