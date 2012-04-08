@@ -54,7 +54,7 @@ public class BidirectionalBubbleSort implements ISorter {
 
 	@Override
 	public String describe() {
-		return "Bi-directional bubble sort is a alternative of bubble sort. Bi-directional bubble sorting also known as cocktail shaker sort, shaker sort, double-direction bubble sort. In Bi-directional bubble sort at least one elements is moved forward or backward to its place in the array with each pass.  The  bi-directional bubble sort compares each adjacent pair of elements in an array. The values will be swap if necessary. The values passes from the beginning to the end and also from the end to the beginning. It stops when there is no any element to swap.";
+		return "Bi-directional bubble sort is a alternative of bubble sort. In this at least one elements is moved forward or backward to its place in the array with each pass.  It compares each adjacent pair of elements in an array. The values will be swap if necessary. The values passes from the beginning to the end and also from the end to the beginning. It stops when there is no any element to swap.";
 	}	
 
 }
