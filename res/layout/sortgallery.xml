@@ -4,7 +4,7 @@
               android:layout_height="fill_parent"
         android:orientation="vertical">
 
-<include layout="@layout/menu"  android:id="@+id/menus"/>
+<include layout="@layout/menu"  android:id="@+id/menus" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
 
 <RelativeLayout 
     android:orientation="vertical"

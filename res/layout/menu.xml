@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:myns="http://schemas.android.com/apk/res/com.example"
-    android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" > 
+    xmlns:myns="http://schemas.android.com/apk/res/com.example" android:background="@drawable/aurorabackground"
+    android:id="@+id/toolbar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="horizontal" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" > 
 	<Button android:id="@+id/home" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="25dp" android:background="@drawable/home" />
     <Button android:id="@+id/converter" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="25dp" android:background="@drawable/system_binary"/>
     <Button android:id="@+id/sorter" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="25dp" android:background="@drawable/sort"/>

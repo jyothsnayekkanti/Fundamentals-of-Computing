@@ -5,19 +5,22 @@
 <LinearLayout 
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
-<include layout="@layout/menu"  android:id="@+id/menus"/>
+<include layout="@layout/menu"  android:id="@+id/menus" />
 
 
 
 <LinearLayout 
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  >
+
+
+<LinearLayout 
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
-
-
 
         <TableRow android:id="@+id/tableRow1"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/aboutSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
@@ -28,7 +31,7 @@
         <TextView android:id="@+id/describeSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"  android:textStyle="normal" />
         </TableRow>
         
-        
+</LinearLayout>        
          <include layout="@layout/spacer" />
         
         
