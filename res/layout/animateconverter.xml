@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+<ScrollView android:isScrollContainer="true" xmlns:android="http://schemas.android.com/apk/res/android"   
+                android:layout_width="fill_parent"
+              android:layout_height="fill_parent" >
+<LinearLayout 
+              android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
 
     <include layout="@layout/spacer"/>
 
@@ -13,6 +15,7 @@
 <TextView android:id="@+id/steps" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
 <TextView android:id="@+id/systemresult" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp"/>
 
+    <include layout="@layout/spacer"/>
 
-
-</LinearLayout>              
+</LinearLayout> 
+</ScrollView>             

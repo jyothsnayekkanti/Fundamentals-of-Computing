@@ -69,6 +69,6 @@ public class HeapSort implements ISorter{
 
 	@Override
 	public String describe() {
-		return "Heap Sort";
+		return "Heapsort is a comparison-based sorting algorithm to create a sorted array (or list), and is part of the selection sort family. Because it moves elements around quite frequently, it should not be used for value-based data.";
 	}
 }

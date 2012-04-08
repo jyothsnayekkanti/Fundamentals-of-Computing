@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+<ScrollView android:isScrollContainer="true" xmlns:android="http://schemas.android.com/apk/res/android"   
+                android:layout_width="fill_parent"
+              android:layout_height="fill_parent" >
+<RelativeLayout 
+              android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
 
 <include layout="@layout/menu" android:id="@+id/menus" />
 
@@ -32,8 +34,9 @@
     
 
 
-    <TextView android:id="@+id/explainHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="@string/conversion_help_knowmore_label" android:layout_marginTop="30dp" style="@style/HelpTheme" android:layout_above="@+id/animateHelp"/>
+    <TextView android:id="@+id/explainHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="@string/conversion_help_knowmore_label" android:layout_marginTop="20dp" style="@style/HelpTheme" android:layout_below="@+id/explainNumberSystem"/>
     
-    <TextView android:id="@+id/animateHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="@string/conversion_help_viewconversion_label" android:layout_marginTop="2dp"  style="@style/HelpTheme" android:layout_alignParentBottom="true"/>
+    <TextView android:id="@+id/animateHelp" android:layout_width="wrap_content" android:layout_height="20dp" android:text="@string/conversion_help_viewconversion_label" android:layout_marginTop="2dp"  style="@style/HelpTheme" android:layout_below="@+id/explainHelp"/>
 
 </RelativeLayout>
+</ScrollView>
