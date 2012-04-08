@@ -42,36 +42,37 @@ public class WebViewActivity extends Activity {
 		StringBuffer url = new StringBuffer("http://fundamentalsofcomputing.herokuapp.com");
 
 		if(componentType.equalsIgnoreCase("convert")){
-			if(type.equalsIgnoreCase("Binary"))
-			{
-				url.append("/");
-				url.append("insertion_sort");
-				url.append(".html");
-			}
-			else if(type.equalsIgnoreCase("Quaternary"))
-			{
-				url.append("/");
-				url.append("insertion_sort");
-				url.append(".html");
-			}
-			else if(type.equalsIgnoreCase("Octal"))
-			{
-				url.append("/");
-				url.append("insertion_sort");
-				url.append(".html");
-			}
-			else if(type.equalsIgnoreCase("Decimal"))
-			{
-				url.append("/");
-				url.append("insertion_sort");
-				url.append(".html");
-			}
-			else if(type.equalsIgnoreCase("Hexadecimal"))
-			{
-				url.append("/");
-				url.append("insertion_sort");
-				url.append(".html");
-			}
+			url.append("/conversions.html");
+//			if(type.equalsIgnoreCase("Binary"))
+//			{
+//				url.append("/");
+//				url.append("insertion_sort");
+//				url.append(".html");
+//			}
+//			else if(type.equalsIgnoreCase("Quaternary"))
+//			{
+//				url.append("/");
+//				url.append("insertion_sort");
+//				url.append(".html");
+//			}
+//			else if(type.equalsIgnoreCase("Octal"))
+//			{
+//				url.append("/");
+//				url.append("insertion_sort");
+//				url.append(".html");
+//			}
+//			else if(type.equalsIgnoreCase("Decimal"))
+//			{
+//				url.append("/");
+//				url.append("insertion_sort");
+//				url.append(".html");
+//			}
+//			else if(type.equalsIgnoreCase("Hexadecimal"))
+//			{
+//				url.append("/");
+//				url.append("insertion_sort");
+//				url.append(".html");
+//			}
 		}		
 		else if(componentType.equalsIgnoreCase("sort")){
 			if(type.equalsIgnoreCase("Bubble Sort"))
@@ -89,31 +90,31 @@ public class WebViewActivity extends Activity {
 			else if(type.equalsIgnoreCase("Heap Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("heap_sort");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Merge Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("merge_sort");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Selection Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("selection_sort");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Quick Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("quick_sort");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Bidirectional Bubble Sort"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("bidirectional_bubblesort");
 				url.append(".html");
 			}
 
@@ -122,13 +123,13 @@ public class WebViewActivity extends Activity {
 			if(type.equalsIgnoreCase("Binary Search"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("binary_search");
 				url.append(".html");
 			}
 			else if(type.equalsIgnoreCase("Sequential Search"))
 			{
 				url.append("/");
-				url.append("insertion_sort");
+				url.append("sequential_search");
 				url.append(".html");
 			}
 		}

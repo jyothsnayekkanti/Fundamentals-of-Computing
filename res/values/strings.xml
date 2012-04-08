@@ -46,7 +46,19 @@
     <string name="complexity_label">Complexity</string>
     <string name="complexity_label_Best">Best</string>
     <string name="complexity_label_Avg">Average</string>
-    <string name="complexity_label_Worst">Worst</string>                
+    <string name="complexity_label_Worst">Worst</string>
+    
+    
+    <string name= "helphometext">Home</string>
+    <string name= "helpconvertertext">Number System Converter</string>
+    <string name= "helpsortertext">Sorting Algorithms/ Sort given numbers</string>
+    <string name= "helpsearchertext">Search Algorithms/ Search given element</string>
+    <string name= "helpquittext">Quit</string>
+    <string name= "helphelptext">Help</string>
+    <string name= "helpexplaintext">Explain or Know more</string>
+    <string name= "helpgeneratetext">Generate new set of numbers</string>
+    <string name= "helpanimatetext">View Animation</string>
+    
 
     <string-array name="numbersystem_array">
         <item>Binary</item>
