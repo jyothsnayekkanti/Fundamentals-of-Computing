@@ -97,21 +97,21 @@ public class SorterActivity extends MenuActivity {
 			}
 		});
 	    
-	    Button animateButton = (Button)findViewById(R.id.animateButton);
-	    animateButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-//				setContentView(R.layout.sortanimate);
-				Intent intent = new Intent(context, AnimateSortActivity.class);
-                intent.putExtra("inputArray", inputArray);
-                intent.putExtra("inputValue", input.getText().toString());
-                intent.putExtra("outputArray", sortedArray);
-                intent.putExtra("sortType", sortType);
-                intent.putExtra("outputValue", output.getText().toString());				
-				context.startActivity(intent);				
-			}
-		});
+//	    Button animateButton = (Button)findViewById(R.id.animateButton);
+//	    animateButton.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+////				setContentView(R.layout.sortanimate);
+//				Intent intent = new Intent(context, AnimateSortActivity.class);
+//                intent.putExtra("inputArray", inputArray);
+//                intent.putExtra("inputValue", input.getText().toString());
+//                intent.putExtra("outputArray", sortedArray);
+//                intent.putExtra("sortType", sortType);
+//                intent.putExtra("outputValue", output.getText().toString());				
+//				context.startActivity(intent);				
+//			}
+//		});
 	    
 	    Button explainButton = (Button)findViewById(R.id.explainButton);
 	    explainButton.setOnClickListener(new OnClickListener() {

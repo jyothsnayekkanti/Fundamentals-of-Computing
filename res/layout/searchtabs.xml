@@ -124,13 +124,7 @@
                         android:layout_height="25dp"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/search" />
-                    
-                    <Button
-                        android:id="@+id/animateButton"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/animate" />                    
+                                     
                     
                 </TableRow>
 

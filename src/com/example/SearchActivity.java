@@ -105,16 +105,16 @@ public class SearchActivity extends MenuActivity {
 	    	}
 	    });	    
 	    
-	    Button animateButton = (Button)findViewById(R.id.animateButton);
-	    animateButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-//				setContentView(R.layout.sortanimate);
-				Intent intent = new Intent(context, AnimateSearchActivity.class);
-				context.startActivity(intent);				
-			}
-		});
+//	    Button animateButton = (Button)findViewById(R.id.animateButton);
+//	    animateButton.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+////				setContentView(R.layout.sortanimate);
+//				Intent intent = new Intent(context, AnimateSearchActivity.class);
+//				context.startActivity(intent);				
+//			}
+//		});
 	    
 	    Button explainButton = (Button)findViewById(R.id.explainButton);
 	    explainButton.setOnClickListener(new OnClickListener() {

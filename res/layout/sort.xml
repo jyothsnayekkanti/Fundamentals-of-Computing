@@ -100,8 +100,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp">
-            </TextView>
-        <Button android:id="@+id/animateButton"  android:layout_width="25dp"  android:layout_height="25dp"  android:layout_marginTop="2dp"   android:background="@drawable/animate" />            
+            </TextView>            
         </TableRow> 
 </LinearLayout>
 
