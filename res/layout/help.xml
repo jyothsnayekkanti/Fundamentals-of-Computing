@@ -1,55 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="5dp" android:layout_marginBottom="5dp">
+    android:id="@+id/toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
     
-<TableRow android:id="@+id/space" android:layout_width="fill_parent" android:layout_height="10dp" >
-    
-</TableRow>
 
     <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >
-	<Button android:id="@+id/helphome" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/home" android:enabled="false" android:layout_marginTop="20dp"/>
-	<TextView android:id="@+id/helphometext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helphometext"/>	
+	<Button android:id="@+id/helphome" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/home" android:enabled="false" android:layout_marginTop="10dp"/>
+	<TextView android:id="@+id/helphometext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:text="@string/helphometext" style="@style/CustomTheme2"/>	
 	</TableRow>
 	
     <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >
-        	<Button android:id="@+id/helpconverter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary"  android:enabled="false" android:layout_marginTop="20dp"/>
-    <TextView android:id="@+id/helpconvertertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpconvertertext"/>        	
+        	<Button android:id="@+id/helpconverter" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/system_binary"  android:enabled="false" android:layout_marginTop="20dp"/>
+    <TextView android:id="@+id/helpconvertertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpconvertertext" style="@style/CustomTheme2"/>        	
 	</TableRow>
 	
     <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-    <Button android:id="@+id/helpsorter" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"  android:enabled="false" android:layout_marginTop="20dp"/>
-    <TextView android:id="@+id/helpsortertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp"  android:layout_marginTop="20dp" android:text="@string/helpsortertext"/>        
+    <Button android:id="@+id/helpsorter" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/sort"  android:enabled="false" android:layout_marginTop="20dp"/>
+    <TextView android:id="@+id/helpsortertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp"  android:layout_marginTop="20dp" android:text="@string/helpsortertext" style="@style/CustomTheme2"/>        
 	</TableRow>    
 
     <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-<Button android:id="@+id/helpsearcher" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/search"   android:enabled="false" android:layout_marginTop="20dp"/>
-<TextView android:id="@+id/helpsearchertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp"  android:layout_marginTop="20dp" android:text="@string/helpsearchertext"/>        
+<Button android:id="@+id/helpsearcher" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/search"   android:enabled="false" android:layout_marginTop="20dp"/>
+<TextView android:id="@+id/helpsearchertext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp"  android:layout_marginTop="20dp" android:text="@string/helpsearchertext" style="@style/CustomTheme2"/>        
 	</TableRow>    
 
         <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-            <Button android:id="@+id/helpquit" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"  android:enabled="false" android:layout_marginTop="20dp"/>
-                <TextView android:id="@+id/helpquittext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpquittext"/>
+            <Button android:id="@+id/helpquit" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/quit"  android:enabled="false" android:layout_marginTop="20dp"/>
+                <TextView android:id="@+id/helpquittext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpquittext" style="@style/CustomTheme2"/>
 	</TableRow>    
 
         <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-            <Button android:id="@+id/helphelp" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/question"  android:enabled="false" android:layout_marginTop="20dp"/>
-            <TextView android:id="@+id/helphelptext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpexplaintext"/>
+            <Button android:id="@+id/helphelp" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/question"  android:enabled="false" android:layout_marginTop="20dp"/>
+            <TextView android:id="@+id/helphelptext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helphelptext" style="@style/CustomTheme2"/>
 	</TableRow>    
 
         <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-            <Button android:id="@+id/helpexplain" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/help"  android:enabled="false" android:layout_marginTop="20dp"/>
-            <TextView android:id="@+id/helpexplaintext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helphelptext"/>
+            <Button android:id="@+id/helpexplain" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/help"  android:enabled="false" android:layout_marginTop="20dp"/>
+            <TextView android:id="@+id/helpexplaintext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpexplaintext" style="@style/CustomTheme2"/>
 	</TableRow>    
 
         <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-            <Button android:id="@+id/helpgenerate" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/refresh"  android:enabled="false" android:layout_marginTop="20dp"/>
-            <TextView android:id="@+id/helpgeneratetext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpgeneratetext"/>
+            <Button android:id="@+id/helpgenerate" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/refresh"  android:enabled="false" android:layout_marginTop="20dp"/>
+            <TextView android:id="@+id/helpgeneratetext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpgeneratetext" style="@style/CustomTheme2"/>
 	</TableRow>    
 
         <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" >	
-<Button android:id="@+id/helpanimate" android:layout_width="20dp" android:layout_height="20dp" android:layout_marginLeft="20dp" android:background="@drawable/animate"  android:enabled="false" android:layout_marginTop="20dp"/>
-<TextView android:id="@+id/helpanimatetext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpanimatetext"/>            
+<Button android:id="@+id/helpanimate" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="20dp" android:background="@drawable/animate"  android:enabled="false" android:layout_marginTop="20dp"/>
+<TextView android:id="@+id/helpanimatetext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:text="@string/helpanimatetext" style="@style/CustomTheme2"/>            
 	</TableRow>    
 
     

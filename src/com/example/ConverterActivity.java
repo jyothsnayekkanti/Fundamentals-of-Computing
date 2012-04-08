@@ -89,8 +89,7 @@ public class ConverterActivity extends MenuActivity
 		(menuView.findViewById(R.id.converter)).setOnClickListener(toConverterButtonListener);
 		(menuView.findViewById(R.id.sorter)).setOnClickListener(toSorterButtonListener);		
 		(menuView.findViewById(R.id.searcher)).setOnClickListener(toSearcherButtonListener);
-		(menuView.findViewById(R.id.help)).setOnClickListener(helpButtonListener);		
-		
+		(menuView.findViewById(R.id.help)).setOnClickListener(helpButtonListener);
 		
 		spinner = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.numbersystem_array, android.R.layout.simple_spinner_item);

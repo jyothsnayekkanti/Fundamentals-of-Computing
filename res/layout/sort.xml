@@ -20,7 +20,7 @@
         <TableRow android:id="@+id/tableRow1"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/aboutSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
         
-        <Button android:id="@+id/explainButton"  android:layout_width="20dp"  android:layout_height="20dp"  android:layout_marginTop="2dp"  android:background="@drawable/help"/>            
+        <Button android:id="@+id/explainButton"  android:layout_width="25dp"  android:layout_height="25dp"  android:layout_marginTop="2dp"  android:background="@drawable/help"/>            
         </TableRow>
         <TableRow android:id="@+id/tableRow1a"  android:layout_width="wrap_content"  android:layout_height="wrap_content" android:layout_marginTop="5dp">
         <TextView android:id="@+id/describeSortType"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textSize="10dp"/>
@@ -44,8 +44,8 @@
             
 <Button
                 android:id="@+id/generateSortButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="2dp"
                  android:background="@drawable/refresh"
@@ -81,8 +81,8 @@
 
             <Button
                 android:id="@+id/sortButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
                android:background="@drawable/sort" />              
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp">
             </TextView>
-        <Button android:id="@+id/animateButton"  android:layout_width="20dp"  android:layout_height="20dp"  android:layout_marginTop="2dp"   android:background="@drawable/animate" />            
+        <Button android:id="@+id/animateButton"  android:layout_width="25dp"  android:layout_height="25dp"  android:layout_marginTop="2dp"   android:background="@drawable/animate" />            
         </TableRow> 
 </LinearLayout>
 
