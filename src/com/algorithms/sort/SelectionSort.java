@@ -27,17 +27,17 @@ public class SelectionSort implements ISorter{
 
 	@Override
 	public String bestComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override
 	public String averageComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override
 	public String worstComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override

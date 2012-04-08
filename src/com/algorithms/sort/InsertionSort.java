@@ -30,12 +30,12 @@ public class InsertionSort implements ISorter{
 
 	@Override
 	public String averageComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override
 	public String worstComplexity() {
-		return "O(n<sup>2</sup>)";
+		return "O(n^2)";
 	}
 
 	@Override

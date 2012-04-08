@@ -56,7 +56,7 @@ public class QuickSort implements ISorter{
 
 	@Override
 	public String worstComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override

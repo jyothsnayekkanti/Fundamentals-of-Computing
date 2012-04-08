@@ -31,20 +31,17 @@ public class SequentialSearch implements ISearcher {
 
 	@Override
 	public String bestComplexity() {
-		// TODO
-		return null;
+		return "O(1)";
 	}
 
 	@Override
 	public String averageComplexity() {
-		// TODO
-		return null;
+		return "O(n)";
 	}
 
 	@Override
 	public String worstComplexity() {
-		// TODO
-		return null;
+		return "O(n)";
 	}
 
 	@Override

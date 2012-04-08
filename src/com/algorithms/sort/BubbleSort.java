@@ -1,9 +1,5 @@
 package com.algorithms.sort;
 
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-
-import com.example.R;
 
 public class BubbleSort implements ISorter{
 
@@ -36,12 +32,12 @@ public class BubbleSort implements ISorter{
 
 	@Override
 	public String averageComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override
 	public String worstComplexity() {
-		return "O(n2)";
+		return "O(n^2)";
 	}
 
 	@Override

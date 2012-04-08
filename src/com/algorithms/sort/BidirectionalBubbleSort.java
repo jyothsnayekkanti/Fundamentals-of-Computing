@@ -36,20 +36,17 @@ public class BidirectionalBubbleSort implements ISorter {
 
 	@Override
 	public String bestComplexity() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(n)";
 	}
 
 	@Override
 	public String averageComplexity() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(n^2)";
 	}
 
 	@Override
 	public String worstComplexity() {
-		// TODO Auto-generated method stub
-		return null;
+		return "O(n^2)";
 	}
 
 	@Override
